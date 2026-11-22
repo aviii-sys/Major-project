@@ -1,0 +1,20 @@
+.venv/
+__pycache__/
+*.pyc
+data/raw/
+data/processed/
+mlruns/
+.DS_Store
+
+# --- added for version control (heavy or re-creatable; see ARTIFACTS.md) ---
+*.pt
+reports/**/runs/**/predictions.npz
+reports/phase1b/frozen/predictions.npz
+reports/phase1b/frozen/*.joblib
+reports/**/oof_predictions.csv.gz
+reports/**/verification/
+data/raw/
+data/processed/
+.claude/
+*.egg-info/
+.pytest_cache/

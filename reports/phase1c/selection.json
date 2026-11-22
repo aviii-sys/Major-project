@@ -1,0 +1,26 @@
+{
+  "lstm": {
+    "validation_event_window_rmse_seed0": {
+      "32": 1.0145100741998758,
+      "64": 1.0042258536733943
+    },
+    "chosen_hidden": 64,
+    "rule": "lowest mean validation event-window RMSE over the 4 horizons, seed 0 only"
+  },
+  "gru": {
+    "validation_event_window_rmse_seed0": {
+      "32": 0.999135757297414,
+      "64": 0.9835665642788762
+    },
+    "chosen_hidden": 64,
+    "rule": "lowest mean validation event-window RMSE over the 4 horizons, seed 0 only"
+  },
+  "transformer": {
+    "validation_event_window_rmse_seed0": {
+      "32": 1.000197551919005,
+      "64": 0.9803212209239365
+    },
+    "chosen_hidden": 64,
+    "rule": "lowest mean validation event-window RMSE over the 4 horizons, seed 0 only"
+  }
+}

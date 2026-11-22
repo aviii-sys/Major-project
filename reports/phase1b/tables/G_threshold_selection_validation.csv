@@ -1,0 +1,49 @@
+target,horizon,learner,train_positive_rows,val_positive_rows,independent_val_events,theta,val_row_F2,xgb_trees,note
+experimental_stage_10ft,15m,logistic,848,167,5,0.5,0.9443800695249133,,
+experimental_stage_10ft,15m,xgb_plain,848,167,5,0.45,0.9510250569476083,219.0,
+experimental_stage_10ft,15m,xgb_weighted,848,167,5,0.85,0.9510250569476083,369.0,
+experimental_stage_10ft,30m,logistic,848,167,5,0.45,0.9584295612009238,,
+experimental_stage_10ft,30m,xgb_plain,848,167,5,0.45,0.944254835039818,265.0,
+experimental_stage_10ft,30m,xgb_weighted,848,167,5,0.85,0.9531963470319633,399.0,
+experimental_stage_10ft,1h,logistic,848,167,5,0.35,0.9512761020881672,,
+experimental_stage_10ft,1h,xgb_plain,848,167,5,0.5,0.9299655568312285,289.0,
+experimental_stage_10ft,1h,xgb_weighted,848,167,5,0.9,0.9396355353075171,400.0,
+experimental_stage_10ft,3h,logistic,848,167,5,0.35,0.8023952095808383,,
+experimental_stage_10ft,3h,xgb_plain,848,167,5,0.25,0.7912087912087912,200.0,
+experimental_stage_10ft,3h,xgb_weighted,848,167,5,0.75,0.7812499999999999,399.0,
+experimental_stage_15ft,15m,logistic,280,82,2,0.25,0.9501187648456056,,
+experimental_stage_15ft,15m,xgb_plain,280,82,2,0.05,0.8488612836438925,113.0,
+experimental_stage_15ft,15m,xgb_weighted,280,82,2,0.3,0.8816964285714285,294.0,
+experimental_stage_15ft,30m,logistic,280,82,2,0.15,0.9389671361502347,,
+experimental_stage_15ft,30m,xgb_plain,280,82,2,0.1,0.8666666666666667,86.0,
+experimental_stage_15ft,30m,xgb_weighted,280,82,2,0.15,0.8676789587852495,281.0,
+experimental_stage_15ft,1h,logistic,280,82,2,0.15,0.9462616822429906,,
+experimental_stage_15ft,1h,xgb_plain,280,82,2,0.1,0.829694323144105,105.0,
+experimental_stage_15ft,1h,xgb_weighted,280,82,2,0.4,0.8597285067873304,278.0,
+experimental_stage_15ft,3h,logistic,280,82,2,0.1,0.8685446009389671,,
+experimental_stage_15ft,3h,xgb_plain,280,82,2,0.1,0.7563025210084033,109.0,
+experimental_stage_15ft,3h,xgb_weighted,280,82,2,0.3,0.7739307535641549,369.0,
+experimental_rise_4ft_3h,15m,logistic,181,86,6,0.45,0.9418604651162791,,
+experimental_rise_4ft_3h,15m,xgb_plain,181,86,6,0.2,0.8867521367521368,98.0,
+experimental_rise_4ft_3h,15m,xgb_weighted,181,86,6,0.5,0.9042553191489363,330.0,
+experimental_rise_4ft_3h,30m,logistic,181,86,6,0.15,0.9010989010989012,,
+experimental_rise_4ft_3h,30m,xgb_plain,181,86,6,0.1,0.8574380165289257,118.0,
+experimental_rise_4ft_3h,30m,xgb_weighted,181,86,6,0.35,0.8799171842650103,281.0,
+experimental_rise_4ft_3h,1h,logistic,181,86,6,0.05,0.8565310492505354,,
+experimental_rise_4ft_3h,1h,xgb_plain,181,86,6,0.15,0.8367768595041324,98.0,
+experimental_rise_4ft_3h,1h,xgb_weighted,181,86,6,0.8,0.8208955223880596,306.0,
+experimental_rise_4ft_3h,3h,logistic,181,86,6,0.02,0.25,,
+experimental_rise_4ft_3h,3h,xgb_plain,181,86,6,0.05,0.4056795131845842,54.0,
+experimental_rise_4ft_3h,3h,xgb_weighted,181,86,6,0.2,0.33428165007112376,399.0,
+experimental_rise_8ft_3h,15m,logistic,78,11,1,,,,no threshold selectable: 11 validation positive rows (< 30)
+experimental_rise_8ft_3h,15m,xgb_plain,78,11,1,,,388.0,no threshold selectable: 11 validation positive rows (< 30)
+experimental_rise_8ft_3h,15m,xgb_weighted,78,11,1,,,382.0,no threshold selectable: 11 validation positive rows (< 30)
+experimental_rise_8ft_3h,30m,logistic,78,11,1,,,,no threshold selectable: 11 validation positive rows (< 30)
+experimental_rise_8ft_3h,30m,xgb_plain,78,11,1,,,303.0,no threshold selectable: 11 validation positive rows (< 30)
+experimental_rise_8ft_3h,30m,xgb_weighted,78,11,1,,,399.0,no threshold selectable: 11 validation positive rows (< 30)
+experimental_rise_8ft_3h,1h,logistic,78,11,1,,,,no threshold selectable: 11 validation positive rows (< 30)
+experimental_rise_8ft_3h,1h,xgb_plain,78,11,1,,,191.0,no threshold selectable: 11 validation positive rows (< 30)
+experimental_rise_8ft_3h,1h,xgb_weighted,78,11,1,,,371.0,no threshold selectable: 11 validation positive rows (< 30)
+experimental_rise_8ft_3h,3h,logistic,78,11,1,,,,no threshold selectable: 11 validation positive rows (< 30)
+experimental_rise_8ft_3h,3h,xgb_plain,78,11,1,,,37.0,no threshold selectable: 11 validation positive rows (< 30)
+experimental_rise_8ft_3h,3h,xgb_weighted,78,11,1,,,400.0,no threshold selectable: 11 validation positive rows (< 30)

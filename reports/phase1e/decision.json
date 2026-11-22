@@ -1,0 +1,5 @@
+{
+  "horizons_with_consistent_improvement_in_flood_windows": 0,
+  "adopt_72h": false,
+  "rule": "72 h adopted only if consistent improvement in flood-window RMSE at >= 2 of 4 horizons and no horizon significantly worse on all rows; otherwise retain 24 h"
+}

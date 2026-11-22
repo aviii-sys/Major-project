@@ -1,0 +1,6 @@
+definition,event_start,horizon,eligible_frac,issue_times,stage_missing_or_floor,target_missing,hydro_feature_missing,rain_missing,longest_stage_gap_h_in_prior_24h
+experimental_rise_4ft_3h,2024-06-02 07:15:00+00:00,15m,0.0,6,0,0,6,0,21.0
+experimental_rise_4ft_3h,2024-06-02 07:15:00+00:00,30m,0.0,7,0,0,7,0,21.0
+experimental_rise_4ft_3h,2024-06-02 07:15:00+00:00,1h,0.0,9,0,0,9,0,21.0
+experimental_rise_4ft_3h,2024-06-02 07:15:00+00:00,3h,0.0,17,4,4,17,0,21.0
+experimental_rise_4ft_3h,2024-07-24 14:00:00+00:00,3h,0.76,17,0,0,4,0,0.0

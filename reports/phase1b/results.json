@@ -1,0 +1,151 @@
+{
+  "validation_event_counts": {
+    "official_action_25ft": 0,
+    "official_minor_30ft": 0,
+    "official_moderate_36ft": 0,
+    "experimental_stage_10ft": 5,
+    "experimental_stage_15ft": 2,
+    "experimental_rise_4ft_3h": 6,
+    "experimental_rise_8ft_3h": 1
+  },
+  "feature_set_mean_val_event_window_rmse": {
+    "H": 1.02188572578507,
+    "H2": 1.0342028323906154,
+    "H2+G": 1.0435622878589614,
+    "H2+R": 1.0665192439204372,
+    "H2+R+G": 1.015970174862175
+  },
+  "adopted_feature_set": "H2",
+  "chosen_lambda": {
+    "ridge": 0.0,
+    "xgb": 10.0
+  },
+  "trend_v2_selected": {
+    "15m": {
+      "window": "15m",
+      "window_steps": 1,
+      "phi": 1.0
+    },
+    "30m": {
+      "window": "15m",
+      "window_steps": 1,
+      "phi": 0.75
+    },
+    "1h": {
+      "window": "15m",
+      "window_steps": 1,
+      "phi": 0.75
+    },
+    "3h": {
+      "window": "15m",
+      "window_steps": 1,
+      "phi": 0.25
+    }
+  },
+  "tuned": {
+    "ridge_H0_15m": {
+      "kind": "ridge",
+      "feature_set": "H",
+      "lambda": 0.0,
+      "alpha": 10000.0
+    },
+    "xgb_H0_15m": {
+      "kind": "xgb",
+      "feature_set": "H",
+      "lambda": 0.0,
+      "depth": 3,
+      "trees": 112
+    },
+    "ridge_B_15m": {
+      "kind": "ridge",
+      "feature_set": "H2",
+      "lambda": 0.0,
+      "alpha": 10000.0
+    },
+    "xgb_B_15m": {
+      "kind": "xgb",
+      "feature_set": "H2",
+      "lambda": 10.0,
+      "depth": 3,
+      "trees": 204
+    },
+    "ridge_H0_30m": {
+      "kind": "ridge",
+      "feature_set": "H",
+      "lambda": 0.0,
+      "alpha": 10000.0
+    },
+    "xgb_H0_30m": {
+      "kind": "xgb",
+      "feature_set": "H",
+      "lambda": 0.0,
+      "depth": 3,
+      "trees": 86
+    },
+    "ridge_B_30m": {
+      "kind": "ridge",
+      "feature_set": "H2",
+      "lambda": 0.0,
+      "alpha": 10000.0
+    },
+    "xgb_B_30m": {
+      "kind": "xgb",
+      "feature_set": "H2",
+      "lambda": 10.0,
+      "depth": 3,
+      "trees": 196
+    },
+    "ridge_H0_1h": {
+      "kind": "ridge",
+      "feature_set": "H",
+      "lambda": 0.0,
+      "alpha": 1000.0
+    },
+    "xgb_H0_1h": {
+      "kind": "xgb",
+      "feature_set": "H",
+      "lambda": 0.0,
+      "depth": 3,
+      "trees": 86
+    },
+    "ridge_B_1h": {
+      "kind": "ridge",
+      "feature_set": "H2",
+      "lambda": 0.0,
+      "alpha": 10000.0
+    },
+    "xgb_B_1h": {
+      "kind": "xgb",
+      "feature_set": "H2",
+      "lambda": 10.0,
+      "depth": 3,
+      "trees": 121
+    },
+    "ridge_H0_3h": {
+      "kind": "ridge",
+      "feature_set": "H",
+      "lambda": 0.0,
+      "alpha": 1000.0
+    },
+    "xgb_H0_3h": {
+      "kind": "xgb",
+      "feature_set": "H",
+      "lambda": 0.0,
+      "depth": 5,
+      "trees": 28
+    },
+    "ridge_B_3h": {
+      "kind": "ridge",
+      "feature_set": "H2",
+      "lambda": 0.0,
+      "alpha": 10000.0
+    },
+    "xgb_B_3h": {
+      "kind": "xgb",
+      "feature_set": "H2",
+      "lambda": 10.0,
+      "depth": 5,
+      "trees": 27
+    }
+  }
+}

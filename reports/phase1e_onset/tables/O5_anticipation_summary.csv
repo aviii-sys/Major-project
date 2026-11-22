@@ -1,0 +1,33 @@
+horizon,scope,window_h,events,events_flagged_by_all_3_seeds,events_flagged_by_>=1_seed,flagged_event_seed_pairs,possible_pairs,median_max_pred_change_ft
+15m,all 18 events,24,18,0,0,0,54,0.07150000000000012
+15m,all 18 events,72,18,0,0,0,54,0.07416666666666658
+15m,all 18 events,damped trend,18,0,0,0,18,
+15m,all 18 events,ridge H,18,0,0,0,18,
+15m,excluding R3 ambiguous-onset events,24,14,0,0,0,42,0.07150000000000012
+15m,excluding R3 ambiguous-onset events,72,14,0,0,0,42,0.07750000000000012
+15m,excluding R3 ambiguous-onset events,damped trend,14,0,0,0,14,
+15m,excluding R3 ambiguous-onset events,ridge H,14,0,0,0,14,
+30m,all 18 events,24,18,0,2,3,54,0.16550000000000012
+30m,all 18 events,72,18,0,1,1,54,0.15900000000000025
+30m,all 18 events,damped trend,18,0,0,0,18,
+30m,all 18 events,ridge H,18,0,0,0,18,
+30m,excluding R3 ambiguous-onset events,24,14,0,1,2,42,0.16550000000000012
+30m,excluding R3 ambiguous-onset events,72,14,0,1,1,42,0.15900000000000025
+30m,excluding R3 ambiguous-onset events,damped trend,14,0,0,0,14,
+30m,excluding R3 ambiguous-onset events,ridge H,14,0,0,0,14,
+1h,all 18 events,24,18,4,9,20,54,0.3603333333333333
+1h,all 18 events,72,18,5,7,18,54,0.3506666666666665
+1h,all 18 events,damped trend,18,0,0,0,18,
+1h,all 18 events,ridge H,18,0,0,0,18,
+1h,excluding R3 ambiguous-onset events,24,14,4,7,17,42,0.3603333333333333
+1h,excluding R3 ambiguous-onset events,72,14,5,6,17,42,0.34400000000000014
+1h,excluding R3 ambiguous-onset events,damped trend,14,0,0,0,14,
+1h,excluding R3 ambiguous-onset events,ridge H,14,0,0,0,14,
+3h,all 18 events,24,18,13,15,43,54,0.8328333333333331
+3h,all 18 events,72,18,13,15,43,54,0.760333333333333
+3h,all 18 events,damped trend,18,8,8,8,18,
+3h,all 18 events,ridge H,18,5,5,5,18,
+3h,excluding R3 ambiguous-onset events,24,14,11,12,35,42,0.8918333333333331
+3h,excluding R3 ambiguous-onset events,72,14,10,12,34,42,0.7563333333333332
+3h,excluding R3 ambiguous-onset events,damped trend,14,6,6,6,14,
+3h,excluding R3 ambiguous-onset events,ridge H,14,4,4,4,14,

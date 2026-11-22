@@ -1,0 +1,161 @@
+event_start,peak_ft_08167500,site,name,drain_area_sqmi,status,upstream_rise_ft,coverage,arrival_lead_h,peak_lag_h
+2010-04-17 02:00,16.09,08165300,"N Fk Guadalupe Rv nr Hunt, TX",169.0,no data,,,,
+2010-04-17 02:00,16.09,08165500,"Guadalupe Rv at Hunt, TX",288.0,no data,,,,
+2010-04-17 02:00,16.09,08166000,"Johnson Ck nr Ingram, TX",114.0,no data,,,,
+2010-04-17 02:00,16.09,08166140,"Guadalupe Rv abv Bear Ck at Kerrville, TX",494.0,responds,11.549999999999999,1.003717472118959,21.0,25.5
+2010-04-17 02:00,16.09,08166200,"Guadalupe Rv at Kerrville, TX",510.0,no data,,,,
+2010-04-17 02:00,16.09,08166250,"Guadalupe Rv nr Center Point, TX",553.0,responds,16.669999999999998,1.003717472118959,19.25,23.5
+2010-04-17 02:00,16.09,08167000,"Guadalupe Rv at Comfort, TX",839.0,responds,17.23,1.003717472118959,15.25,18.5
+2010-04-17 02:00,16.09,08167200,"Guadalupe Rv at FM 474 nr Bergheim, TX",1103.0,no data,,,,
+2010-09-08 21:45,13.96,08165300,"N Fk Guadalupe Rv nr Hunt, TX",169.0,no data,,,,
+2010-09-08 21:45,13.96,08165500,"Guadalupe Rv at Hunt, TX",288.0,no response (rise < 1 ft),0.2699999999999996,1.0041666666666667,,
+2010-09-08 21:45,13.96,08166000,"Johnson Ck nr Ingram, TX",114.0,no data,,,,
+2010-09-08 21:45,13.96,08166140,"Guadalupe Rv abv Bear Ck at Kerrville, TX",494.0,responds,3.3199999999999994,1.0041666666666667,-33.25,-11.25
+2010-09-08 21:45,13.96,08166200,"Guadalupe Rv at Kerrville, TX",510.0,no data,,,,
+2010-09-08 21:45,13.96,08166250,"Guadalupe Rv nr Center Point, TX",553.0,responds,4.99,1.0041666666666667,4.0,-14.75
+2010-09-08 21:45,13.96,08167000,"Guadalupe Rv at Comfort, TX",839.0,responds,6.46,1.0041666666666667,-5.75,9.0
+2010-09-08 21:45,13.96,08167200,"Guadalupe Rv at FM 474 nr Bergheim, TX",1103.0,no data,,,,
+2012-01-25 12:15,10.09,08165300,"N Fk Guadalupe Rv nr Hunt, TX",169.0,no data,,,,
+2012-01-25 12:15,10.09,08165500,"Guadalupe Rv at Hunt, TX",288.0,no response (rise < 1 ft),0.3000000000000007,1.0,,
+2012-01-25 12:15,10.09,08166000,"Johnson Ck nr Ingram, TX",114.0,no data,,,,
+2012-01-25 12:15,10.09,08166140,"Guadalupe Rv abv Bear Ck at Kerrville, TX",494.0,no response (rise < 1 ft),0.3999999999999999,1.0046082949308757,,
+2012-01-25 12:15,10.09,08166200,"Guadalupe Rv at Kerrville, TX",510.0,no response (rise < 1 ft),0.24,1.0046082949308757,,
+2012-01-25 12:15,10.09,08166250,"Guadalupe Rv nr Center Point, TX",553.0,no response (rise < 1 ft),0.7900000000000005,1.0046082949308757,,
+2012-01-25 12:15,10.09,08167000,"Guadalupe Rv at Comfort, TX",839.0,no response (rise < 1 ft),0.5799999999999996,1.0046082949308757,,
+2012-01-25 12:15,10.09,08167200,"Guadalupe Rv at FM 474 nr Bergheim, TX",1103.0,no data,,,,
+2013-10-31 06:30,14.95,08165300,"N Fk Guadalupe Rv nr Hunt, TX",169.0,no data,,,,
+2013-10-31 06:30,14.95,08165500,"Guadalupe Rv at Hunt, TX",288.0,no data,,,,
+2013-10-31 06:30,14.95,08166000,"Johnson Ck nr Ingram, TX",114.0,no data,,,,
+2013-10-31 06:30,14.95,08166140,"Guadalupe Rv abv Bear Ck at Kerrville, TX",494.0,no response (rise < 1 ft),0.020000000000000018,1.0044052863436124,,
+2013-10-31 06:30,14.95,08166200,"Guadalupe Rv at Kerrville, TX",510.0,no response (rise < 1 ft),0.050000000000000044,1.0044052863436124,,
+2013-10-31 06:30,14.95,08166250,"Guadalupe Rv nr Center Point, TX",553.0,no response (rise < 1 ft),0.10000000000000009,1.0044052863436124,,
+2013-10-31 06:30,14.95,08167000,"Guadalupe Rv at Comfort, TX",839.0,no response (rise < 1 ft),0.1200000000000001,0.9647577092511013,,
+2013-10-31 06:30,14.95,08167200,"Guadalupe Rv at FM 474 nr Bergheim, TX",1103.0,no data,,,,
+2015-05-17 16:30,11.72,08165300,"N Fk Guadalupe Rv nr Hunt, TX",169.0,no data,,,,
+2015-05-17 16:30,11.72,08165500,"Guadalupe Rv at Hunt, TX",288.0,no response (rise < 1 ft),0.3200000000000012,1.0034602076124568,,
+2015-05-17 16:30,11.72,08166000,"Johnson Ck nr Ingram, TX",114.0,no data,,,,
+2015-05-17 16:30,11.72,08166140,"Guadalupe Rv abv Bear Ck at Kerrville, TX",494.0,insufficient coverage,,,,
+2015-05-17 16:30,11.72,08166200,"Guadalupe Rv at Kerrville, TX",510.0,no response (rise < 1 ft),0.25,1.0034602076124568,,
+2015-05-17 16:30,11.72,08166250,"Guadalupe Rv nr Center Point, TX",553.0,responds,1.7999999999999998,1.0034602076124568,-29.75,9.75
+2015-05-17 16:30,11.72,08167000,"Guadalupe Rv at Comfort, TX",839.0,responds,7.069999999999999,1.0034602076124568,-32.75,6.0
+2015-05-17 16:30,11.72,08167200,"Guadalupe Rv at FM 474 nr Bergheim, TX",1103.0,no data,,,,
+2015-05-23 23:15,34.5,08165300,"N Fk Guadalupe Rv nr Hunt, TX",169.0,no data,,,,
+2015-05-23 23:15,34.5,08165500,"Guadalupe Rv at Hunt, TX",288.0,responds,2.6799999999999997,1.002145922746781,-2.75,-12.25
+2015-05-23 23:15,34.5,08166000,"Johnson Ck nr Ingram, TX",114.0,no data,,,,
+2015-05-23 23:15,34.5,08166140,"Guadalupe Rv abv Bear Ck at Kerrville, TX",494.0,responds,2.79,1.002145922746781,-1.5,-14.75
+2015-05-23 23:15,34.5,08166200,"Guadalupe Rv at Kerrville, TX",510.0,responds,2.6800000000000006,1.002145922746781,-2.75,-15.5
+2015-05-23 23:15,34.5,08166250,"Guadalupe Rv nr Center Point, TX",553.0,responds,5.3,1.002145922746781,-1.25,-17.75
+2015-05-23 23:15,34.5,08167000,"Guadalupe Rv at Comfort, TX",839.0,responds,22.1,0.9914163090128756,0.5,1.0
+2015-05-23 23:15,34.5,08167200,"Guadalupe Rv at FM 474 nr Bergheim, TX",1103.0,no data,,,,
+2015-10-30 12:30,30.06,08165300,"N Fk Guadalupe Rv nr Hunt, TX",169.0,no data,,,,
+2015-10-30 12:30,30.06,08165500,"Guadalupe Rv at Hunt, TX",288.0,no response (rise < 1 ft),0.9299999999999997,1.00398406374502,,
+2015-10-30 12:30,30.06,08166000,"Johnson Ck nr Ingram, TX",114.0,no data,,,,
+2015-10-30 12:30,30.06,08166140,"Guadalupe Rv abv Bear Ck at Kerrville, TX",494.0,responds,1.46,1.00398406374502,-4.25,-15.75
+2015-10-30 12:30,30.06,08166200,"Guadalupe Rv at Kerrville, TX",510.0,responds,1.34,1.00398406374502,-5.75,-16.25
+2015-10-30 12:30,30.06,08166250,"Guadalupe Rv nr Center Point, TX",553.0,responds,3.71,1.00398406374502,-9.75,-18.5
+2015-10-30 12:30,30.06,08167000,"Guadalupe Rv at Comfort, TX",839.0,responds,2.0000000000000004,1.00398406374502,-19.5,-24.25
+2015-10-30 12:30,30.06,08167200,"Guadalupe Rv at FM 474 nr Bergheim, TX",1103.0,no data,,,,
+2016-05-18 07:00,13.46,08165300,"N Fk Guadalupe Rv nr Hunt, TX",169.0,no data,,,,
+2016-05-18 07:00,13.46,08165500,"Guadalupe Rv at Hunt, TX",288.0,responds,1.8400000000000007,1.0041322314049588,2.75,5.25
+2016-05-18 07:00,13.46,08166000,"Johnson Ck nr Ingram, TX",114.0,no data,,,,
+2016-05-18 07:00,13.46,08166140,"Guadalupe Rv abv Bear Ck at Kerrville, TX",494.0,responds,4.12,1.0041322314049588,2.75,3.75
+2016-05-18 07:00,13.46,08166200,"Guadalupe Rv at Kerrville, TX",510.0,responds,3.52,1.0041322314049588,2.25,2.75
+2016-05-18 07:00,13.46,08166250,"Guadalupe Rv nr Center Point, TX",553.0,responds,7.250000000000001,1.0041322314049588,1.5,1.25
+2016-05-18 07:00,13.46,08167000,"Guadalupe Rv at Comfort, TX",839.0,insufficient coverage,,,,
+2016-05-18 07:00,13.46,08167200,"Guadalupe Rv at FM 474 nr Bergheim, TX",1103.0,no data,,,,
+2016-05-19 15:45,18.41,08165300,"N Fk Guadalupe Rv nr Hunt, TX",169.0,no data,,,,
+2016-05-19 15:45,18.41,08165500,"Guadalupe Rv at Hunt, TX",288.0,responds,1.4900000000000002,1.002967359050445,2.0,39.5
+2016-05-19 15:45,18.41,08166000,"Johnson Ck nr Ingram, TX",114.0,no data,,,,
+2016-05-19 15:45,18.41,08166140,"Guadalupe Rv abv Bear Ck at Kerrville, TX",494.0,responds,2.66,1.002967359050445,1.75,38.0
+2016-05-19 15:45,18.41,08166200,"Guadalupe Rv at Kerrville, TX",510.0,no data,,,,
+2016-05-19 15:45,18.41,08166250,"Guadalupe Rv nr Center Point, TX",553.0,responds,6.83,1.002967359050445,1.5,35.5
+2016-05-19 15:45,18.41,08167000,"Guadalupe Rv at Comfort, TX",839.0,insufficient coverage,,,,
+2016-05-19 15:45,18.41,08167200,"Guadalupe Rv at FM 474 nr Bergheim, TX",1103.0,no data,,,,
+2016-05-29 20:30,26.07,08165300,"N Fk Guadalupe Rv nr Hunt, TX",169.0,no data,,,,
+2016-05-29 20:30,26.07,08165500,"Guadalupe Rv at Hunt, TX",288.0,no data,,,,
+2016-05-29 20:30,26.07,08166000,"Johnson Ck nr Ingram, TX",114.0,no data,,,,
+2016-05-29 20:30,26.07,08166140,"Guadalupe Rv abv Bear Ck at Kerrville, TX",494.0,responds,5.949999999999999,1.0023419203747073,16.0,21.25
+2016-05-29 20:30,26.07,08166200,"Guadalupe Rv at Kerrville, TX",510.0,responds,6.350000000000001,1.0023419203747073,16.25,20.5
+2016-05-29 20:30,26.07,08166250,"Guadalupe Rv nr Center Point, TX",553.0,responds,10.07,1.0023419203747073,15.75,17.75
+2016-05-29 20:30,26.07,08167000,"Guadalupe Rv at Comfort, TX",839.0,responds,23.14,1.0023419203747073,14.0,18.0
+2016-05-29 20:30,26.07,08167200,"Guadalupe Rv at FM 474 nr Bergheim, TX",1103.0,no data,,,,
+2016-06-02 17:30,12.8,08165300,"N Fk Guadalupe Rv nr Hunt, TX",169.0,no data,,,,
+2016-06-02 17:30,12.8,08165500,"Guadalupe Rv at Hunt, TX",288.0,responds,2.049999999999999,1.0033898305084745,-18.5,18.5
+2016-06-02 17:30,12.8,08166000,"Johnson Ck nr Ingram, TX",114.0,no data,,,,
+2016-06-02 17:30,12.8,08166140,"Guadalupe Rv abv Bear Ck at Kerrville, TX",494.0,responds,1.29,1.0033898305084745,-17.0,15.75
+2016-06-02 17:30,12.8,08166200,"Guadalupe Rv at Kerrville, TX",510.0,responds,1.5899999999999999,1.0033898305084745,-17.25,14.5
+2016-06-02 17:30,12.8,08166250,"Guadalupe Rv nr Center Point, TX",553.0,responds,3.99,1.0033898305084745,-17.75,23.25
+2016-06-02 17:30,12.8,08167000,"Guadalupe Rv at Comfort, TX",839.0,responds,4.15,1.0033898305084745,-19.5,11.0
+2016-06-02 17:30,12.8,08167200,"Guadalupe Rv at FM 474 nr Bergheim, TX",1103.0,no data,,,,
+2018-09-09 15:15,12.64,08165300,"N Fk Guadalupe Rv nr Hunt, TX",169.0,no data,,,,
+2018-09-09 15:15,12.64,08165500,"Guadalupe Rv at Hunt, TX",288.0,no response (rise < 1 ft),0.16999999999999904,1.0043290043290043,,
+2018-09-09 15:15,12.64,08166000,"Johnson Ck nr Ingram, TX",114.0,no data,,,,
+2018-09-09 15:15,12.64,08166140,"Guadalupe Rv abv Bear Ck at Kerrville, TX",494.0,no response (rise < 1 ft),0.17999999999999972,1.0043290043290043,,
+2018-09-09 15:15,12.64,08166200,"Guadalupe Rv at Kerrville, TX",510.0,no data,,,,
+2018-09-09 15:15,12.64,08166250,"Guadalupe Rv nr Center Point, TX",553.0,no response (rise < 1 ft),0.8499999999999996,1.0043290043290043,,
+2018-09-09 15:15,12.64,08167000,"Guadalupe Rv at Comfort, TX",839.0,no data,,,,
+2018-09-09 15:15,12.64,08167200,"Guadalupe Rv at FM 474 nr Bergheim, TX",1103.0,no data,,,,
+2018-09-22 16:15,10.3,08165300,"N Fk Guadalupe Rv nr Hunt, TX",169.0,no data,,,,
+2018-09-22 16:15,10.3,08165500,"Guadalupe Rv at Hunt, TX",288.0,no response (rise < 1 ft),0.009999999999999787,1.0045454545454546,,
+2018-09-22 16:15,10.3,08166000,"Johnson Ck nr Ingram, TX",114.0,no data,,,,
+2018-09-22 16:15,10.3,08166140,"Guadalupe Rv abv Bear Ck at Kerrville, TX",494.0,no data,,,,
+2018-09-22 16:15,10.3,08166200,"Guadalupe Rv at Kerrville, TX",510.0,no response (rise < 1 ft),0.16000000000000014,1.0045454545454546,,
+2018-09-22 16:15,10.3,08166250,"Guadalupe Rv nr Center Point, TX",553.0,no response (rise < 1 ft),0.4299999999999997,1.0045454545454546,,
+2018-09-22 16:15,10.3,08167000,"Guadalupe Rv at Comfort, TX",839.0,responds,3.1700000000000004,1.0045454545454546,2.75,6.25
+2018-09-22 16:15,10.3,08167200,"Guadalupe Rv at FM 474 nr Bergheim, TX",1103.0,no data,,,,
+2018-10-17 00:45,24.37,08165300,"N Fk Guadalupe Rv nr Hunt, TX",169.0,no data,,,,
+2018-10-17 00:45,24.37,08165500,"Guadalupe Rv at Hunt, TX",288.0,responds,10.190000000000001,1.0030864197530864,24.0,22.75
+2018-10-17 00:45,24.37,08166000,"Johnson Ck nr Ingram, TX",114.0,no data,,,,
+2018-10-17 00:45,24.37,08166140,"Guadalupe Rv abv Bear Ck at Kerrville, TX",494.0,responds,12.129999999999999,1.0030864197530864,22.25,22.25
+2018-10-17 00:45,24.37,08166200,"Guadalupe Rv at Kerrville, TX",510.0,insufficient coverage,,,,
+2018-10-17 00:45,24.37,08166250,"Guadalupe Rv nr Center Point, TX",553.0,responds,19.21,1.0030864197530864,22.0,20.75
+2018-10-17 00:45,24.37,08167000,"Guadalupe Rv at Comfort, TX",839.0,responds,21.41,0.9845679012345679,16.75,16.75
+2018-10-17 00:45,24.37,08167200,"Guadalupe Rv at FM 474 nr Bergheim, TX",1103.0,no data,,,,
+2019-05-08 20:45,12.18,08165300,"N Fk Guadalupe Rv nr Hunt, TX",169.0,no data,,,,
+2019-05-08 20:45,12.18,08165500,"Guadalupe Rv at Hunt, TX",288.0,no data,,,,
+2019-05-08 20:45,12.18,08166000,"Johnson Ck nr Ingram, TX",114.0,no data,,,,
+2019-05-08 20:45,12.18,08166140,"Guadalupe Rv abv Bear Ck at Kerrville, TX",494.0,no response (rise < 1 ft),0.6999999999999997,1.0043859649122806,,
+2019-05-08 20:45,12.18,08166200,"Guadalupe Rv at Kerrville, TX",510.0,no response (rise < 1 ft),0.3400000000000003,1.0043859649122806,,
+2019-05-08 20:45,12.18,08166250,"Guadalupe Rv nr Center Point, TX",553.0,responds,2.5300000000000002,1.0043859649122806,5.75,4.25
+2019-05-08 20:45,12.18,08167000,"Guadalupe Rv at Comfort, TX",839.0,responds,2.7299999999999995,0.9912280701754386,1.0,-1.25
+2019-05-08 20:45,12.18,08167200,"Guadalupe Rv at FM 474 nr Bergheim, TX",1103.0,no data,,,,
+2021-10-14 04:45,19.73,08165300,"N Fk Guadalupe Rv nr Hunt, TX",169.0,no data,,,,
+2021-10-14 04:45,19.73,08165500,"Guadalupe Rv at Hunt, TX",288.0,no response (rise < 1 ft),0.1800000000000006,3.00418410041841,,
+2021-10-14 04:45,19.73,08166000,"Johnson Ck nr Ingram, TX",114.0,no data,,,,
+2021-10-14 04:45,19.73,08166140,"Guadalupe Rv abv Bear Ck at Kerrville, TX",494.0,no response (rise < 1 ft),0.40000000000000036,2.99163179916318,,
+2021-10-14 04:45,19.73,08166200,"Guadalupe Rv at Kerrville, TX",510.0,no response (rise < 1 ft),0.32999999999999985,1.00418410041841,,
+2021-10-14 04:45,19.73,08166250,"Guadalupe Rv nr Center Point, TX",553.0,responds,1.2699999999999996,1.00418410041841,2.25,1.75
+2021-10-14 04:45,19.73,08167000,"Guadalupe Rv at Comfort, TX",839.0,no response (rise < 1 ft),0.52,1.00418410041841,,
+2021-10-14 04:45,19.73,08167200,"Guadalupe Rv at FM 474 nr Bergheim, TX",1103.0,no data,,,,
+2024-07-24 14:45,12.34,08165300,"N Fk Guadalupe Rv nr Hunt, TX",169.0,no data,,,,
+2024-07-24 14:45,12.34,08165500,"Guadalupe Rv at Hunt, TX",288.0,no data,,,,
+2024-07-24 14:45,12.34,08166000,"Johnson Ck nr Ingram, TX",114.0,no data,,,,
+2024-07-24 14:45,12.34,08166140,"Guadalupe Rv abv Bear Ck at Kerrville, TX",494.0,responds,7.540000000000001,3.0041152263374484,-6.583333333333333,27.416666666666668
+2024-07-24 14:45,12.34,08166200,"Guadalupe Rv at Kerrville, TX",510.0,responds,7.75,1.0041152263374487,-7.0,27.0
+2024-07-24 14:45,12.34,08166250,"Guadalupe Rv nr Center Point, TX",553.0,responds,12.92,1.0041152263374487,-7.5,25.75
+2024-07-24 14:45,12.34,08167000,"Guadalupe Rv at Comfort, TX",839.0,responds,14.05,1.0041152263374487,-11.5,20.5
+2024-07-24 14:45,12.34,08167200,"Guadalupe Rv at FM 474 nr Bergheim, TX",1103.0,no data,,,,
+2025-07-05 03:45,30.03,08165300,"N Fk Guadalupe Rv nr Hunt, TX",169.0,no data,,,,
+2025-07-05 03:45,30.03,08165500,"Guadalupe Rv at Hunt, TX",288.0,no data,,,,
+2025-07-05 03:45,30.03,08166000,"Johnson Ck nr Ingram, TX",114.0,no data,,,,
+2025-07-05 03:45,30.03,08166140,"Guadalupe Rv abv Bear Ck at Kerrville, TX",494.0,responds,32.15,1.0031847133757963,17.25,22.25
+2025-07-05 03:45,30.03,08166200,"Guadalupe Rv at Kerrville, TX",510.0,insufficient coverage,,,,
+2025-07-05 03:45,30.03,08166250,"Guadalupe Rv nr Center Point, TX",553.0,insufficient coverage,,,,
+2025-07-05 03:45,30.03,08167000,"Guadalupe Rv at Comfort, TX",839.0,responds,31.83,0.9968152866242038,13.25,18.0
+2025-07-05 03:45,30.03,08167200,"Guadalupe Rv at FM 474 nr Bergheim, TX",1103.0,no data,,,,
+2026-06-15 18:30,13.58,08165300,"N Fk Guadalupe Rv nr Hunt, TX",169.0,no data,,,,
+2026-06-15 18:30,13.58,08165500,"Guadalupe Rv at Hunt, TX",288.0,insufficient coverage,,,,
+2026-06-15 18:30,13.58,08166000,"Johnson Ck nr Ingram, TX",114.0,no data,,,,
+2026-06-15 18:30,13.58,08166140,"Guadalupe Rv abv Bear Ck at Kerrville, TX",494.0,no response (rise < 1 ft),0.3899999999999997,3.0040816326530613,,
+2026-06-15 18:30,13.58,08166200,"Guadalupe Rv at Kerrville, TX",510.0,no response (rise < 1 ft),0.41999999999999993,3.0040816326530613,,
+2026-06-15 18:30,13.58,08166250,"Guadalupe Rv nr Center Point, TX",553.0,no response (rise < 1 ft),0.7700000000000005,3.0040816326530613,,
+2026-06-15 18:30,13.58,08167000,"Guadalupe Rv at Comfort, TX",839.0,responds,1.96,2.289795918367347,4.333333333333333,7.166666666666667
+2026-06-15 18:30,13.58,08167200,"Guadalupe Rv at FM 474 nr Bergheim, TX",1103.0,no data,,,,
+2026-07-15 18:30,36.75,08165300,"N Fk Guadalupe Rv nr Hunt, TX",169.0,no data,,,,
+2026-07-15 18:30,36.75,08165500,"Guadalupe Rv at Hunt, TX",288.0,responds,11.34,3.0021413276231264,-13.416666666666666,21.0
+2026-07-15 18:30,36.75,08166000,"Johnson Ck nr Ingram, TX",114.0,no data,,,,
+2026-07-15 18:30,36.75,08166140,"Guadalupe Rv abv Bear Ck at Kerrville, TX",494.0,responds,25.630000000000003,2.918629550321199,-12.416666666666666,19.666666666666668
+2026-07-15 18:30,36.75,08166200,"Guadalupe Rv at Kerrville, TX",510.0,responds,28.27,2.6295503211991433,-15.583333333333334,19.666666666666668
+2026-07-15 18:30,36.75,08166250,"Guadalupe Rv nr Center Point, TX",553.0,responds,33.31999999999999,3.0021413276231264,-13.333333333333334,19.166666666666668
+2026-07-15 18:30,36.75,08167000,"Guadalupe Rv at Comfort, TX",839.0,responds,34.3,2.9850107066381155,-0.16666666666666666,16.5
+2026-07-15 18:30,36.75,08167200,"Guadalupe Rv at FM 474 nr Bergheim, TX",1103.0,no data,,,,

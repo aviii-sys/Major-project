@@ -1,0 +1,7 @@
+[15:03:11] classical comparators fold 1 done (all-row RMSE, 0 validation events)
+[15:03:13] classical comparators fold 2 done (event-window RMSE, 5 validation events)
+[15:03:17] classical comparators fold 3 done (event-window RMSE, 7 validation events)
+[15:08:17] classical comparators fold 4 done (event-window RMSE, 7 validation events)
+[15:08:25] classical comparators fold 5 done (event-window RMSE, 8 validation events)
+[15:13:26] classical comparators fold 6 done (event-window RMSE, 4 validation events)
+[15:13:26] classical stage done

@@ -1,0 +1,61 @@
+horizon,level,variant,events_with_level_reached,median_issue_vs_onset_h,events_first_forecast_issued_before_onset_any_seed,events_first_forecast_issued_before_onset_all_seeds
+15m,10% of the rise,GRU 24 h,18,0.5,1,0
+15m,10% of the rise,GRU 72 h,18,0.5,1,0
+15m,10% of the rise,damped trend,18,0.5,0,0
+15m,10% of the rise,ridge H,18,0.5,0,0
+15m,10% of the rise,persistence,18,0.625,0,0
+15m,50% of the rise,GRU 24 h,18,2.375,0,0
+15m,50% of the rise,GRU 72 h,18,2.375,0,0
+15m,50% of the rise,damped trend,18,2.375,0,0
+15m,50% of the rise,ridge H,18,2.375,0,0
+15m,50% of the rise,persistence,18,2.5,0,0
+15m,90% of the rise,GRU 24 h,18,5.625,0,0
+15m,90% of the rise,GRU 72 h,18,5.625,0,0
+15m,90% of the rise,damped trend,18,5.375,0,0
+15m,90% of the rise,ridge H,18,5.625,0,0
+15m,90% of the rise,persistence,18,5.875,0,0
+30m,10% of the rise,GRU 24 h,18,0.375,2,1
+30m,10% of the rise,GRU 72 h,18,0.375,2,1
+30m,10% of the rise,damped trend,18,0.5,1,1
+30m,10% of the rise,ridge H,18,0.5,1,1
+30m,10% of the rise,persistence,18,0.625,0,0
+30m,50% of the rise,GRU 24 h,18,2.25,0,0
+30m,50% of the rise,GRU 72 h,18,2.25,0,0
+30m,50% of the rise,damped trend,18,2.0,0,0
+30m,50% of the rise,ridge H,18,2.125,0,0
+30m,50% of the rise,persistence,18,2.5,0,0
+30m,90% of the rise,GRU 24 h,18,5.375,0,0
+30m,90% of the rise,GRU 72 h,18,5.25,0,0
+30m,90% of the rise,damped trend,18,5.25,0,0
+30m,90% of the rise,ridge H,18,5.375,0,0
+30m,90% of the rise,persistence,18,5.875,0,0
+1h,10% of the rise,GRU 24 h,18,0.25,2,1
+1h,10% of the rise,GRU 72 h,18,0.25,2,1
+1h,10% of the rise,damped trend,18,0.375,1,1
+1h,10% of the rise,ridge H,18,0.25,1,1
+1h,10% of the rise,persistence,18,0.625,0,0
+1h,50% of the rise,GRU 24 h,18,2.0,0,0
+1h,50% of the rise,GRU 72 h,18,2.0,0,0
+1h,50% of the rise,damped trend,18,1.875,0,0
+1h,50% of the rise,ridge H,18,2.0,0,0
+1h,50% of the rise,persistence,18,2.5,0,0
+1h,90% of the rise,GRU 24 h,18,5.0,0,0
+1h,90% of the rise,GRU 72 h,18,5.0,0,0
+1h,90% of the rise,damped trend,18,4.875,0,0
+1h,90% of the rise,ridge H,18,5.125,0,0
+1h,90% of the rise,persistence,18,5.875,0,0
+3h,10% of the rise,GRU 24 h,18,0.25,7,4
+3h,10% of the rise,GRU 72 h,18,0.25,7,4
+3h,10% of the rise,damped trend,18,0.25,2,2
+3h,10% of the rise,ridge H,18,0.25,2,2
+3h,10% of the rise,persistence,18,0.625,0,0
+3h,50% of the rise,GRU 24 h,18,2.0,0,0
+3h,50% of the rise,GRU 72 h,18,2.0,0,0
+3h,50% of the rise,damped trend,18,1.625,0,0
+3h,50% of the rise,ridge H,18,1.625,0,0
+3h,50% of the rise,persistence,18,2.5,0,0
+3h,90% of the rise,GRU 24 h,18,5.125,0,0
+3h,90% of the rise,GRU 72 h,18,5.25,0,0
+3h,90% of the rise,damped trend,18,3.25,0,0
+3h,90% of the rise,ridge H,18,5.125,0,0
+3h,90% of the rise,persistence,18,5.875,0,0

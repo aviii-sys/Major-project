@@ -1,0 +1,2 @@
+Phase 1E evaluation written. Decision (pre-registered rule): adopt 72 h = False | horizons consistent in flood windows: 0
+.venv/bin/python scripts/eval_phase1e.py  32.74s user 0.37s system 98% cpu 33.450 total

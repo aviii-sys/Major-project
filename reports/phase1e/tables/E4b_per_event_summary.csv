@@ -1,0 +1,5 @@
+horizon,events,storm_clusters,events_72h_lower_window_rmse,median_window_rmse_diff_72_minus_24,events_72h_peak_ratio_closer_to_1
+15m,18.0,14.0,8.0,0.0006935734489738887,8.0
+1h,18.0,14.0,7.0,0.007375608756027441,5.0
+30m,18.0,14.0,2.0,0.0056698888863434965,7.0
+3h,18.0,14.0,6.0,0.019198049716491195,7.0

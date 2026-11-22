@@ -1,0 +1,2 @@
+Phase 1D evaluation written; OOF rows: 502850 | pooled rows 1h: 501803
+.venv/bin/python scripts/eval_phase1d.py  27.16s user 0.30s system 99% cpu 27.497 total

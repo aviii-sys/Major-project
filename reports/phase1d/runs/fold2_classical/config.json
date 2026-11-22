@@ -1,0 +1,57 @@
+{
+  "validation_events_used_for_trend": 5,
+  "trend_selection_by": "event-window RMSE",
+  "trend_15m": {
+    "window": "15m",
+    "phi": 0.75
+  },
+  "ridge_15m": {
+    "alpha": 10000.0
+  },
+  "xgb_15m": {
+    "depth": 5,
+    "trees": 40
+  },
+  "trend_30m": {
+    "window": "15m",
+    "phi": 0.75
+  },
+  "ridge_30m": {
+    "alpha": 10000.0
+  },
+  "xgb_30m": {
+    "depth": 5,
+    "trees": 37
+  },
+  "trend_1h": {
+    "window": "15m",
+    "phi": 0.5
+  },
+  "ridge_1h": {
+    "alpha": 10000.0
+  },
+  "xgb_1h": {
+    "depth": 5,
+    "trees": 41
+  },
+  "trend_3h": {
+    "window": "15m",
+    "phi": 0.25
+  },
+  "ridge_3h": {
+    "alpha": 10000.0
+  },
+  "xgb_3h": {
+    "depth": 5,
+    "trees": 50
+  },
+  "fold": 2,
+  "seed": 0,
+  "environment": {
+    "python": "3.11.18",
+    "numpy": "2.4.6",
+    "pandas": "3.1.1"
+  },
+  "predictions_sha256": "72ab80ec9a0347e4d78e7d944f29464a6ea31fa63173d9de2bfbd4c29a710386",
+  "quick": false
+}

@@ -1,0 +1,30 @@
+Geopandas not installed. Geometries will be flattened into pandas DataFrames.
+done event 2010-04-17
+done event 2010-09-08
+done event 2012-01-25
+done event 2013-10-31
+done event 2015-05-17
+done event 2015-05-23
+done event 2015-10-30
+done event 2016-05-18
+done event 2016-05-19
+done event 2016-05-29
+done event 2016-06-02
+done event 2018-09-09
+done event 2018-09-22
+done event 2018-10-17
+done event 2019-05-08
+done event 2021-10-14
+done event 2024-07-24
+done event 2025-07-05
+done event 2026-06-15
+done event 2026-07-15
+    site                                      name  drain_area_sqmi  events_in_catalogue  events_with_usable_data  events_upstream_responds  responds_and_two_timings_agree  median_first_rise_lead_h  min_first_rise_lead_h  max_first_rise_lead_h  median_steepest_rise_lead_h  events_first_rise_lead_ge_1h  events_first_rise_lead_ge_3h  events_first_rise_lead_negative
+08167200    Guadalupe Rv at FM 474 nr Bergheim, TX           1103.0                   20                        6                         5                               4                      4.42                   0.75                   8.25                         7.88                             3                             2                                0
+08167000               Guadalupe Rv at Comfort, TX            839.0                   20                       18                        12                               9                     13.00                   0.00                  16.25                        13.75                             7                             5                                0
+08166250          Guadalupe Rv nr Center Point, TX            553.0                   20                       19                        13                              11                      2.75                 -12.50                  21.50                         4.00                             8                             5                                2
+08166200             Guadalupe Rv at Kerrville, TX            510.0                   20                       17                         8                               7                     15.75                  -9.50                  20.50                        15.17                             5                             4                                1
+08166140 Guadalupe Rv abv Bear Ck at Kerrville, TX            494.0                   20                       19                        11                               8                      9.00                  -8.75                  22.50                         9.62                             5                             4                                2
+08165500                  Guadalupe Rv at Hunt, TX            288.0                   20                       20                        10                               8                     14.25                 -32.50                  23.50                        16.62                             6                             5                                2
+08165300             N Fk Guadalupe Rv nr Hunt, TX            169.0                   20                       20                         8                               6                     17.50                 -31.25                  25.75                        18.38                             4                             4                                2
+08166000                  Johnson Ck nr Ingram, TX            114.0                   20                       18                        10                               6                      0.38                  -7.50                  22.75                         2.88                             3                             2                                3

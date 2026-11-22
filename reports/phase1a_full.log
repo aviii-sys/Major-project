@@ -1,0 +1,19 @@
+[12:38:53] grid 671141 rows; valid stage 651581; storm clusters 78; val starts 2018-01-01 00:00:00+00:00; test starts 2022-01-01 00:00:00+00:00
+[12:38:55] chrono h=15m H: ridge alpha=10000.0, xgb depth=3 trees=128
+[12:38:58] blocked-CV h=15m H done
+[12:39:00] chrono h=15m HR: ridge alpha=10000.0, xgb depth=3 trees=129
+[12:39:04] blocked-CV h=15m HR done
+[12:39:05] chrono h=30m H: ridge alpha=10000.0, xgb depth=5 trees=63
+[12:39:07] blocked-CV h=30m H done
+[12:39:09] chrono h=30m HR: ridge alpha=10000.0, xgb depth=3 trees=97
+[12:39:12] blocked-CV h=30m HR done
+[12:39:13] chrono h=1h H: ridge alpha=1000.0, xgb depth=3 trees=82
+[12:39:15] blocked-CV h=1h H done
+[12:39:17] chrono h=1h HR: ridge alpha=1000.0, xgb depth=3 trees=114
+[12:39:20] blocked-CV h=1h HR done
+[12:39:21] chrono h=3h H: ridge alpha=1000.0, xgb depth=5 trees=28
+[12:39:22] blocked-CV h=3h H done
+[12:39:24] chrono h=3h HR: ridge alpha=1000.0, xgb depth=3 trees=22
+[12:39:25] blocked-CV h=3h HR done
+[12:39:30] done
+.venv/bin/python -u scripts/run_phase1a.py  119.97s user 12.39s system 347% cpu 38.110 total

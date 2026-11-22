@@ -1,0 +1,20 @@
+| run                | arch        |   hidden |   seed |   epochs_run |   best_epoch |   best_val_scaled_loss |   train_seconds | chosen_for_primary   |
+|:-------------------|:------------|---------:|-------:|-------------:|-------------:|-----------------------:|----------------:|:---------------------|
+| gru_h32_s0         | gru         |       32 |      0 |           27 |           20 |               0.290451 |           164.9 | False                |
+| gru_h64_s0         | gru         |       64 |      0 |           22 |           15 |               0.295288 |           162.1 | True                 |
+| gru_h64_s1         | gru         |       64 |      1 |           19 |           12 |               0.300696 |           139.7 | True                 |
+| gru_h64_s2         | gru         |       64 |      2 |           39 |           32 |               0.292411 |           284.3 | True                 |
+| gru_h64_s3         | gru         |       64 |      3 |           18 |           11 |               0.29748  |           132.4 | True                 |
+| gru_h64_s4         | gru         |       64 |      4 |           31 |           24 |               0.276393 |           225.4 | True                 |
+| lstm_h32_s0        | lstm        |       32 |      0 |           16 |            9 |               0.306267 |            40.8 | False                |
+| lstm_h64_s0        | lstm        |       64 |      0 |           22 |           15 |               0.300265 |            99.7 | True                 |
+| lstm_h64_s1        | lstm        |       64 |      1 |           19 |           12 |               0.29738  |            80.6 | True                 |
+| lstm_h64_s2        | lstm        |       64 |      2 |           19 |           12 |               0.297236 |            88.3 | True                 |
+| lstm_h64_s3        | lstm        |       64 |      3 |           24 |           17 |               0.287204 |           105.8 | True                 |
+| lstm_h64_s4        | lstm        |       64 |      4 |           14 |            7 |               0.308981 |            65.4 | True                 |
+| transformer_h32_s0 | transformer |       32 |      0 |           32 |           25 |               0.304561 |           815.9 | False                |
+| transformer_h64_s0 | transformer |       64 |      0 |           16 |            9 |               0.323968 |           478.9 | True                 |
+| transformer_h64_s1 | transformer |       64 |      1 |            8 |            1 |               0.363183 |           235.9 | True                 |
+| transformer_h64_s2 | transformer |       64 |      2 |           13 |            6 |               0.325832 |           370.4 | True                 |
+| transformer_h64_s3 | transformer |       64 |      3 |           22 |           15 |               0.318745 |           612.5 | True                 |
+| transformer_h64_s4 | transformer |       64 |      4 |           11 |            4 |               0.346996 |           315.2 | True                 |

@@ -1,0 +1,3 @@
+event_start,peak_ft,v3_gauges_consistent,v3_best_first_rise_lead_h,v3_best_gauge,v3_gauges_with_insufficient_coverage,v2_best_first_rise_lead_h,v2_best_gauge,v2_class,v3_class
+2016-05-19 15:45,18.41,6,35.25,08166140,1,0.0,8166140.0,none (<1 h),>=6 h
+2024-07-24 14:45,12.34,8,24.333333333333332,08166000,0,,,none (<1 h),>=6 h

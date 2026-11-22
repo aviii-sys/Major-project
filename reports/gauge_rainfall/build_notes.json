@@ -1,0 +1,31 @@
+{
+  "rows": 1183067,
+  "rows_qflag_failed": 1577,
+  "rows_mflag_PI_dropped": 2188,
+  "rows_trace_or_H_kept_as_zero": 36221,
+  "stations_downloaded": 664,
+  "stations_inside_basin": 187,
+  "stations_inside_primary_family": 185,
+  "stations_total_primary_family": 660,
+  "by_network_inside": {
+    "CoCoRaHS": 176,
+    "COOP": 9,
+    "WBAN/airport": 2
+  },
+  "coop_vs_cocorahs_daily_corr_by_lag_days": {
+    "-1": 0.28242853897753994,
+    "0": 0.9521192307168251,
+    "1": 0.25058188929474623
+  },
+  "coop_vs_cocorahs_days_both_ge10mm": 349,
+  "selected_idw": {
+    "p": 2,
+    "k": 12,
+    "rmax_km": 60.0,
+    "criterion": "lowest LOO MAE on wet station-days (>=5 mm)"
+  },
+  "grid_cells": 128,
+  "days": 6985,
+  "days_missing": 1,
+  "days_low_coverage": 1
+}

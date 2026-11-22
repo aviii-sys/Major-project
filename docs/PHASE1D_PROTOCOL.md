@@ -1,0 +1,35 @@
+# Phase 1D Protocol: six-fold blocked chronological cross-validation for GRU and LSTM (fixed BEFORE any Phase 1D model was trained)
+
+Written 2026-11-22. Experiment id **E14**. Output folder `reports/phase1d/` (new; no earlier artifact is modified). Scope: GRU and LSTM only, plus classical comparators trained under the same folds. No hybrid, no window ablation (Phase 1E), no Transformer diagnostic (Phase 1F), no probability head, no discharge, no rainfall input.
+
+## 0. What this experiment is and is not
+**Retrospective blocked chronological cross-validation.** It is **not untouched external validation**: the whole 2007-2026 record has been inspected in earlier phases (test period 2022+ in Phases 1A-1C; the 2018-2021 period as validation; deviation 3 documented in `docs/PHASE1A_PROTOCOL.md` and `reports/DEVIATION3_COMPARISON.md`). Every number here is exploratory. Its purpose is out-of-fold forecasts for (almost) all historical events instead of the 4 events of the Phase 1C test period. Nothing is tuned on held-out blocks.
+
+## 1. Fold design (expanding window, forward chaining)
+Fold k holds out a contiguous block; the model is fitted on data that all PRECEDE the block. Never is a later event used to train a model evaluated on an earlier event. Sequence inside a fold: `[ train | embargo | validation | embargo | held-out block ]`.
+- **Held-out blocks** (nominal starts 2012-01-01, 2015-01-01, 2016-01-01, 2018-01-01, 2020-01-01, 2025-01-01; the last block ends at the end of the record, 2026-11-22). Chosen from the event timeline only (dates, not any model result), to give every block at least two >= 10 ft events and to start in quiet periods. A boundary may be moved forward only if a storm cluster intersects the 96 h before it (none was moved).
+- **Initial segment:** 2007-10-02 to the end of 2011 is never held out (needed as the first training data). Events inside it are **excluded and documented** (two >= 10 ft events in 2010, one >= 15 ft, two rise events).
+- **Validation chunk** (prior data only, used for early stopping and hyperparameter selection of the classical comparators): the 25% of prior duration before the block, clipped to 12 to 24 months, ending one embargo before the block; its start is moved forward if a storm cluster intersects the 96 h before it.
+- **Embargo = 27 h 15 min** (24 h input window + 3 h maximum horizon + one 15-min step) between train and validation and between validation and the held-out block, so no training or validation TARGET shares a timestamp with any held-out INPUT window. Rows in an embargo are used by nothing.
+- **Storm integrity:** storm clusters (>= 5 ft or >= 1 ft/3 h, merged within 72 h) are never split: every boundary has no cluster in the 96 h before it. Events are assigned to the block containing their first sample; an event whose end crosses a block end would be excluded (none does).
+- **Preprocessing fitted within each fold on its training rows only:** channel normalisation statistics, the current-stage statistics and the per-horizon target scales for the deep models; the classical models' scalers and hyperparameters (on the validation chunk).
+- Eligibility, feature definitions, targets, horizons and event definitions are exactly those of Phases 1B/1C.
+
+## 2. Models
+- **GRU and LSTM:** exactly the Phase 1C architecture and hyperparameters: 24 h window (96 steps), hydrology-only channels, shared encoder with four horizon-specific heads, hidden size 64, Adam 1e-3, batch 512, 120,000 random training rows per epoch (all rows if fewer), patience 6, at most 40 epochs, per-horizon scaled MSE with equal horizon weights, best-validation checkpoint. **Seed 0 for every fold.** Six trainings per architecture. No hyperparameter search, no refit on train + validation.
+- **Classical comparators, same folds, same data, no refit (symmetric with the deep models):** persistence; damped trend (window in {15 m, 30 m, 1 h}, phi in {0.25, 0.5, 0.75, 1.0}, one choice per horizon per fold by validation event-window RMSE if the validation chunk holds at least two >= 10 ft or >= 4 ft/3 h events, otherwise by validation all-row RMSE); ridge H (alpha grid of Phase 1B, chosen by validation RMSE); XGBoost H (depth in {3, 5}, early stopping on the validation chunk). Features are the Phase 1A hydrology set H. (In Phase 1B the classical models were refitted on train + validation; here they are not, so that deep and classical models see identical data.)
+
+## 3. Evaluation
+Out-of-fold (OOF) predictions are pooled over the six held-out blocks (every eligible held-out timestamp is predicted exactly once). Reported for GRU, LSTM and the comparators: per-horizon RMSE and MAE pooled and per fold; flood-window metrics (windows of the >= 10 ft events and of the >= 4 ft/3 h rises, Phase 1B definition); per-event window RMSE and peak capture; event-level fixed-alarm-rule detection (Phase 1A/1B definition) with hits, late detections, misses, false-alarm episodes, lead times, and **events and storm clusters next to every number**; skill versus persistence; 95% storm-cluster bootstrap intervals (2,000 resamples) on pooled OOF errors, with paired intervals for model differences. Number of eligible and excluded events and the reason for each exclusion are tabulated (`event_to_fold_mapping.csv`).
+No claim of warning capability, early-detection reliability or generalization will be made. Official categories are descriptive (6 events, all evaluable, 5 independent storms).
+
+## 4. Saved artifacts
+`fold_specification.csv/json`; `event_to_fold_mapping.csv`; per fold and architecture: configuration, seed, checkpoint (SHA-256), history, held-out predictions; pooled OOF predictions as compressed CSV (all models, all horizons); metric tables; plots of observed versus predicted stage for every evaluated >= 10 ft event; `manifest.json` with hashes and environment; test file `tests/test_phase1d.py`; registry entry E14.
+
+## 5. Known limitations (stated in advance)
+Fold 1 trains on about 3 years with two small floods and fold 5's held-out block is 5 years long; one seed per fold (seed variation is quantified only in Phase 1C); validation chunks contain few or no events (early stopping is driven mostly by quiet-period loss); intervals rest on 14 evaluated storm clusters; the project folder is not under version control.
+
+## Deviations
+1. A quick-mode smoke run (2 epochs, 20,000 rows per epoch, 80 XGBoost trees; seed 0) was executed to debug the runner; its outputs were deleted before the real run and nothing in this protocol was changed because of them.
+2. The smoke run exposed a machine-specific crash (segmentation fault, OpenMP clash) when PyTorch and XGBoost are used in the same process. The runner was split into two separate processes (`--stage dl`, `--stage classical`); this does not change any modelling choice.
+3. Validation chunk of fold 1 contains no event, so the damped-trend selection for fold 1 uses the pre-registered all-row fallback; folds 2 to 6 use event-window selection (4 to 8 validation events).

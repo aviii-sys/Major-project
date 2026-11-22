@@ -1,0 +1,11 @@
+|   threshold_ft | kind                       |   events_sep12h |   events_sep24h |   events_sep48h |   events_sep72h |   median_peak_ft |   max_peak_ft |
+|---------------:|:---------------------------|----------------:|----------------:|----------------:|----------------:|-----------------:|--------------:|
+|              5 | NOT official (sensitivity) |              51 |              49 |              47 |              46 |            7.45  |         36.75 |
+|              8 | NOT official (sensitivity) |              25 |              24 |              23 |              23 |           13.11  |         36.75 |
+|             10 | NOT official (sensitivity) |              20 |              20 |              18 |              18 |           14.455 |         36.75 |
+|             15 | NOT official (sensitivity) |              10 |               9 |               9 |               9 |           26.07  |         36.75 |
+|             20 | NOT official (sensitivity) |               7 |               6 |               6 |               6 |           30.045 |         36.75 |
+|             25 | action                     |               6 |               6 |               5 |               5 |           30.045 |         36.75 |
+|             30 | minor                      |               4 |               4 |               4 |               4 |           32.28  |         36.75 |
+|             36 | moderate                   |               1 |               1 |               1 |               1 |           36.75  |         36.75 |
+|             39 | major                      |               0 |               0 |               0 |               0 |          nan     |        nan    |

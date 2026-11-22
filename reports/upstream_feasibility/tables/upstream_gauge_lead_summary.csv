@@ -1,0 +1,9 @@
+site,name,drain_area_sqmi,events_in_catalogue,events_with_usable_data,events_upstream_responds,responds_and_two_timings_agree,median_first_rise_lead_h,min_first_rise_lead_h,max_first_rise_lead_h,median_steepest_rise_lead_h,events_first_rise_lead_ge_1h,events_first_rise_lead_ge_3h,events_first_rise_lead_negative
+08167200,"Guadalupe Rv at FM 474 nr Bergheim, TX",1103.0,20,6,5,4,4.416666666666666,0.75,8.25,7.875,3,2,0
+08167000,"Guadalupe Rv at Comfort, TX",839.0,20,18,12,9,13.0,0.0,16.25,13.75,7,5,0
+08166250,"Guadalupe Rv nr Center Point, TX",553.0,20,19,13,11,2.75,-12.5,21.5,4.0,8,5,2
+08166200,"Guadalupe Rv at Kerrville, TX",510.0,20,17,8,7,15.75,-9.5,20.5,15.166666666666666,5,4,1
+08166140,"Guadalupe Rv abv Bear Ck at Kerrville, TX",494.0,20,19,11,8,9.0,-8.75,22.5,9.625,5,4,2
+08165500,"Guadalupe Rv at Hunt, TX",288.0,20,20,10,8,14.25,-32.5,23.5,16.625,6,5,2
+08165300,"N Fk Guadalupe Rv nr Hunt, TX",169.0,20,20,8,6,17.5,-31.25,25.75,18.375,4,4,2
+08166000,"Johnson Ck nr Ingram, TX",114.0,20,18,10,6,0.375,-7.5,22.75,2.875,3,2,3

@@ -1,0 +1,35 @@
+[12:57:33] rows 671141; eligible 1h train/val/test = [np.int64(356105), np.int64(139643), np.int64(152084)]; sets ['H', 'H2', 'H2+R', 'H2+G', 'H2+R+G']
+[12:57:33] validation events: {'official_action_25ft': 0, 'official_minor_30ft': 0, 'official_moderate_36ft': 0, 'experimental_stage_10ft': 5, 'experimental_stage_15ft': 2, 'experimental_rise_4ft_3h': 6, 'experimental_rise_8ft_3h': 1}
+[12:57:37] A: feature set H done
+[12:57:43] A: feature set H2 done
+[12:57:50] A: feature set H2+R done
+[12:57:57] A: feature set H2+G done
+[12:58:08] A: feature set H2+R+G done
+[12:58:08] adopted feature set: H2 ({'H': 1.0219, 'H2': 1.0342, 'H2+G': 1.0436, 'H2+R': 1.0665, 'H2+R+G': 1.016})
+[12:58:12] B: ridge lambdas done
+[12:58:32] B: xgb lambdas done
+[12:58:32] chosen lambda: {'ridge': 0.0, 'xgb': 10.0}
+[12:58:45] D: final regression models h=15m done
+[12:58:56] D: final regression models h=30m done
+[12:59:06] D: final regression models h=1h done
+[12:59:12] D: final regression models h=3h done
+[12:59:14] F: fixed-rule detection chrono_val done
+[12:59:15] F: fixed-rule detection chrono_test done
+[12:59:16] F: fixed-rule detection blocked_cv_NONCAUSAL done
+[12:59:34] G: experimental_stage_10ft h=15m done
+[12:59:55] G: experimental_stage_10ft h=30m done
+[13:00:18] G: experimental_stage_10ft h=1h done
+[13:00:38] G: experimental_stage_10ft h=3h done
+[13:00:54] G: experimental_stage_15ft h=15m done
+[13:01:07] G: experimental_stage_15ft h=30m done
+[13:01:22] G: experimental_stage_15ft h=1h done
+[13:01:40] G: experimental_stage_15ft h=3h done
+[13:01:57] G: experimental_rise_4ft_3h h=15m done
+[13:02:13] G: experimental_rise_4ft_3h h=30m done
+[13:02:29] G: experimental_rise_4ft_3h h=1h done
+[13:02:46] G: experimental_rise_4ft_3h h=3h done
+[13:02:51] G: experimental_rise_8ft_3h h=15m done
+[13:02:56] G: experimental_rise_8ft_3h h=30m done
+[13:03:00] G: experimental_rise_8ft_3h h=1h done
+[13:03:03] G: experimental_rise_8ft_3h h=3h done
+[13:03:07] done

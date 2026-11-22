@@ -1,0 +1,9 @@
+| definition               | event_start               |   peak_ft |   storm_cluster | reason                                                                                                    |
+|:-------------------------|:--------------------------|----------:|----------------:|:----------------------------------------------------------------------------------------------------------|
+| experimental_stage_10ft  | 2010-04-17 02:00:00+00:00 |     16.09 |               8 | excluded: lies in the initial training segment (no earlier data to train a model that is evaluated on it) |
+| experimental_stage_10ft  | 2010-09-08 21:45:00+00:00 |     13.96 |              10 | excluded: lies in the initial training segment (no earlier data to train a model that is evaluated on it) |
+| experimental_stage_15ft  | 2010-04-17 04:45:00+00:00 |     16.09 |               8 | excluded: lies in the initial training segment (no earlier data to train a model that is evaluated on it) |
+| experimental_rise_4ft_3h | 2010-04-17 01:30:00+00:00 |     15.73 |               8 | excluded: lies in the initial training segment (no earlier data to train a model that is evaluated on it) |
+| experimental_rise_4ft_3h | 2010-09-08 21:15:00+00:00 |     13.89 |              10 | excluded: lies in the initial training segment (no earlier data to train a model that is evaluated on it) |
+| experimental_rise_8ft_3h | 2010-04-17 02:45:00+00:00 |     14.25 |               8 | excluded: lies in the initial training segment (no earlier data to train a model that is evaluated on it) |
+| experimental_rise_8ft_3h | 2010-09-08 22:15:00+00:00 |     13    |              10 | excluded: lies in the initial training segment (no earlier data to train a model that is evaluated on it) |

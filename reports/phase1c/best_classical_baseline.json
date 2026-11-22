@@ -1,0 +1,9 @@
+{
+  "validation_mean_event_window_rmse": {
+    "trend_v2": 1.023097531230789,
+    "ridge_H0": 1.0336121608937725,
+    "xgb_H0": 1.02188572578507
+  },
+  "best_classical": "xgb_H0",
+  "rule": "lowest mean validation event-window RMSE among damped trend, ridge H, XGBoost H, computed before any deep-model test evaluation"
+}

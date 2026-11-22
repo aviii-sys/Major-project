@@ -1,0 +1,65 @@
+{
+  "experiment": "E16 phase1e",
+  "fold": 2,
+  "arch": "gru",
+  "window_hours": 24,
+  "window_steps": 96,
+  "hidden": 64,
+  "seed": 0,
+  "optimizer": "adam",
+  "lr": 0.001,
+  "batch": 512,
+  "grad_clip": 1.0,
+  "max_epochs": 40,
+  "patience": 6,
+  "rows_per_epoch": 120000,
+  "epochs_run": 15,
+  "best_epoch": 8,
+  "best_val_scaled_loss": 1.3215597925290667,
+  "train_seconds": 102.2,
+  "min_history_steps_for_training_rows": 288,
+  "norm_stats_fit_on_fold_train_only": {
+    "c1": [
+      0.02531951479613781,
+      0.3522281050682068
+    ],
+    "c2": [
+      -0.003367174882441759,
+      0.1564130187034607
+    ],
+    "cur": [
+      2.2919700145721436,
+      0.9827902913093567
+    ]
+  },
+  "sigma_ft": {
+    "15m": 0.017654351890087128,
+    "30m": 0.03301464766263962,
+    "1h": 0.061837948858737946,
+    "3h": 0.14806511998176575
+  },
+  "rows": {
+    "train": 187495,
+    "val": 63522,
+    "test": 35038
+  },
+  "boundaries": {
+    "train_start": "2007-10-02 05:00:00+00:00",
+    "train_end": "2013-03-07 18:45:00+00:00",
+    "val_start": "2013-03-08 22:00:00+00:00",
+    "val_end": "2014-12-30 20:45:00+00:00",
+    "test_start": "2015-01-01 00:00:00+00:00",
+    "test_end": "2015-12-31 23:45:00+00:00"
+  },
+  "environment": {
+    "python": "3.11.18",
+    "torch": "2.15.0",
+    "device": "mps",
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "numpy": "2.4.6",
+    "pandas": "3.1.1"
+  },
+  "checkpoint_sha256": "30d0e2c4cf8efc8089720ccfc331632760e06956284990f15004fff565d5c3bc",
+  "predictions_sha256": "3d9df46038955eeb9c6b5be032548f19776d50ea1d65ac9ff65267dbd67e332e",
+  "quick": false
+}

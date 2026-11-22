@@ -1,0 +1,125 @@
+{
+  "test_period_exposed": true,
+  "confirmatory_results": [],
+  "entries": [
+    {
+      "id": "E0",
+      "what": "Phase 0 data audit, event catalogue, thresholds",
+      "where": "`reports/phase0/`",
+      "protocol": "`PHASE0_REPORT.md`",
+      "status": "primary evidence (data), with documented addendum"
+    },
+    {
+      "id": "E1",
+      "what": "Phase 1A ORIGINAL run (strict rolling features, no not-evaluable rule)",
+      "where": "`reports/phase1a_original_strict/`",
+      "protocol": "`docs/PHASE1A_PROTOCOL.md`",
+      "status": "archived (defect, deviation 3); reproduced exactly from `--legacy`"
+    },
+    {
+      "id": "E2",
+      "what": "Phase 1A CORRECTED run",
+      "where": "`reports/phase1a/`",
+      "protocol": "`docs/PHASE1A_PROTOCOL.md`",
+      "status": "exploratory (post-hoc correction after seeing test output)"
+    },
+    {
+      "id": "E3",
+      "what": "Phase 1B classical: persistence, trend, ridge H (lambda 0), XGBoost H (lambda 0)",
+      "where": "`reports/phase1b/`, frozen predictions `reports/phase1b/frozen/`",
+      "protocol": "`docs/PHASE1B_PROTOCOL.md`",
+      "status": "**primary classical comparators** (exploratory test numbers)"
+    },
+    {
+      "id": "E4",
+      "what": "Phase 1B damped trend v2 (window 15 min, phi 1.0/0.75/0.75/0.25)",
+      "where": "same",
+      "protocol": "same",
+      "status": "**primary classical comparator**"
+    },
+    {
+      "id": "E5",
+      "what": "Phase 1B H2 features, sample weighting (ridge_B, xgb_B, lambda ridge 0, XGB 10)",
+      "where": "same (models `ridge_B`, `xgb_B`; tables A, B)",
+      "protocol": "same",
+      "status": "**archived** (no improvement under the evaluation rule)"
+    },
+    {
+      "id": "E6",
+      "what": "Phase 1B ERA5 and gauge rainfall feature sets (H2+R, H2+G, H2+R+G)",
+      "where": "same (table A)",
+      "protocol": "same",
+      "status": "archived (no improvement under the 5% rule)"
+    },
+    {
+      "id": "E7",
+      "what": "Phase 1B fixed-rule detection",
+      "where": "`reports/phase1b/tables/F_*`",
+      "protocol": "same",
+      "status": "exploratory"
+    },
+    {
+      "id": "E8",
+      "what": "Phase 1B probability detection with validation-F2 thresholds",
+      "where": "`reports/phase1b/tables/G_*`",
+      "protocol": "same",
+      "status": "**archived exploratory** (low thresholds, heavy false alarms; superseded by a future false-alarm-constrained experiment)"
+    },
+    {
+      "id": "E9",
+      "what": "Gauge-based daily basin rainfall product",
+      "where": "`data/processed/gauge_basin_daily.csv`, `reports/gauge_rainfall/`",
+      "protocol": "README",
+      "status": "primary rainfall product for controlled comparisons; NLDAS-2 = future extension (needs Earthdata)"
+    },
+    {
+      "id": "E10",
+      "what": "1998-2007 discharge-only dataset",
+      "where": "`data/processed/discharge_1998_2007_15min.csv.gz`, `reports/discharge_pre2007/`",
+      "protocol": "README",
+      "status": "separate; forecasting deferred until the stage deep baselines and the hybrid are evaluated"
+    },
+    {
+      "id": "E11",
+      "what": "Phase 1C deep regression baselines (LSTM, GRU, Transformer; 24 h; shared encoder, 4 heads; hydrology only; hidden size 64 chosen for all three on validation; 5 seeds each)",
+      "where": "`reports/phase1c/` (runs, configs, checkpoints with SHA-256 in `runs/manifest.json`, tables, figures), report `reports/PHASE1C_REPORT.md`",
+      "protocol": "`docs/PHASE1C_DL_PROTOCOL.md`",
+      "status": "primary deep baselines; test exploratory; trained 2026-11-22"
+    },
+    {
+      "id": "E12",
+      "what": "Phase 1C post-hoc comparison of deep models against ridge H and damped trend",
+      "where": "`reports/phase1c/tables/C2b_posthoc_vs_ridge_and_trend.csv`",
+      "protocol": "protocol deviation 3 of Phase 1C",
+      "status": "exploratory, post-hoc (not pre-registered)"
+    },
+    {
+      "id": "E14",
+      "what": "**Phase 1D** six-fold expanding-window blocked chronological CV: GRU and LSTM (Phase 1C configuration, hidden 64, seed 0, 6 trainings each) plus persistence, damped trend, ridge H, XGBoost H under the same folds",
+      "where": "`reports/phase1d/` (fold spec, event-to-fold mapping, runs with SHA-256 manifest, OOF predictions `oof_predictions.csv.gz`, tables, figures), report `reports/PHASE1D_REPORT.md`",
+      "protocol": "`docs/PHASE1D_PROTOCOL.md`",
+      "status": "primary out-of-sample evidence so far; RETROSPECTIVE, not untouched validation; run 2026-11-22"
+    },
+    {
+      "id": "E15",
+      "what": "Planned, not run: Phase 1F (bounded Transformer instability diagnostic), hybrid Transformer-LSTM, shared-vs-independent heads, gauge side input, probability head / false-alarm-capped detection, discharge forecasting, warning-category calibration, dashboard",
+      "where": "not run",
+      "protocol": "`docs/PHASE1C_DL_PROTOCOL.md` section 7 and the Phase 1D review instructions",
+      "status": "planned; awaiting review of Phase 1E and the upstream-input assessment"
+    },
+    {
+      "id": "E16",
+      "what": "**Phase 1E** GRU input window 24 h vs 72 h on the six Phase 1D folds, matched seeds 0-2 (36 trainings)",
+      "where": "`reports/phase1e/` (runs with SHA-256 manifest, tables, figures, `decision.json`), report `reports/PHASE1E_REPORT.md`",
+      "protocol": "`docs/PHASE1E_PROTOCOL.md`",
+      "status": "evaluated 2026-11-22; RETROSPECTIVE blocked CV, exploratory; pre-registered decision rule applied: 72 h NOT adopted, 24 h retained (0 of 4 horizons consistently better in flood windows; 72 h slightly worse on all rows at 15 min to 1 h); report `reports/PHASE1E_REPORT.md`"
+    },
+    {
+      "id": "E17",
+      "what": "Upstream-input data-availability and feasibility assessment (descriptive, no model): upstream gauge lead times, sensitivity, river distance, gauge audit, radar archive checks",
+      "where": "`docs/UPSTREAM_INPUT_FEASIBILITY.md`, `docs/GUIDE_BRIEF.md`, `reports/upstream_feasibility/` (tables, figures; `FIRST_RUN_INVALID_*` kept as evidence of two bugs fixed in v2), `data/raw/upstream/`",
+      "protocol": "section 0 of the feasibility document",
+      "status": "descriptive; v2 timing with a v3 alternative; range reported because multi-pulse storms are ambiguous"
+    }
+  ]
+}

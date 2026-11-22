@@ -1,0 +1,2 @@
+best classical baseline (validation rule): xgb_H0 {'trend_v2': 1.0231, 'ridge_H0': 1.0336, 'xgb_H0': 1.0219}
+evaluation written

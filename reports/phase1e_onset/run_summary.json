@@ -1,0 +1,6 @@
+{
+  "events": 18,
+  "reproduction_check_rows": 48,
+  "reproduction_all_match": true,
+  "note": "Post-hoc diagnostic on saved out-of-fold predictions; retrospective blocked CV, exploratory"
+}

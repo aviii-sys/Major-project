@@ -1,0 +1,65 @@
+{
+  "experiment": "E16 phase1e",
+  "fold": 5,
+  "arch": "gru",
+  "window_hours": 72,
+  "window_steps": 288,
+  "hidden": 64,
+  "seed": 1,
+  "optimizer": "adam",
+  "lr": 0.001,
+  "batch": 512,
+  "grad_clip": 1.0,
+  "max_epochs": 40,
+  "patience": 6,
+  "rows_per_epoch": 120000,
+  "epochs_run": 16,
+  "best_epoch": 9,
+  "best_val_scaled_loss": 0.29750884648420256,
+  "train_seconds": 7427.1,
+  "min_history_steps_for_training_rows": 288,
+  "norm_stats_fit_on_fold_train_only": {
+    "c1": [
+      0.05964406952261925,
+      0.6251463890075684
+    ],
+    "c2": [
+      -0.005391585174947977,
+      0.20877577364444733
+    ],
+    "cur": [
+      2.40352201461792,
+      1.2261338233947754
+    ]
+  },
+  "sigma_ft": {
+    "15m": 0.03005151078104973,
+    "30m": 0.0557599700987339,
+    "1h": 0.10562411695718765,
+    "3h": 0.26958706974983215
+  },
+  "rows": {
+    "train": 356053,
+    "val": 69842,
+    "test": 157447
+  },
+  "boundaries": {
+    "train_start": "2007-10-02 05:00:00+00:00",
+    "train_end": "2017-12-29 04:03:35.999999992+00:00",
+    "val_start": "2017-12-30 07:18:35.999999992+00:00",
+    "val_end": "2019-12-30 20:45:00+00:00",
+    "test_start": "2020-01-01 00:00:00+00:00",
+    "test_end": "2024-12-31 23:45:00+00:00"
+  },
+  "environment": {
+    "python": "3.11.18",
+    "torch": "2.15.0",
+    "device": "mps",
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "numpy": "2.4.6",
+    "pandas": "3.1.1"
+  },
+  "checkpoint_sha256": "24a77f0929f9ba106f8810ebbe0587ec1032ced65872d8fdd73177658eba8280",
+  "predictions_sha256": "f3f3174789effd473e4aec7bb5fba1c090e1ee49bbf884e46edb6f31d31522a7",
+  "quick": false
+}

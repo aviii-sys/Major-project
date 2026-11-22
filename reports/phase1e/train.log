@@ -1,0 +1,44 @@
+[16:22:49] fold specification identical to Phase 1D
+[16:22:49] === fold 1: train 108826 / val 37125 / test 105066 rows
+[16:23:52] saved fold1_gru_w24h_h64_s0: best epoch 3 val 0.0901 in 63.0s
+[16:24:49] saved fold1_gru_w24h_h64_s1: best epoch 2 val 0.0907 in 57.1s
+[16:25:57] saved fold1_gru_w24h_h64_s2: best epoch 4 val 0.0908 in 68.2s
+[16:29:06] saved fold1_gru_w72h_h64_s0: best epoch 3 val 0.0905 in 189.2s
+[16:31:48] saved fold1_gru_w72h_h64_s1: best epoch 2 val 0.0918 in 162.2s
+[16:35:08] saved fold1_gru_w72h_h64_s2: best epoch 4 val 0.0936 in 199.9s
+[16:35:08] === fold 2: train 187495 / val 63522 / test 35038 rows
+[16:36:51] saved fold2_gru_w24h_h64_s0: best epoch 8 val 1.3216 in 102.2s
+[16:38:44] saved fold2_gru_w24h_h64_s1: best epoch 9 val 1.3270 in 113.4s
+[16:40:34] saved fold2_gru_w24h_h64_s2: best epoch 9 val 1.3073 in 109.6s
+[16:44:35] saved fold2_gru_w72h_h64_s0: best epoch 5 val 1.3370 in 240.9s
+[16:49:54] saved fold2_gru_w72h_h64_s1: best epoch 9 val 1.3475 in 319.8s
+[16:56:51] saved fold2_gru_w72h_h64_s2: best epoch 14 val 1.3006 in 417.0s
+[16:56:51] === fold 3: train 215926 / val 70128 / test 70053 rows
+[16:58:26] saved fold3_gru_w24h_h64_s0: best epoch 7 val 3.4872 in 94.7s
+[17:00:14] saved fold3_gru_w24h_h64_s1: best epoch 9 val 3.3944 in 108.1s
+[17:02:56] saved fold3_gru_w24h_h64_s2: best epoch 17 val 3.3265 in 161.8s
+[17:07:35] saved fold3_gru_w72h_h64_s0: best epoch 7 val 3.4741 in 278.8s
+[17:12:57] saved fold3_gru_w72h_h64_s1: best epoch 9 val 3.4952 in 322.1s
+[17:21:22] saved fold3_gru_w72h_h64_s2: best epoch 18 val 3.2555 in 505.6s
+[17:21:23] === fold 4: train 286096 / val 70011 / test 69788 rows
+[17:23:44] saved fold4_gru_w24h_h64_s0: best epoch 14 val 0.3584 in 141.9s
+[17:25:19] saved fold4_gru_w24h_h64_s1: best epoch 7 val 0.3708 in 94.8s
+[17:27:21] saved fold4_gru_w24h_h64_s2: best epoch 11 val 0.3659 in 121.5s
+[17:31:41] saved fold4_gru_w72h_h64_s0: best epoch 6 val 0.3884 in 259.8s
+[17:36:20] saved fold4_gru_w72h_h64_s1: best epoch 7 val 0.3649 in 279.0s
+[17:43:25] saved fold4_gru_w72h_h64_s2: best epoch 14 val 0.3698 in 425.6s
+[17:43:25] === fold 5: train 356053 / val 69842 / test 157447 rows
+[17:45:28] saved fold5_gru_w24h_h64_s0: best epoch 11 val 0.2915 in 122.7s
+[17:47:18] saved fold5_gru_w24h_h64_s1: best epoch 9 val 0.3022 in 109.7s
+[17:48:54] saved fold5_gru_w24h_h64_s2: best epoch 7 val 0.2922 in 95.9s
+[17:55:21] saved fold5_gru_w72h_h64_s0: best epoch 11 val 0.2832 in 387.8s
+[19:59:08] saved fold5_gru_w72h_h64_s1: best epoch 9 val 0.2975 in 7427.1s
+[20:03:56] saved fold5_gru_w72h_h64_s2: best epoch 7 val 0.2910 in 287.1s
+[20:03:56] === fold 6: train 526033 / val 57309 / test 65458 rows
+[20:05:51] saved fold6_gru_w24h_h64_s0: best epoch 10 val 0.1928 in 115.1s
+[20:09:13] saved fold6_gru_w24h_h64_s1: best epoch 22 val 0.1895 in 202.5s
+[20:10:54] saved fold6_gru_w24h_h64_s2: best epoch 8 val 0.1947 in 100.7s
+[20:18:14] saved fold6_gru_w72h_h64_s0: best epoch 15 val 0.1962 in 439.6s
+[20:27:50] saved fold6_gru_w72h_h64_s1: best epoch 22 val 0.1958 in 576.2s
+[20:32:58] saved fold6_gru_w72h_h64_s2: best epoch 8 val 0.1965 in 308.3s
+[20:32:58] all runs done

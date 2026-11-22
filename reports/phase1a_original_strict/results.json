@@ -1,0 +1,55 @@
+{
+  "boundaries": {
+    "val_start": "2018-01-01 00:00:00+00:00",
+    "test_start": "2022-01-01 00:00:00+00:00",
+    "blocked_cv_bounds": [
+      "2010-12-10 09:00:00+00:00",
+      "2014-02-17 13:15:00+00:00",
+      "2017-04-27 17:30:00+00:00",
+      "2020-07-05 21:45:00+00:00",
+      "2023-09-14 02:00:00+00:00"
+    ]
+  },
+  "tuned": {
+    "H_15m": {
+      "ridge_alpha": 10000.0,
+      "xgb_depth": 3,
+      "xgb_trees": 124
+    },
+    "HR_15m": {
+      "ridge_alpha": 10000.0,
+      "xgb_depth": 3,
+      "xgb_trees": 106
+    },
+    "H_30m": {
+      "ridge_alpha": 10000.0,
+      "xgb_depth": 5,
+      "xgb_trees": 55
+    },
+    "HR_30m": {
+      "ridge_alpha": 10000.0,
+      "xgb_depth": 3,
+      "xgb_trees": 92
+    },
+    "H_1h": {
+      "ridge_alpha": 1000.0,
+      "xgb_depth": 3,
+      "xgb_trees": 92
+    },
+    "HR_1h": {
+      "ridge_alpha": 1000.0,
+      "xgb_depth": 5,
+      "xgb_trees": 66
+    },
+    "H_3h": {
+      "ridge_alpha": 1000.0,
+      "xgb_depth": 5,
+      "xgb_trees": 32
+    },
+    "HR_3h": {
+      "ridge_alpha": 1000.0,
+      "xgb_depth": 3,
+      "xgb_trees": 22
+    }
+  }
+}

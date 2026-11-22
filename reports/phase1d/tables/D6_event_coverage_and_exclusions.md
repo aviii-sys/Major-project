@@ -1,0 +1,13 @@
+| definition               | status    |   events |   storm_clusters |
+|:-------------------------|:----------|---------:|-----------------:|
+| experimental_rise_4ft_3h | evaluated |       25 |               22 |
+| experimental_rise_4ft_3h | excluded  |        2 |                2 |
+| experimental_rise_8ft_3h | evaluated |       13 |               10 |
+| experimental_rise_8ft_3h | excluded  |        2 |                2 |
+| experimental_stage_10ft  | evaluated |       18 |               14 |
+| experimental_stage_10ft  | excluded  |        2 |                2 |
+| experimental_stage_15ft  | evaluated |        8 |                7 |
+| experimental_stage_15ft  | excluded  |        1 |                1 |
+| official_action_25ft     | evaluated |        6 |                5 |
+| official_minor_30ft      | evaluated |        4 |                4 |
+| official_moderate_36ft   | evaluated |        1 |                1 |

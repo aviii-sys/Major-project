@@ -1,0 +1,50 @@
+{
+  "arch": "transformer",
+  "hidden": 32,
+  "seed": 0,
+  "window_steps": 96,
+  "dropout": 0.1,
+  "optimizer": "adam",
+  "lr": 0.001,
+  "batch": 512,
+  "grad_clip": 1.0,
+  "max_epochs": 40,
+  "patience": 6,
+  "rows_per_epoch": 120000,
+  "epochs_run": 32,
+  "best_epoch": 25,
+  "best_val_scaled_loss": 0.3045607064117717,
+  "train_seconds": 815.9,
+  "device": "mps",
+  "torch": "2.15.0",
+  "python": "3.11.18",
+  "norm_stats": {
+    "c1": [
+      0.03298249840736389,
+      0.4196111261844635
+    ],
+    "c2": [
+      -0.005660943686962128,
+      0.21059642732143402
+    ],
+    "cur": [
+      2.403669834136963,
+      1.2841256856918335
+    ]
+  },
+  "sigma_ft": {
+    "15m": 0.03004072979092598,
+    "30m": 0.05573978275060654,
+    "1h": 0.1055857464671135,
+    "3h": 0.26948902010917664
+  },
+  "rows": {
+    "train": 356312,
+    "val": 139728,
+    "test": 152953
+  },
+  "checkpoint_sha256": "b8d43028db5bfe5f630f8e53efc2db386af72720f81bf2ebf81da58b5287a4e2",
+  "predictions_sha256": "fcec0c2e76444674a2f56dc7ba4f5f1e00af248b8c59f0fa1a831b950777a49c",
+  "quick": false,
+  "note": "Test predictions saved from the best-validation checkpoint; never used for selection. MPS kernels are not guaranteed bit-reproducible."
+}

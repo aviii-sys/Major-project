@@ -1,0 +1,18 @@
+[12:46:39] grid 671141 rows; valid stage 651581; storm clusters 78; val starts 2018-01-01 00:00:00+00:00; test starts 2022-01-01 00:00:00+00:00
+[12:46:41] chrono h=15m H: ridge alpha=10000.0, xgb depth=3 trees=124
+[12:46:43] blocked-CV h=15m H done
+[12:46:45] chrono h=15m HR: ridge alpha=10000.0, xgb depth=3 trees=106
+[12:46:48] blocked-CV h=15m HR done
+[12:46:50] chrono h=30m H: ridge alpha=10000.0, xgb depth=5 trees=55
+[12:46:51] blocked-CV h=30m H done
+[12:46:53] chrono h=30m HR: ridge alpha=10000.0, xgb depth=3 trees=92
+[12:46:56] blocked-CV h=30m HR done
+[12:46:57] chrono h=1h H: ridge alpha=1000.0, xgb depth=3 trees=92
+[12:46:59] blocked-CV h=1h H done
+[12:47:01] chrono h=1h HR: ridge alpha=1000.0, xgb depth=5 trees=66
+[12:47:04] blocked-CV h=1h HR done
+[12:47:05] chrono h=3h H: ridge alpha=1000.0, xgb depth=5 trees=32
+[12:47:06] blocked-CV h=3h H done
+[12:47:07] chrono h=3h HR: ridge alpha=1000.0, xgb depth=3 trees=22
+[12:47:09] blocked-CV h=3h HR done
+[12:47:14] done

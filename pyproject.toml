@@ -1,0 +1,27 @@
+[project]
+name = "flashflood"
+version = "0.1.0"
+description = "Hybrid Transformer-LSTM flash-flood forecasting and early warning (research prototype)"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+  "numpy",
+  "pandas",
+  "scipy",
+  "scikit-learn",
+  "xgboost",
+  "torch",
+  "matplotlib",
+  "pyyaml",
+  "requests",
+  "dataretrieval",
+  "pytest",
+  "shapely",
+  "pyproj",
+  "tabulate",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

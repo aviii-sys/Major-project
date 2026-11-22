@@ -1,0 +1,50 @@
+{
+  "arch": "lstm",
+  "hidden": 64,
+  "seed": 4,
+  "window_steps": 96,
+  "dropout": 0.1,
+  "optimizer": "adam",
+  "lr": 0.001,
+  "batch": 512,
+  "grad_clip": 1.0,
+  "max_epochs": 40,
+  "patience": 6,
+  "rows_per_epoch": 120000,
+  "epochs_run": 14,
+  "best_epoch": 7,
+  "best_val_scaled_loss": 0.3089806490507799,
+  "train_seconds": 65.4,
+  "device": "mps",
+  "torch": "2.15.0",
+  "python": "3.11.18",
+  "norm_stats": {
+    "c1": [
+      0.03298249840736389,
+      0.4196111261844635
+    ],
+    "c2": [
+      -0.005660943686962128,
+      0.21059642732143402
+    ],
+    "cur": [
+      2.403669834136963,
+      1.2841256856918335
+    ]
+  },
+  "sigma_ft": {
+    "15m": 0.03004072979092598,
+    "30m": 0.05573978275060654,
+    "1h": 0.1055857464671135,
+    "3h": 0.26948902010917664
+  },
+  "rows": {
+    "train": 356312,
+    "val": 139728,
+    "test": 152953
+  },
+  "checkpoint_sha256": "28af68669720ade2975a6e9c17afc915c549c5be3a82bedabce55adfc3da5527",
+  "predictions_sha256": "b237844593554babedb87df84953226ad5609a118816d7ad68a30854dbcb97f0",
+  "quick": false,
+  "note": "Test predictions saved from the best-validation checkpoint; never used for selection. MPS kernels are not guaranteed bit-reproducible."
+}

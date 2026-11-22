@@ -1,0 +1,146 @@
+{
+  "frozen_utc": "2026-11-22 07:33:07",
+  "predictions_sha256": "90a9b7e799d8b7dc625d163a41bdecc7712c4f0c9454ea0766e2510979589bdc",
+  "adopted_feature_set": "H2",
+  "chosen_lambda": {
+    "ridge": 0.0,
+    "xgb": 10.0
+  },
+  "trend_v2": {
+    "15m": {
+      "window": "15m",
+      "window_steps": 1,
+      "phi": 1.0
+    },
+    "30m": {
+      "window": "15m",
+      "window_steps": 1,
+      "phi": 0.75
+    },
+    "1h": {
+      "window": "15m",
+      "window_steps": 1,
+      "phi": 0.75
+    },
+    "3h": {
+      "window": "15m",
+      "window_steps": 1,
+      "phi": 0.25
+    }
+  },
+  "tuned": {
+    "ridge_H0_15m": {
+      "kind": "ridge",
+      "feature_set": "H",
+      "lambda": 0.0,
+      "alpha": 10000.0
+    },
+    "xgb_H0_15m": {
+      "kind": "xgb",
+      "feature_set": "H",
+      "lambda": 0.0,
+      "depth": 3,
+      "trees": 112
+    },
+    "ridge_B_15m": {
+      "kind": "ridge",
+      "feature_set": "H2",
+      "lambda": 0.0,
+      "alpha": 10000.0
+    },
+    "xgb_B_15m": {
+      "kind": "xgb",
+      "feature_set": "H2",
+      "lambda": 10.0,
+      "depth": 3,
+      "trees": 204
+    },
+    "ridge_H0_30m": {
+      "kind": "ridge",
+      "feature_set": "H",
+      "lambda": 0.0,
+      "alpha": 10000.0
+    },
+    "xgb_H0_30m": {
+      "kind": "xgb",
+      "feature_set": "H",
+      "lambda": 0.0,
+      "depth": 3,
+      "trees": 86
+    },
+    "ridge_B_30m": {
+      "kind": "ridge",
+      "feature_set": "H2",
+      "lambda": 0.0,
+      "alpha": 10000.0
+    },
+    "xgb_B_30m": {
+      "kind": "xgb",
+      "feature_set": "H2",
+      "lambda": 10.0,
+      "depth": 3,
+      "trees": 196
+    },
+    "ridge_H0_1h": {
+      "kind": "ridge",
+      "feature_set": "H",
+      "lambda": 0.0,
+      "alpha": 1000.0
+    },
+    "xgb_H0_1h": {
+      "kind": "xgb",
+      "feature_set": "H",
+      "lambda": 0.0,
+      "depth": 3,
+      "trees": 86
+    },
+    "ridge_B_1h": {
+      "kind": "ridge",
+      "feature_set": "H2",
+      "lambda": 0.0,
+      "alpha": 10000.0
+    },
+    "xgb_B_1h": {
+      "kind": "xgb",
+      "feature_set": "H2",
+      "lambda": 10.0,
+      "depth": 3,
+      "trees": 121
+    },
+    "ridge_H0_3h": {
+      "kind": "ridge",
+      "feature_set": "H",
+      "lambda": 0.0,
+      "alpha": 1000.0
+    },
+    "xgb_H0_3h": {
+      "kind": "xgb",
+      "feature_set": "H",
+      "lambda": 0.0,
+      "depth": 5,
+      "trees": 28
+    },
+    "ridge_B_3h": {
+      "kind": "ridge",
+      "feature_set": "H2",
+      "lambda": 0.0,
+      "alpha": 10000.0
+    },
+    "xgb_B_3h": {
+      "kind": "xgb",
+      "feature_set": "H2",
+      "lambda": 10.0,
+      "depth": 5,
+      "trees": 27
+    }
+  },
+  "boundaries": {
+    "val_start": "2018-01-01 00:00:00+00:00",
+    "test_start": "2022-01-01 00:00:00+00:00"
+  },
+  "versions": {
+    "pandas": "3.1.1",
+    "numpy": "2.4.6"
+  },
+  "note": "Test period was already inspected before Phase 1B; results on it are exploratory. Events after 2026-11-22 can serve as a prospective check."
+}

@@ -1,0 +1,23 @@
+| definition               | protocol             |   events |   distinct_storm_clusters |
+|:-------------------------|:---------------------|---------:|--------------------------:|
+| official_action_25ft     | chrono_val           |        0 |                         0 |
+| official_action_25ft     | chrono_test          |        3 |                         2 |
+| official_action_25ft     | blocked_cv_NONCAUSAL |        6 |                         5 |
+| official_minor_30ft      | chrono_val           |        0 |                         0 |
+| official_minor_30ft      | chrono_test          |        2 |                         2 |
+| official_minor_30ft      | blocked_cv_NONCAUSAL |        4 |                         4 |
+| official_moderate_36ft   | chrono_val           |        0 |                         0 |
+| official_moderate_36ft   | chrono_test          |        1 |                         1 |
+| official_moderate_36ft   | blocked_cv_NONCAUSAL |        1 |                         1 |
+| experimental_stage_10ft  | chrono_val           |        5 |                         5 |
+| experimental_stage_10ft  | chrono_test          |        4 |                         4 |
+| experimental_stage_10ft  | blocked_cv_NONCAUSAL |       20 |                        16 |
+| experimental_stage_15ft  | chrono_val           |        2 |                         2 |
+| experimental_stage_15ft  | chrono_test          |        2 |                         2 |
+| experimental_stage_15ft  | blocked_cv_NONCAUSAL |        9 |                         8 |
+| experimental_rise_4ft_3h | chrono_val           |        6 |                         6 |
+| experimental_rise_4ft_3h | chrono_test          |        7 |                         7 |
+| experimental_rise_4ft_3h | blocked_cv_NONCAUSAL |       27 |                        24 |
+| experimental_rise_8ft_3h | chrono_val           |        1 |                         1 |
+| experimental_rise_8ft_3h | chrono_test          |        5 |                         4 |
+| experimental_rise_8ft_3h | blocked_cv_NONCAUSAL |       15 |                        12 |

@@ -1,0 +1,19 @@
+item,n
+15-min grid rows,671141
+valid stage rows,651581
+rows masked as sensor-floor (stage <= -1.2 ft),16538
+rows with complete hydrology features,642558
+rows with complete hydrology+rain features,641452
+"storm clusters (>=5 ft or >=1 ft/3h, <72 h merged)",78
+eligible rows h=15m train,354730
+eligible rows h=15m val,139331
+eligible rows h=15m test,147089
+eligible rows h=30m train,354684
+eligible rows h=30m val,139315
+eligible rows h=30m test,147033
+eligible rows h=1h train,354604
+eligible rows h=1h val,139300
+eligible rows h=1h test,146949
+eligible rows h=3h train,354465
+eligible rows h=3h val,139249
+eligible rows h=3h test,146540

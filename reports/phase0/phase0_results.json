@@ -1,0 +1,135 @@
+{
+  "hydro": {
+    "rows_raw": 668307,
+    "duplicates_dropped": 0,
+    "first": "2007-10-02 05:00:00+00:00",
+    "last": "2026-11-22 06:00:00+00:00",
+    "expected_15min_steps": 671141,
+    "stage_missing": 3022,
+    "discharge_missing": 2834,
+    "off_15min_grid_timestamps": 0,
+    "step_distribution_top": {
+      "0 days 00:15:00": 668122,
+      "0 days 00:30:00": 65,
+      "0 days 01:15:00": 28,
+      "0 days 00:45:00": 21,
+      "0 days 01:00:00": 11,
+      "0 days 01:45:00": 11,
+      "0 days 02:15:00": 8,
+      "0 days 01:30:00": 8
+    },
+    "gap_runs": 186,
+    "gap_longest_h": 96.0,
+    "gaps_ge_1h": 89,
+    "gaps_ge_6h": 15,
+    "gaps_ge_24h": 13,
+    "gap_missing_steps_in_gaps_ge_24h": 2300,
+    "qualifier_codes": {
+      "stage_cd": {
+        "A": 638199,
+        "P": 29920,
+        "NA": 188
+      },
+      "q_cd": {
+        "A": 638195,
+        "P": 29916,
+        "A, e": 192,
+        "P, e": 4
+      }
+    },
+    "stage_ft": {
+      "min": -1.23,
+      "median": 2.19,
+      "p99": 5.55,
+      "max": 36.75,
+      "n_negative": 39096,
+      "n_zero": 36
+    },
+    "q_cfs": {
+      "min": 0.0,
+      "median": 61.0,
+      "p99": 1540.0,
+      "max": 59800.0,
+      "n_negative": 0,
+      "n_zero": 44165
+    },
+    "jumps_gt_1ft_per_15min": 118,
+    "jumps_gt_3ft_per_15min": 3
+  },
+  "events": {
+    "official_categories_ft": {
+      "action": 25.0,
+      "minor": 30.0,
+      "moderate": 36.0,
+      "major": 39.0
+    },
+    "source": "NWS NWPS gauge SRGT2 (api.water.noaa.gov/nwps/v1/gauges/08167500)",
+    "n_events_action": 6
+  },
+  "weather": {
+    "precip_cells_downloaded": "13/13",
+    "land_cells_downloaded": "14/53",
+    "precip": {
+      "first": "2007-10-02 00:00:00+00:00",
+      "last_valid": "2026-11-15 23:00:00+00:00",
+      "hours_expected": 167640,
+      "null_hours": 0,
+      "min_mm": 0.0,
+      "max_hourly_mm": 20.3319815616821,
+      "frac_hours_gt_0.1mm": 0.09641493676926748,
+      "native_grid": "ERA5 0.25 deg (~25 km), via Open-Meteo model=era5"
+    },
+    "soil_moisture_0_7cm": {
+      "first": "2007-10-02 00:00:00+00:00",
+      "last_valid": "2026-11-15 23:00:00+00:00",
+      "null_frac": 0.0,
+      "min": 0.23829344896759944,
+      "max": 0.5200000000000001,
+      "cells_used": "14/53"
+    },
+    "soil_moisture_7_28cm": {
+      "first": "2007-10-02 00:00:00+00:00",
+      "last_valid": "2026-11-15 23:00:00+00:00",
+      "null_frac": 0.0,
+      "min": 0.27581649541238534,
+      "max": 0.5130342758568965,
+      "cells_used": "14/53"
+    },
+    "soil_moisture_28_100cm": {
+      "first": "2007-10-02 00:00:00+00:00",
+      "last_valid": "2026-11-15 23:00:00+00:00",
+      "null_frac": 0.0,
+      "min": 0.279,
+      "max": 0.5037126428160704,
+      "cells_used": "14/53"
+    },
+    "temperature_2m": {
+      "first": "2007-10-02 00:00:00+00:00",
+      "last_valid": "2026-11-15 23:00:00+00:00",
+      "null_frac": 0.0,
+      "min": -13.794804870121752,
+      "max": 41.11884547113678,
+      "cells_used": "14/53"
+    },
+    "relative_humidity_2m": {
+      "first": "2007-10-02 00:00:00+00:00",
+      "last_valid": "2026-11-15 23:00:00+00:00",
+      "null_frac": 0.0,
+      "min": 5.898947473686843,
+      "max": 100.0,
+      "cells_used": "14/53"
+    }
+  },
+  "alignment": {
+    "rain_age_min_distribution": {
+      "0": 0.25,
+      "15": 0.25,
+      "30": 0.25,
+      "45": 0.25
+    },
+    "rows_without_rain": 601,
+    "first_row_without_rain_after_start": "2026-11-22 06:00:00+00:00",
+    "rows": 671141,
+    "note": "Hourly weather is NOT interpolated or repeated as independent values: each 15-min row carries the latest completed hourly value plus rain_age_min. Draft only: no scaling, no windows, no splits."
+  }
+}
