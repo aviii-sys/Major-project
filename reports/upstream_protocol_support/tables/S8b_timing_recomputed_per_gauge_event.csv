@@ -1,0 +1,145 @@
+event_start,site,gauge,source,native_median_step,coverage_v3_window_15min_grid,longest_gap_h_v3_window,status_v3_window,v2c_status,v3c_status,v2c_first_lead_h,v2c_consistent,v3c_first_lead_h,v3c_consistent
+2012-01-25 12:15,08165300,N Fk Hunt,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2012-01-25 12:15,08165500,Hunt,cache,0 days 00:15:00,1.0,0.25,recorded,no response,no response,,,,
+2012-01-25 12:15,08166000,Johnson Ck,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2012-01-25 12:15,08166140,Kerrville abv Bear,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2012-01-25 12:15,08166200,Kerrville,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2012-01-25 12:15,08166250,Center Point,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2012-01-25 12:15,08167000,Comfort,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2012-01-25 12:15,08167200,Bergheim,none,NaT,,,not installed (record starts later),no data,no data,,,,
+2013-10-31 06:30,08165300,N Fk Hunt,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2013-10-31 06:30,08165500,Hunt,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2013-10-31 06:30,08166000,Johnson Ck,cache,0 days 00:15:00,0.9852941176470589,1.0,recorded,no response,no response,,,,
+2013-10-31 06:30,08166140,Kerrville abv Bear,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2013-10-31 06:30,08166200,Kerrville,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2013-10-31 06:30,08166250,Center Point,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2013-10-31 06:30,08167000,Comfort,cache,0 days 00:15:00,0.9705882352941176,0.5,recorded,no response,no response,,,,
+2013-10-31 06:30,08167200,Bergheim,none,NaT,,,not installed (record starts later),no data,no data,,,,
+2015-05-17 16:30,08165300,N Fk Hunt,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2015-05-17 16:30,08165500,Hunt,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2015-05-17 16:30,08166000,Johnson Ck,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2015-05-17 16:30,08166140,Kerrville abv Bear,cache,0 days 00:15:00,0.0,51.25,dropout (<80% coverage),insufficient coverage,insufficient coverage,,,,
+2015-05-17 16:30,08166200,Kerrville,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2015-05-17 16:30,08166250,Center Point,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,responds,2.75,True,2.75,True
+2015-05-17 16:30,08167000,Comfort,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,responds,1.25,True,1.25,True
+2015-05-17 16:30,08167200,Bergheim,none,NaT,,,not installed (record starts later),no data,no data,,,,
+2015-05-23 23:15,08165300,N Fk Hunt,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,no response,-15.25,True,,
+2015-05-23 23:15,08165500,Hunt,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,no response,-4.75,True,,
+2015-05-23 23:15,08166000,Johnson Ck,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2015-05-23 23:15,08166140,Kerrville abv Bear,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,no response,-8.75,True,,
+2015-05-23 23:15,08166200,Kerrville,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,no response,-9.5,True,,
+2015-05-23 23:15,08166250,Center Point,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,responds,-3.0,True,-3.0,True
+2015-05-23 23:15,08167000,Comfort,cache,0 days 00:15:00,0.9705882352941176,0.5,recorded,responds,responds,0.0,True,0.0,True
+2015-05-23 23:15,08167200,Bergheim,none,NaT,,,not installed (record starts later),no data,no data,,,,
+2015-10-30 12:30,08165300,N Fk Hunt,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2015-10-30 12:30,08165500,Hunt,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2015-10-30 12:30,08166000,Johnson Ck,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,responds,-1.5,True,-1.5,True
+2015-10-30 12:30,08166140,Kerrville abv Bear,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,no response,-6.5,True,,
+2015-10-30 12:30,08166200,Kerrville,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2015-10-30 12:30,08166250,Center Point,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,no response,-12.5,True,,
+2015-10-30 12:30,08167000,Comfort,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2015-10-30 12:30,08167200,Bergheim,none,NaT,,,not installed (record starts later),no data,no data,,,,
+2016-05-18 07:00,08165300,N Fk Hunt,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2016-05-18 07:00,08165500,Hunt,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,responds,1.75,True,1.75,True
+2016-05-18 07:00,08166000,Johnson Ck,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,responds,2.25,True,2.25,True
+2016-05-18 07:00,08166140,Kerrville abv Bear,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,responds,2.5,True,2.5,True
+2016-05-18 07:00,08166200,Kerrville,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,responds,2.0,True,2.0,True
+2016-05-18 07:00,08166250,Center Point,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,responds,1.75,True,1.75,True
+2016-05-18 07:00,08167000,Comfort,cache,0 days 00:15:00,0.9019607843137255,5.25,recorded,insufficient coverage,no response,,,,
+2016-05-18 07:00,08167200,Bergheim,none,NaT,,,not installed (record starts later),no data,no data,,,,
+2016-05-19 15:45,08165300,N Fk Hunt,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,responds,-31.25,True,1.0,True
+2016-05-19 15:45,08165500,Hunt,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,responds,-32.5,True,34.5,True
+2016-05-19 15:45,08166000,Johnson Ck,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,responds,0.0,False,35.0,True
+2016-05-19 15:45,08166140,Kerrville abv Bear,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,responds,0.0,True,35.25,True
+2016-05-19 15:45,08166200,Kerrville,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,responds,0.0,True,34.75,True
+2016-05-19 15:45,08166250,Center Point,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,responds,0.0,True,34.5,True
+2016-05-19 15:45,08167000,Comfort,cache,0 days 00:15:00,0.25980392156862747,38.0,dropout (<80% coverage),insufficient coverage,insufficient coverage,,,,
+2016-05-19 15:45,08167200,Bergheim,none,NaT,,,not installed (record starts later),no data,no data,,,,
+2016-05-29 20:30,08165300,N Fk Hunt,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2016-05-29 20:30,08165500,Hunt,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,responds,16.0,True,16.0,True
+2016-05-29 20:30,08166000,Johnson Ck,requery,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,responds,16.25,True,16.25,True
+2016-05-29 20:30,08166140,Kerrville abv Bear,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,responds,15.5,True,15.5,True
+2016-05-29 20:30,08166200,Kerrville,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,responds,15.75,True,15.75,True
+2016-05-29 20:30,08166250,Center Point,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,responds,15.5,True,15.5,True
+2016-05-29 20:30,08167000,Comfort,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,responds,13.5,True,13.5,True
+2016-05-29 20:30,08167200,Bergheim,none,NaT,,,not installed (record starts later),no data,no data,,,,
+2016-06-02 17:30,08165300,N Fk Hunt,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,responds,15.0,True,15.0,True
+2016-06-02 17:30,08165500,Hunt,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,responds,12.5,True,12.5,True
+2016-06-02 17:30,08166000,Johnson Ck,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2016-06-02 17:30,08166140,Kerrville abv Bear,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2016-06-02 17:30,08166200,Kerrville,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,responds,18.25,True,18.25,True
+2016-06-02 17:30,08166250,Center Point,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,responds,18.0,True,18.0,True
+2016-06-02 17:30,08167000,Comfort,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,responds,16.25,True,16.25,True
+2016-06-02 17:30,08167200,Bergheim,none,NaT,,,not installed (record starts later),no data,no data,,,,
+2018-09-09 15:15,08165300,N Fk Hunt,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2018-09-09 15:15,08165500,Hunt,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2018-09-09 15:15,08166000,Johnson Ck,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2018-09-09 15:15,08166140,Kerrville abv Bear,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2018-09-09 15:15,08166200,Kerrville,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2018-09-09 15:15,08166250,Center Point,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2018-09-09 15:15,08167000,Comfort,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2018-09-09 15:15,08167200,Bergheim,requery,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,responds,-7.0,True,-7.0,True
+2018-09-22 16:15,08165300,N Fk Hunt,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2018-09-22 16:15,08165500,Hunt,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2018-09-22 16:15,08166000,Johnson Ck,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2018-09-22 16:15,08166140,Kerrville abv Bear,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2018-09-22 16:15,08166200,Kerrville,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2018-09-22 16:15,08166250,Center Point,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2018-09-22 16:15,08167000,Comfort,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,responds,2.25,True,2.25,True
+2018-09-22 16:15,08167200,Bergheim,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,responds,2.5,True,2.5,True
+2018-10-17 00:45,08165300,N Fk Hunt,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,responds,25.75,True,25.75,True
+2018-10-17 00:45,08165500,Hunt,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,responds,23.5,True,23.5,True
+2018-10-17 00:45,08166000,Johnson Ck,cache,0 days 00:15:00,0.7352941176470589,13.75,dropout (<80% coverage),insufficient coverage,insufficient coverage,,,,
+2018-10-17 00:45,08166140,Kerrville abv Bear,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,responds,22.5,True,22.5,True
+2018-10-17 00:45,08166200,Kerrville,cache,0 days 00:15:00,0.6911764705882353,16.0,dropout (<80% coverage),insufficient coverage,insufficient coverage,,,,
+2018-10-17 00:45,08166250,Center Point,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,responds,21.5,True,21.5,True
+2018-10-17 00:45,08167000,Comfort,cache,0 days 00:15:00,0.9950980392156863,0.25,recorded,responds,responds,16.25,True,16.25,True
+2018-10-17 00:45,08167200,Bergheim,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,responds,8.25,True,8.25,True
+2019-05-08 20:45,08165300,N Fk Hunt,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2019-05-08 20:45,08165500,Hunt,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2019-05-08 20:45,08166000,Johnson Ck,cache,0 days 00:05:00,0.9754901960784313,1.5,recorded,responds,responds,-4.0,True,-4.0,True
+2019-05-08 20:45,08166140,Kerrville abv Bear,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2019-05-08 20:45,08166200,Kerrville,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2019-05-08 20:45,08166250,Center Point,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,responds,2.0,True,2.0,True
+2019-05-08 20:45,08167000,Comfort,cache,0 days 00:15:00,0.9901960784313726,0.25,recorded,responds,responds,0.5,True,0.5,True
+2019-05-08 20:45,08167200,Bergheim,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,responds,0.75,True,0.75,True
+2021-10-14 04:45,08165300,N Fk Hunt,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2021-10-14 04:45,08165500,Hunt,cache,0 days 00:05:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2021-10-14 04:45,08166000,Johnson Ck,cache,0 days 00:05:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2021-10-14 04:45,08166140,Kerrville abv Bear,cache,0 days 00:05:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2021-10-14 04:45,08166200,Kerrville,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2021-10-14 04:45,08166250,Center Point,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2021-10-14 04:45,08167000,Comfort,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2021-10-14 04:45,08167200,Bergheim,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2024-07-24 14:45,08165300,N Fk Hunt,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,responds,-14.25,False,17.25,True
+2024-07-24 14:45,08165500,Hunt,cache,0 days 00:05:00,1.0049019607843137,0.0,recorded,responds,responds,-21.25,False,10.25,True
+2024-07-24 14:45,08166000,Johnson Ck,cache,0 days 00:05:00,1.0049019607843137,0.0,recorded,responds,responds,-7.25,False,24.25,True
+2024-07-24 14:45,08166140,Kerrville abv Bear,cache,0 days 00:05:00,1.0049019607843137,0.0,recorded,responds,responds,-7.75,False,23.75,True
+2024-07-24 14:45,08166200,Kerrville,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,responds,-8.0,False,23.5,True
+2024-07-24 14:45,08166250,Center Point,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,responds,-8.25,False,23.25,True
+2024-07-24 14:45,08167000,Comfort,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,responds,-12.25,False,19.25,True
+2024-07-24 14:45,08167200,Bergheim,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,responds,-22.0,False,9.5,True
+2025-07-05 03:45,08165300,N Fk Hunt,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,responds,20.0,True,20.0,True
+2025-07-05 03:45,08165500,Hunt,cache,0 days 00:05:00,0.5882352941176471,21.25,dropout (<80% coverage),insufficient coverage,insufficient coverage,,,,
+2025-07-05 03:45,08166000,Johnson Ck,cache,0 days 00:05:00,1.0049019607843137,0.0,recorded,responds,responds,18.0,True,18.0,True
+2025-07-05 03:45,08166140,Kerrville abv Bear,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,responds,17.25,True,17.25,True
+2025-07-05 03:45,08166200,Kerrville,cache,0 days 00:15:00,0.5735294117647058,19.25,dropout (<80% coverage),insufficient coverage,insufficient coverage,,,,
+2025-07-05 03:45,08166250,Center Point,cache,0 days 00:15:00,0.6274509803921569,18.25,dropout (<80% coverage),insufficient coverage,insufficient coverage,,,,
+2025-07-05 03:45,08167000,Comfort,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,responds,13.0,True,13.0,True
+2025-07-05 03:45,08167200,Bergheim,requery,0 days 00:05:00,1.0049019607843137,0.0,recorded,responds,responds,16.25,False,16.25,False
+2026-06-15 18:30,08165300,N Fk Hunt,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2026-06-15 18:30,08165500,Hunt,cache,0 days 00:05:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2026-06-15 18:30,08166000,Johnson Ck,cache,0 days 00:05:00,1.0049019607843137,0.0,recorded,responds,no response,-7.5,True,,
+2026-06-15 18:30,08166140,Kerrville abv Bear,cache,0 days 00:05:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2026-06-15 18:30,08166200,Kerrville,cache,0 days 00:05:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2026-06-15 18:30,08166250,Center Point,cache,0 days 00:05:00,1.0049019607843137,0.0,recorded,no response,no response,,,,
+2026-06-15 18:30,08167000,Comfort,cache,0 days 00:05:00,0.5980392156862745,0.25,dropout (<80% coverage),insufficient coverage,insufficient coverage,,,,
+2026-06-15 18:30,08167200,Bergheim,cache,0 days 00:05:00,1.0049019607843137,0.0,recorded,responds,responds,6.25,True,6.25,True
+2026-07-15 18:30,08165300,N Fk Hunt,cache,0 days 00:15:00,1.0049019607843137,0.0,recorded,responds,no response,-30.0,False,,
+2026-07-15 18:30,08165500,Hunt,cache,0 days 00:05:00,1.0049019607843137,0.0,recorded,responds,no response,-25.0,False,,
+2026-07-15 18:30,08166000,Johnson Ck,cache,0 days 00:05:00,1.0049019607843137,0.0,recorded,insufficient coverage,no response,,,,
+2026-07-15 18:30,08166140,Kerrville abv Bear,cache,0 days 00:05:00,1.0049019607843137,0.0,recorded,responds,no response,-23.75,False,,
+2026-07-15 18:30,08166200,Kerrville,cache,0 days 00:05:00,1.0049019607843137,0.0,recorded,responds,responds,19.5,False,36.75,True
+2026-07-15 18:30,08166250,Center Point,cache,0 days 00:05:00,1.0049019607843137,0.0,recorded,responds,responds,18.0,True,36.25,False
+2026-07-15 18:30,08167000,Comfort,cache,0 days 00:05:00,0.8823529411764706,0.25,recorded,responds,responds,20.75,False,29.5,False
+2026-07-15 18:30,08167200,Bergheim,requery,0 days 00:05:00,1.0049019607843137,0.0,recorded,responds,responds,8.0,True,15.5,False

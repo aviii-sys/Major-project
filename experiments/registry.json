@@ -120,6 +120,27 @@
       "where": "`docs/UPSTREAM_INPUT_FEASIBILITY.md`, `docs/GUIDE_BRIEF.md`, `reports/upstream_feasibility/` (tables, figures; `FIRST_RUN_INVALID_*` kept as evidence of two bugs fixed in v2), `data/raw/upstream/`",
       "protocol": "section 0 of the feasibility document",
       "status": "descriptive; v2 timing with a v3 alternative; range reported because multi-pulse storms are ambiguous"
+    },
+    {
+      "id": "E18",
+      "what": "Phase 1E addendum: onset-timing comparison of the saved GRU 24 h and 72 h out-of-fold predictions (post-hoc diagnostic; level-arrival lead and lag, pre-onset anticipation, issue time of the first forecast of half the rise, fixed-rule alarm leads)",
+      "where": "`reports/phase1e_onset/` (tables O0-O8, figures figO1-figO4), report `reports/PHASE1E_ONSET_TIMING.md`, code `src/flashflood/onset.py`, `scripts/run_onset_timing.py`, tests `tests/test_onset.py`",
+      "protocol": "`docs/PHASE1E_ONSET_PROTOCOL.md` (written before the analysis; deviation 1 logged)",
+      "status": "done 2026-11-22; no retraining; reproduces Phase 1E E6 detection counts exactly; result: no evidence that 72 h changes response behaviour; neither window anticipates the rise (no forecast of half the rise before onset in any of 18 events); 3 h lag median 2.0-2.5 h; exploratory, post-hoc"
+    },
+    {
+      "id": "E19",
+      "what": "Stage 1 historical-replay dashboard from the saved out-of-fold predictions (18 events, 4 horizons, GRU / LSTM / ridge / damped trend plus persistence, XGBoost, GRU 72 h); not live, no warning categories",
+      "where": "`dashboard/replay/` (`index.html` built file, `template.html`, `README.md`, `screenshots/`), code `src/flashflood/replay.py`, `scripts/build_replay_dashboard.py`, tests `tests/test_replay.py`",
+      "protocol": "none (presentation layer; requirements in the approval message; assumptions in `dashboard/replay/README.md`)",
+      "status": "built and verified 2026-11-22; every curve and metric traceable to saved predictions (metrics reproduce D4 and E1 within 0.002 ft); exploratory retrospective replay only"
+    },
+    {
+      "id": "E20",
+      "what": "Upstream-input research protocol for the research guide: four controlled configurations (A hydrology-only, B + upstream rainfall, C + upstream gauges, D + both), event classification, leakage safeguards, decision rule, 15 guide questions; DOCUMENTATION ONLY (no upstream-input experiment run)",
+      "where": "`docs/UPSTREAM_INPUT_PROTOCOL.md`; supporting descriptive tables `reports/upstream_protocol_support/` (S1-S8), `scripts/build_upstream_protocol_support.py`, `tests/test_upstream_protocol_support.py`; re-queried gauge series `data/raw/upstream/iv_requery/`",
+      "protocol": "itself (DRAFT FOR RESEARCH-GUIDE REVIEW, not approved)",
+      "status": "written 2026-11-22; awaiting the guide's decisions (section 6); classes: 6 upstream-led / 6 local-or-downstream-led / 6 ambiguous of 18 events; found 5-minute gauge stamps and 4 failed downloads in the earlier feasibility cache (no class changes); no training or evaluation done"
     }
   ]
 }

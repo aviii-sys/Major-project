@@ -1,0 +1,19 @@
+event_start,v2c_best_lead_h,v2c_best_gauge,v2c_gauges_consistent,v3c_best_lead_h,v3c_best_gauge,v3c_gauges_consistent,gauges_recorded,gauges_dropout_lt80pct,gauges_no_data,gauges_not_installed_yet,v2_best_lead_h_stored,v3_best_lead_h_stored,v3_gauges_with_insufficient_coverage,v2_changed,v3_changed,dropout_gauges_recomputed
+2012-01-25 12:15,,,0,,,0,"N Fk Hunt, Hunt, Johnson Ck, Kerrville abv Bear, Kerrville, Center Point, Comfort",,,Bergheim,,,0,False,False,0
+2013-10-31 06:30,,,0,,,0,"N Fk Hunt, Hunt, Johnson Ck, Kerrville abv Bear, Kerrville, Center Point, Comfort",,,Bergheim,,,0,False,False,0
+2015-05-17 16:30,2.75,08166250,2,2.75,08166250,2,"N Fk Hunt, Hunt, Johnson Ck, Kerrville, Center Point, Comfort",Kerrville abv Bear,,Bergheim,2.75,2.75,1,False,False,1
+2015-05-23 23:15,0.0,08167000,6,0.0,08167000,2,"N Fk Hunt, Hunt, Johnson Ck, Kerrville abv Bear, Kerrville, Center Point, Comfort",,,Bergheim,0.0,0.0,0,False,False,0
+2015-10-30 12:30,-1.5,08166000,3,-1.5,08166000,1,"N Fk Hunt, Hunt, Johnson Ck, Kerrville abv Bear, Kerrville, Center Point, Comfort",,,Bergheim,-1.5,-1.5,0,False,False,0
+2016-05-18 07:00,2.5,08166140,5,2.5,08166140,5,"N Fk Hunt, Hunt, Johnson Ck, Kerrville abv Bear, Kerrville, Center Point, Comfort",,,Bergheim,2.5,2.5,0,False,False,0
+2016-05-19 15:45,0.0,08166140,5,35.25,08166140,6,"N Fk Hunt, Hunt, Johnson Ck, Kerrville abv Bear, Kerrville, Center Point",Comfort,,Bergheim,0.0,35.25,1,False,False,1
+2016-05-29 20:30,16.25,08166000,6,16.25,08166000,6,"N Fk Hunt, Hunt, Johnson Ck, Kerrville abv Bear, Kerrville, Center Point, Comfort",,,Bergheim,16.0,16.0,0,True,True,0
+2016-06-02 17:30,18.25,08166200,5,18.25,08166200,5,"N Fk Hunt, Hunt, Johnson Ck, Kerrville abv Bear, Kerrville, Center Point, Comfort",,,Bergheim,18.25,18.25,0,False,False,0
+2018-09-09 15:15,-7.0,08167200,1,-7.0,08167200,1,"N Fk Hunt, Hunt, Johnson Ck, Kerrville abv Bear, Kerrville, Center Point, Comfort, Bergheim",,,,,,0,True,True,0
+2018-09-22 16:15,2.5,08167200,2,2.5,08167200,2,"N Fk Hunt, Hunt, Johnson Ck, Kerrville abv Bear, Kerrville, Center Point, Comfort, Bergheim",,,,2.5,2.5,0,False,False,0
+2018-10-17 00:45,25.75,08165300,6,25.75,08165300,6,"N Fk Hunt, Hunt, Kerrville abv Bear, Center Point, Comfort, Bergheim","Johnson Ck, Kerrville",,,25.75,25.75,2,False,False,2
+2019-05-08 20:45,2.0,08166250,4,2.0,08166250,4,"N Fk Hunt, Hunt, Johnson Ck, Kerrville abv Bear, Kerrville, Center Point, Comfort, Bergheim",,,,2.0,2.0,0,False,False,0
+2021-10-14 04:45,,,0,,,0,"N Fk Hunt, Hunt, Johnson Ck, Kerrville abv Bear, Kerrville, Center Point, Comfort, Bergheim",,,,,,0,False,False,0
+2024-07-24 14:45,,,0,24.25,08166000,8,"N Fk Hunt, Hunt, Johnson Ck, Kerrville abv Bear, Kerrville, Center Point, Comfort, Bergheim",,,,,24.333333333333332,0,False,True,0
+2025-07-05 03:45,20.0,08165300,4,20.0,08165300,4,"N Fk Hunt, Johnson Ck, Kerrville abv Bear, Comfort, Bergheim","Hunt, Kerrville, Center Point",,,20.0,20.0,2,False,False,3
+2026-06-15 18:30,6.25,08167200,2,6.25,08167200,1,"N Fk Hunt, Hunt, Johnson Ck, Kerrville abv Bear, Kerrville, Center Point, Bergheim",Comfort,,,6.333333333333333,6.333333333333333,0,True,True,1
+2026-07-15 18:30,18.0,08166250,2,36.75,08166200,1,"N Fk Hunt, Hunt, Johnson Ck, Kerrville abv Bear, Kerrville, Center Point, Comfort, Bergheim",,,,19.333333333333332,36.666666666666664,0,True,True,0

@@ -164,7 +164,7 @@ def page(c1, c2, delay, leads):
 <ul class="plain">
 <li>We are testing whether AI models can forecast the water level of a Texas river 15 minutes to 3 hours ahead, early enough to warn people before a flash flood.</li>
 <li>Most of the work so far went into testing fairly: checking the data, stopping the models from cheating, and comparing them against simple methods.</li>
-<li>Result: neural networks (LSTM and GRU) did not clearly beat simple methods such as ridge regression. Every model, simple or neural, reacts about 3 hours late to a sudden rise.</li>
+<li>Result: neural networks (LSTM and GRU) did not clearly beat simple methods such as ridge regression. Every model, simple or neural, reacts late to a sudden rise: measured over the 18 flood events, a 3-hour forecast shows a given level a median of about 2 to 2.5 hours after the river reached it.</li>
 <li>Reason: the river gauge only finds out about heavy rain when the water arrives. Gauges further up the river often rise 6 to 26 hours earlier, in roughly a third of the floods we studied.</li>
 <li>Next: bring in that upstream information, then test the Transformer-LSTM hybrid on it. We do not claim that any model gives reliable flood warnings yet.</li>
 </ul>
@@ -207,7 +207,7 @@ def page(c1, c2, delay, leads):
 </div>
 
 <h3>3. Everyone is late</h3>
-<figure><div class="scroll">{c1}</div><div class="legend"><span class="l-obs">what the river did</span><span class="l-gru">GRU forecast made 3 hours ahead</span><span class="l-trend">damped-trend forecast made 3 hours ahead</span></div><figcaption>The July 2025 flood at Spring Branch. Each forecast is drawn at the time it is about. Both forecasts show the sharp rise {delay:.0f} hours after it really began, and only catch up near the peak. This happens in all 18 flood events.</figcaption></figure>
+<figure><div class="scroll">{c1}</div><div class="legend"><span class="l-obs">what the river did</span><span class="l-gru">GRU forecast made 3 hours ahead</span><span class="l-trend">damped-trend forecast made 3 hours ahead</span></div><figcaption>The July 2025 flood at Spring Branch. Each forecast is drawn at the time it is about. Both forecasts show the sharp rise {delay:.0f} hours after it really began in this event, and only catch up near the peak. Across all 18 events a 3 hour forecast shows a level a median of about 2 to 2.5 hours after the river reached it, and no model, in any event, showed half of the rise before the river began to rise. Using 72 hours of history instead of 24 did not change this.</figcaption></figure>
 <p>The reason is not a weak model. A forecast of a rise that has not yet started at the gauge cannot be made from the gauge's own history. The model sees the rise only once it begins.</p>
 
 <h3>4. Rainfall data we tried did not help</h3>
@@ -258,7 +258,7 @@ def page(c1, c2, delay, leads):
 <h3>The one message</h3>
 <p><i>"We built a strict test bench for flash-flood forecasting and found that the bottleneck is missing upstream information, not model complexity."</i></p>
 <h3>Three takeaways for the audience</h3>
-<ol class="plain"><li>The testing is rigorous: no cheating, strict comparison with simple methods, and mistakes are recorded.</li><li>The result is a clear, honest finding: neural networks did not beat simple methods, and every model is about 3 hours late to sudden rises.</li><li>The data point to the next step: upstream gauges often rise hours earlier.</li></ol>
+<ol class="plain"><li>The testing is rigorous: no cheating, strict comparison with simple methods, and mistakes are recorded.</li><li>The result is a clear, honest finding: neural networks did not beat simple methods, and every model is 2 to 3 hours late to sudden rises at the 3 hour horizon.</li><li>The data point to the next step: upstream gauges often rise hours earlier.</li></ol>
 <h3>Suggested slides (about 20 minutes)</h3>
 <div class="tablewrap"><table><thead><tr><th>#</th><th>Slide</th><th>Key message</th><th>Show</th><th class="num">Min</th></tr></thead><tbody>
 <tr><td>1</td><td>Title and question</td><td>Can AI forecast a flash flood early enough to warn?</td><td>One sentence, one photo of the river</td><td class="num">1</td></tr>
@@ -267,7 +267,7 @@ def page(c1, c2, delay, leads):
 <tr><td>4</td><td>Fair testing</td><td>Whole storms together, later periods only, a gap between</td><td>A simple timeline of folds (past trains, future tests)</td><td class="num">2</td></tr>
 <tr><td>5</td><td>Models compared</td><td>Simple benchmarks versus neural networks</td><td>Four short bullets</td><td class="num">1.5</td></tr>
 <tr><td>6</td><td>Main result</td><td>Neural networks did not beat simple methods</td><td>The results table and the bar chart</td><td class="num">2.5</td></tr>
-<tr><td>7</td><td>Everyone is late</td><td>A 3 hour forecast shows a rise 3 hours late</td><td>The July 2025 chart</td><td class="num">2</td></tr>
+<tr><td>7</td><td>Everyone is late</td><td>A 3 hour forecast shows a rise 2 to 3 hours late</td><td>The July 2025 chart</td><td class="num">2</td></tr>
 <tr><td>8</td><td>Why: upstream gauges</td><td>The early signal exists upstream for some floods</td><td>The upstream chart and the 6 to 8 of 18 range</td><td class="num">2.5</td></tr>
 <tr><td>9</td><td>Mistakes and fixes</td><td>We record and correct our errors</td><td>The four items above</td><td class="num">1.5</td></tr>
 <tr><td>10</td><td>What we claim and do not</td><td>Careful scope builds trust</td><td>The two columns</td><td class="num">1.5</td></tr>
@@ -301,8 +301,10 @@ def page(c1, c2, delay, leads):
 <h2 id="files">Where everything is</h2>
 <div class="tablewrap"><table><thead><tr><th>What</th><th>File in the project</th></tr></thead><tbody>
 <tr><td>Overview and how to run it</td><td><code>README.md</code></td></tr>
-<tr><td>Latest results report</td><td><code>reports/PHASE1D_REPORT.md</code></td></tr>
+<tr><td>Latest results reports</td><td><code>reports/PHASE1E_REPORT.md</code> (24 h versus 72 h), <code>reports/PHASE1E_ONSET_TIMING.md</code> (how late the forecasts are), <code>reports/PHASE1D_REPORT.md</code> (cross-validation)</td></tr>
+<tr><td>Historical replay dashboard (saved forecasts only, not live)</td><td><code>dashboard/replay/index.html</code></td></tr>
 <tr><td>Upstream gauge study</td><td><code>docs/UPSTREAM_INPUT_FEASIBILITY.md</code></td></tr>
+<tr><td>Plan for testing upstream inputs (draft for the guide, nothing run yet)</td><td><code>docs/UPSTREAM_INPUT_PROTOCOL.md</code></td></tr>
 <tr><td>Short brief for the guide</td><td><code>docs/GUIDE_BRIEF.md</code></td></tr>
 <tr><td>Plans written before each experiment</td><td><code>docs/PHASE1A_PROTOCOL.md</code> to <code>PHASE1E_PROTOCOL.md</code></td></tr>
 <tr><td>Questions and answers for the viva</td><td><code>docs/VIVA_STUDY_GUIDE.md</code></td></tr>

@@ -5,7 +5,7 @@ How to use it: cover the **Answer**, read the **Hint**, and try to answer aloud 
 ## A. The problem and the data
 **Q1. In one minute: what is this project and what did you find?**
 Hint: problem, approach, main result, main limitation.
-Answer: forecast the stage of the Guadalupe River at Spring Branch 15 min to 3 h ahead from 15-min history, aiming at early warning of flash floods. I built a strict evaluation, compared persistence, a damped trend, ridge, XGBoost, LSTM and GRU (and a Transformer), and found that deep models give no robust advantage over ridge or the damped trend under blocked chronological cross-validation. Every model trails sharp flood onsets by about 3 h at the 3 h horizon, because stage history alone does not contain information about rain falling upstream. Upstream gauges rise 6 to 26 h earlier in roughly a third of the events (6 to 8 of 18), so the next step is adding upstream inputs.
+Answer: forecast the stage of the Guadalupe River at Spring Branch 15 min to 3 h ahead from 15-min history, aiming at early warning of flash floods. I built a strict evaluation, compared persistence, a damped trend, ridge, XGBoost, LSTM and GRU (and a Transformer), and found that deep models give no robust advantage over ridge or the damped trend under blocked chronological cross-validation. Every model trails sharp flood onsets at the 3 h horizon (median lag 2 to 2.5 h, measured in the onset-timing analysis), because stage history alone does not contain information about rain falling upstream. Upstream gauges rise 6 to 26 h earlier in roughly a third of the events (6 to 8 of 18), so the next step is adding upstream inputs.
 
 **Q2. Why is a flash flood hard to forecast from the river's own history?**
 Hint: what has to happen before the stage at the gauge moves?
@@ -83,8 +83,12 @@ Answer: it had only 4 test events and the seed spread (about 0.1 ft in flood win
 Hint: what can you actually claim?
 Answer: I cannot claim why. It trained unstably (best epoch between 1 and 15, validation loss 0.319 to 0.363 against 0.29-0.31 for LSTM and GRU), but that is one untuned configuration. It is not evidence that Transformers are unsuitable. A bounded diagnostic experiment is planned, not run.
 
-**Q21. All your models trail sharp onsets by about 3 hours. Explain.**
-Answer: the 3 h forecast of a rise that has not yet started at the gauge cannot be made from the gauge's history. The models only recognise a rise once it begins, so a 3 h forecast follows the observation about 3 h late and catches up near the peak. It is an information limit, not a tuning problem.
+**Q21. All your models trail sharp onsets by 2 to 3 hours. Explain.**
+Answer: the 3 h forecast of a rise that has not yet started at the gauge cannot be made from the gauge's history. The models only recognise a rise once it begins, so a 3 h forecast follows the observation roughly 2 to 3 h late (measured: median lag 2.0 to 2.5 h, see Q21b) and only partly catches up near the peak. It is an information limit, not a tuning problem.
+
+**Q21b. How late exactly, and does 72 h of history change the response?**
+Hint: lag versus lead, and what counts as anticipation.
+Answer: measured on the 18 events (`reports/PHASE1E_ONSET_TIMING.md`), a 3 h forecast shows a level a median of 2.5 h (10% of the rise), 2.25 h (50%) and 2.0 h (90%) after the river reached it for the 24 h GRU (persistence 3.0 h; earlier I said "about 3 h" from a visual look). In none of the 18 events did any model issue a forecast showing half of the rise before the river began to rise; the first such forecast came a median of about 2 h after the onset. The 72 h GRU is no different: same-sign lead differences in at most 6 of 18 events (the rule needed 12), equal numbers of pre-onset flags (13 of 18 at 3 h for both windows, but the damped trend flags 8, so the flag mostly means reacting to the first uptick). So the longer window does not change response behaviour; the models react to a rise in progress and extrapolate it. Post-hoc, descriptive, 18 events.
 
 **Q21a. Did giving the GRU 72 hours of history instead of 24 hours help?**
 Hint: what did you decide beforehand, and what do the seeds say?

@@ -1,0 +1,9 @@
+site,gauge,drainage_sqmi,river_km_above_08167500,"events_with_consistent_two_timings (stored v2, 20 events)",median_first_rise_lead_h,min_first_rise_lead_h,max_first_rise_lead_h,implied_speed_m_per_s_from_median,drainage_share_of_target_pct (=area/1315),area_below_gauge_sqmi (=1315-area),travel_h_at_2_m_per_s (=km/(2*3.6)),travel_h_at_3_m_per_s (=km/(3*3.6))
+08167200,Bergheim,1103.0,52.3,4,4.416666666666666,0.75,8.25,3.28,83.9,212.0,7.3,4.8
+08167000,Comfort,839.0,101.6,9,13.0,0.0,16.25,2.17,63.8,476.0,14.1,9.4
+08166250,Center Point,553.0,130.0,11,2.75,-12.5,21.5,13.14,42.1,762.0,18.1,12.0
+08166200,Kerrville,510.0,140.2,7,15.75,-9.5,20.5,2.47,38.8,805.0,19.5,13.0
+08166140,Kerrville abv Bear,494.0,144.0,8,9.0,-8.75,22.5,4.44,37.6,821.0,20.0,13.3
+08165500,Hunt,288.0,157.4,8,14.25,-32.5,23.5,3.06,21.9,1027.0,21.9,14.6
+08165300,N Fk Hunt,169.0,166.5,6,17.5,-31.25,25.75,2.64,12.9,1146.0,23.1,15.4
+08166000,Johnson Ck,114.0,,6,0.375,-7.5,22.75,,8.7,1201.0,,

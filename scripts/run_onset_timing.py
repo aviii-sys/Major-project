@@ -249,6 +249,13 @@ def main() -> None:
     d7 = O7[O7.definition == "experimental_stage_10ft"].pivot_table(index=["horizon", "event_start", "peak_ft"], columns=["window_h"], values="lead_h", aggfunc=["median", "min", "max"]).reset_index()
     d7.columns = ["_".join(str(x) for x in c if str(x) != "").strip("_") for c in d7.columns]
     md(d7, "O7c_stage10_lead_per_event_seed_median_min_max")
+    d7d = []
+    for (defn, h, w), g in O7.groupby(["definition", "horizon", "window_h"]):
+        early = g[g.status == "early"]
+        d7d.append({"definition": defn, "horizon": h, "window_h": w, "events": g.event_start.nunique(), "early_hits_seed_mean": len(early) / 3, "late_seed_mean": int((g.status == "late").sum()) / 3,
+                    "misses_seed_mean": int((g.status == "miss").sum()) / 3, "not_evaluable_seed_mean": int((g.status == "not_evaluable").sum()) / 3,
+                    "median_lead_of_early_hits_h": float(early.lead_h.median()) if len(early) else np.nan, "max_lead_of_early_hits_h": float(early.lead_h.max()) if len(early) else np.nan})
+    md(pd.DataFrame(d7d), "O7d_fixed_rule_lead_summary")
 
     # ---- figures
     make_figures(ctx, FISS, ev, O0, O1, O2, ant, variants)

@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Historical replay of out-of-fold forecasts: Guadalupe River at Spring Branch</title>
+<style>
+:root {
+  color-scheme: light;
+  --bg:#fcfcfb; --card:#ffffff; --ink:#0b0b0b; --ink2:#52514e; --muted:#7a7974; --grid:#e6e5e1; --border:#dcdad4;
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --ref:#8d8c88;
+  --banner-bg:#fff3d1; --banner-ink:#4a3200; --banner-border:#e0b84a; --band:rgba(42,120,214,.14); --win:rgba(120,120,110,.10);
+  --miss:rgba(120,120,110,.28); --prov:rgba(235,104,52,.35); --focus:#2a78d6;
+}
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) {
+    color-scheme: dark;
+    --bg:#1a1a19; --card:#232321; --ink:#f0efec; --ink2:#c3c2b7; --muted:#9a9890; --grid:#34332f; --border:#44433e;
+    --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --ref:#9a9890;
+    --banner-bg:#3b2f10; --banner-ink:#ffe9a8; --banner-border:#8a6d1f; --band:rgba(57,135,229,.22); --win:rgba(200,200,190,.08);
+    --miss:rgba(200,200,190,.25); --prov:rgba(217,89,38,.45); --focus:#7ab2f5;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg:#1a1a19; --card:#232321; --ink:#f0efec; --ink2:#c3c2b7; --muted:#9a9890; --grid:#34332f; --border:#44433e;
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --ref:#9a9890;
+  --banner-bg:#3b2f10; --banner-ink:#ffe9a8; --banner-border:#8a6d1f; --band:rgba(57,135,229,.22); --win:rgba(200,200,190,.08);
+  --miss:rgba(200,200,190,.25); --prov:rgba(217,89,38,.45); --focus:#7ab2f5;
+}
+* { box-sizing: border-box; }
+html, body { margin:0; background:var(--bg); color:var(--ink); font:14px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+.wrap { max-width:1180px; margin:0 auto; padding:0 16px 40px; }
+header { padding:16px 0 4px; display:flex; gap:12px; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; }
+h1 { font-size:20px; margin:0; line-height:1.25; }
+h1 small { display:block; font-size:13px; font-weight:400; color:var(--ink2); margin-top:2px; }
+h2 { font-size:15px; margin:0 0 8px; }
+h3 { font-size:13px; margin:0 0 6px; color:var(--ink2); font-weight:600; }
+.banner { margin:10px 0 12px; padding:10px 14px; border:2px solid var(--banner-border); background:var(--banner-bg); color:var(--banner-ink); border-radius:8px; font-weight:600; font-size:14px; }
+.banner span { font-weight:400; display:block; font-size:12.5px; margin-top:3px; }
+button, select, input { font:inherit; color:inherit; }
+button, select { background:var(--card); border:1px solid var(--border); border-radius:6px; padding:5px 10px; cursor:pointer; }
+button:hover, select:hover { border-color:var(--ink2); }
+button:focus-visible, select:focus-visible, input:focus-visible, summary:focus-visible, .tab:focus-visible { outline:2px solid var(--focus); outline-offset:2px; }
+.tabs { display:flex; gap:4px; border-bottom:1px solid var(--border); margin-bottom:12px; }
+.tab { background:none; border:none; border-bottom:3px solid transparent; border-radius:0; padding:8px 12px; font-weight:600; color:var(--ink2); cursor:pointer; }
+.tab[aria-selected="true"] { color:var(--ink); border-bottom-color:var(--s1); }
+.panel[hidden] { display:none; }
+.controls { display:flex; flex-wrap:wrap; gap:10px 18px; align-items:flex-end; margin-bottom:10px; }
+.ctl { display:flex; flex-direction:column; gap:3px; }
+.ctl > label, .ctl > .lab { font-size:12px; color:var(--ink2); font-weight:600; }
+.seg { display:inline-flex; border:1px solid var(--border); border-radius:6px; overflow:hidden; }
+.seg label { padding:5px 10px; cursor:pointer; border-right:1px solid var(--border); background:var(--card); font-size:13px; }
+.seg label:last-child { border-right:none; }
+.seg input { position:absolute; opacity:0; pointer-events:none; }
+.seg input:checked + span { font-weight:700; }
+.seg label:has(input:checked) { background:var(--ink); color:var(--bg); }
+.seg label:has(input:focus-visible) { outline:2px solid var(--focus); outline-offset:-2px; }
+.chips { display:flex; flex-wrap:wrap; gap:6px 14px; margin:6px 0 4px; }
+.chip { display:inline-flex; align-items:center; gap:6px; font-size:13px; cursor:pointer; }
+.chip svg { width:34px; height:10px; }
+.note { font-size:12px; color:var(--ink2); margin:2px 0 8px; }
+.cards { display:grid; grid-template-columns:repeat(auto-fit, minmax(190px, 1fr)); gap:8px; margin:8px 0 12px; }
+.card { background:var(--card); border:1px solid var(--border); border-radius:8px; padding:8px 10px; }
+.card .k { font-size:11.5px; color:var(--ink2); text-transform:uppercase; letter-spacing:.03em; }
+.card .v { font-size:15px; font-weight:650; }
+.card .s { font-size:12px; color:var(--ink2); }
+.chartwrap { position:relative; background:var(--card); border:1px solid var(--border); border-radius:8px; padding:6px 4px 2px; }
+svg.chart { width:100%; height:auto; display:block; touch-action:pan-y; }
+svg text { fill:var(--ink2); font:11px system-ui, sans-serif; }
+svg .lblstrong { fill:var(--ink); font-weight:600; }
+svg .grid { stroke:var(--grid); stroke-width:1; }
+svg .axis { stroke:var(--muted); stroke-width:1; }
+.tip { position:absolute; pointer-events:none; background:var(--card); color:var(--ink); border:1px solid var(--border); border-radius:6px; padding:6px 9px; font-size:12px; box-shadow:0 2px 8px rgba(0,0,0,.18); max-width:320px; z-index:5; }
+.tip b { font-weight:650; }
+.tip .row { display:flex; justify-content:space-between; gap:14px; }
+.tip .sw { display:inline-block; width:14px; height:3px; margin-right:5px; vertical-align:middle; }
+.grid2 { display:grid; grid-template-columns:repeat(auto-fit, minmax(500px, 1fr)); gap:12px; margin-top:12px; }
+.box { background:var(--card); border:1px solid var(--border); border-radius:8px; padding:10px 12px; overflow-x:auto; }
+table { border-collapse:collapse; width:100%; font-size:12.5px; }
+th, td { text-align:right; padding:4px 6px; border-bottom:1px solid var(--grid); white-space:nowrap; }
+th { white-space:normal; vertical-align:bottom; }
+th:first-child, td:first-child { text-align:left; }
+th { font-weight:600; color:var(--ink2); background:transparent; }
+tr.best td { font-weight:700; }
+tr.click { cursor:pointer; }
+tr.click:hover td { background:var(--win); }
+td.na { color:var(--muted); }
+.sw { display:inline-block; width:14px; height:3px; margin-right:6px; vertical-align:middle; }
+details { margin-top:12px; }
+summary { cursor:pointer; font-weight:600; }
+.scroll { max-height:340px; overflow:auto; }
+footer { margin-top:18px; font-size:12px; color:var(--ink2); }
+code { font-family:ui-monospace, Menlo, monospace; font-size:12px; }
+ul.tight { margin:4px 0 8px; padding-left:18px; } ul.tight li { margin:2px 0; }
+@media (max-width:640px) { .grid2 { grid-template-columns:1fr; } h1 { font-size:17px; } .ctl:first-child { width:100%; } #evSel { flex:1; min-width:0; } .ctl { min-width:0; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Historical replay of out-of-fold forecasts<small>Guadalupe River near Spring Branch, TX (USGS 08167500). Stage forecasts 15 min to 3 h ahead, evaluated retrospectively on held-out storms.</small></h1>
+  <button id="themeBtn" type="button" aria-label="Toggle light and dark theme">Theme</button>
+</header>
+<div class="banner" role="note">Exploratory retrospective historical replay using saved out-of-fold predictions. This is not a live forecasting system or an operational flood-warning service.<span>Every curve is a saved forecast; nothing is retrained, smoothed or interpolated. Where a forecast does not exist the line is left blank. Times are UTC.</span></div>
+
+<div class="tabs" role="tablist" aria-label="Views">
+  <button class="tab" role="tab" id="tab-replay" aria-selected="true" aria-controls="panel-replay" data-tab="replay">Event replay</button>
+  <button class="tab" role="tab" id="tab-all" aria-selected="false" aria-controls="panel-all" data-tab="all">All events</button>
+  <button class="tab" role="tab" id="tab-about" aria-selected="false" aria-controls="panel-about" data-tab="about">About and data</button>
+</div>
+
+<section id="panel-replay" class="panel" role="tabpanel" aria-labelledby="tab-replay">
+  <div class="controls">
+    <div class="ctl"><label for="evSel">Historical flood event (stage of at least 10 ft)</label>
+      <div style="display:flex;gap:6px"><button id="prevBtn" type="button" aria-label="Previous event">&#9664;</button><select id="evSel"></select><button id="nextBtn" type="button" aria-label="Next event">&#9654;</button></div></div>
+    <div class="ctl"><span class="lab" id="hLab">Forecast horizon</span><div class="seg" role="radiogroup" aria-labelledby="hLab" id="hSeg"></div></div>
+    <div class="ctl"><span class="lab" id="axLab">Draw each forecast at</span><div class="seg" role="radiogroup" aria-labelledby="axLab" id="axSeg"></div></div>
+    <div class="ctl"><span class="lab">Zoom</span><div style="display:flex;gap:6px;flex-wrap:wrap"><button type="button" data-zoom="all">Whole window</button><button type="button" data-zoom="rise">Rise</button><button type="button" data-zoom="peak">Around the peak</button></div></div>
+  </div>
+  <div class="chips" id="chips" role="group" aria-label="Models shown"></div>
+  <div class="chips" id="opts" role="group" aria-label="Display options"></div>
+  <div class="note" id="modelNote"></div>
+
+  <div class="cards" id="cards"></div>
+
+  <div class="chartwrap" id="chartwrap"><svg class="chart" id="chart" role="img" aria-label="Observed stage and forecasts for the selected event"></svg><div class="tip" id="tip" hidden></div></div>
+  <div class="note" id="chartNote"></div>
+
+  <div class="grid2">
+    <div class="box"><h2 id="errTitle"></h2><div id="errTable"></div></div>
+    <div class="box"><h2 id="peakTitle"></h2><div id="peakTable"></div></div>
+    <div class="box"><h2>Flood-window RMSE by horizon (ft), this event</h2><div id="matrixTable"></div></div>
+    <div class="box"><h2>Data quality for this event</h2><div id="qualityBox"></div></div>
+  </div>
+  <div class="box" style="margin-top:12px"><h2 id="detTitle"></h2><div id="detTable"></div></div>
+  <details id="dataDetails"><summary>Data table for the plotted series (accessible alternative to the chart)</summary><div class="scroll" id="dataTable"></div></details>
+</section>
+
+<section id="panel-all" class="panel" role="tabpanel" aria-labelledby="tab-all" hidden>
+  <div class="controls">
+    <div class="ctl"><span class="lab" id="hLab2">Forecast horizon</span><div class="seg" role="radiogroup" aria-labelledby="hLab2" id="hSeg2"></div></div>
+    <div class="ctl"><span class="lab" id="mLab">Metric</span><div class="seg" role="radiogroup" aria-labelledby="mLab" id="mSeg"></div></div>
+  </div>
+  <div class="note" id="allNote"></div>
+  <div class="box"><div id="allTable"></div></div>
+</section>
+
+<section id="panel-about" class="panel" role="tabpanel" aria-labelledby="tab-about" hidden>
+  <div class="box" id="about"></div>
+</section>
+
+<footer>Exploratory retrospective historical replay using saved out-of-fold predictions. This is not a live forecasting system or an operational flood-warning service. Research prototype, not for decision making.</footer>
+</div>
+
+<script id="replay-data" type="application/json">__REPLAY_DATA__</script>
+<script>
+"use strict";
+const DATA = JSON.parse(document.getElementById('replay-data').textContent);
+const HZ = DATA.meta.horizons, MODELS = DATA.meta.models, EVENTS = DATA.events;
+const K = {'15m':1, '30m':2, '1h':4, '3h':12};
+const HLAB = {'15m':'15 min', '30m':'30 min', '1h':'1 hour', '3h':'3 hours'};
+const STYLE = {gru:['var(--s1)',''], lstm:['var(--s2)','6 3'], ridge_H:['var(--s3)','2 2'], trend_v2:['var(--s4)','8 3 2 3'], persistence:['var(--ref)','1 3'], xgb_H:['var(--s5)','6 2 1 2'], gru72_s0:['var(--s1)','8 5']};
+const STATUS = {early:'early hit', late:'late', miss:'miss', not_evaluable:'not evaluable'};
+const $ = s => document.querySelector(s);
+const state = {ev:0, h:'3h', axis:'target', models:new Set(MODELS.filter(m => m.default).map(m => m.id)), zoom:null, zk:'rise', band:true, win:true, marks:true, thr:true, peaks:true, tab:'replay', metric:'rmse'};
+
+// ---------------------------------------------------------------- helpers
+const pad = n => String(n).padStart(2, '0');
+function fmtT(ms) { const d = new Date(ms); return `${d.getUTCFullYear()}-${pad(d.getUTCMonth()+1)}-${pad(d.getUTCDate())} ${pad(d.getUTCHours())}:${pad(d.getUTCMinutes())}`; }
+function fmtTick(ms) { const d = new Date(ms); return `${pad(d.getUTCMonth()+1)}-${pad(d.getUTCDate())} ${pad(d.getUTCHours())}:${pad(d.getUTCMinutes())}`; }
+const num = (v, d) => (v === null || v === undefined || !isFinite(v)) ? '—' : v.toFixed(d === undefined ? (Math.abs(v) < 10 ? 3 : 2) : d);
+const sgn = (v, d) => (v === null || v === undefined || !isFinite(v)) ? '—' : (v > 0 ? '+' : v < 0 ? '−' : '') + Math.abs(v).toFixed(d === undefined ? 2 : d);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;'}[c]));
+const ev = () => EVENTS[state.ev];
+const T = i => ev().t0_ms + i * ev().step_ms;
+const modelById = id => MODELS.find(m => m.id === id);
+function swatch(id) { const [c, d] = STYLE[id]; return `<svg viewBox="0 0 34 10" aria-hidden="true"><line x1="1" x2="33" y1="5" y2="5" stroke="${c}" stroke-width="2.6" stroke-dasharray="${d}" stroke-linecap="round"/></svg>`; }
+function niceTicks(lo, hi, count) {
+  const span = hi - lo || 1, raw = span / count, p = Math.pow(10, Math.floor(Math.log10(raw))), f = raw / p;
+  const step = (f < 1.5 ? 1 : f < 3 ? 2 : f < 7 ? 5 : 10) * p, out = [];
+  for (let v = Math.ceil(lo / step) * step; v <= hi + 1e-9; v += step) out.push(Math.abs(v) < 1e-9 ? 0 : +v.toFixed(6));
+  return out;
+}
+function timeTicks(x0, x1) {
+  const h = (x1 - x0) / 3600000, cand = [1, 2, 3, 6, 12, 24, 48, 96], target = 8;
+  const stepH = cand.find(c => h / c <= target) || 96, step = stepH * 3600000, out = [];
+  for (let t = Math.ceil(x0 / step) * step; t <= x1; t += step) out.push(t);
+  return out;
+}
+function pathOf(pts) {  // line broken at gaps: null points are never bridged
+  let d = '', pen = false;
+  for (const p of pts) { if (!p) { pen = false; continue; } d += (pen ? 'L' : 'M') + p[0].toFixed(1) + ',' + p[1].toFixed(1); pen = true; }
+  return d;
+}
+function runsOf(flags) { const out = []; let a = -1; flags.forEach((f, i) => { if (f && a < 0) a = i; if (!f && a >= 0) { out.push([a, i - 1]); a = -1; } }); if (a >= 0) out.push([a, flags.length - 1]); return out; }
+
+// ---------------------------------------------------------------- state <-> URL hash
+function writeHash() {
+  const p = new URLSearchParams({tab:state.tab, e:ev().id, h:state.h, axis:state.axis, m:[...state.models].join(','), metric:state.metric});
+  p.set('zk', state.zk); if (state.zk === 'custom' && state.zoom) p.set('z', Math.round(state.zoom[0]) + '-' + Math.round(state.zoom[1]));
+  try { history.replaceState(null, '', '#' + p.toString()); } catch (e) { /* file:// in some browsers */ }
+}
+function readHash() {
+  const raw = location.hash.replace(/^#/, ''); if (!raw) return;
+  const p = new URLSearchParams(raw);
+  if (p.get('tab') && ['replay', 'all', 'about'].includes(p.get('tab'))) state.tab = p.get('tab');
+  const e = EVENTS.findIndex(x => x.id === p.get('e')); if (e >= 0) state.ev = e;
+  if (HZ.includes(p.get('h'))) state.h = p.get('h');
+  if (['target', 'issue'].includes(p.get('axis'))) state.axis = p.get('axis');
+  if (p.get('m')) { const ms = p.get('m').split(',').filter(x => modelById(x)); if (ms.length) state.models = new Set(ms); }
+  if (['rmse', 'mae', 'ratio'].includes(p.get('metric'))) state.metric = p.get('metric');
+  if (['rise', 'all', 'peak', 'custom'].includes(p.get('zk'))) state.zk = p.get('zk');
+  if (state.zk === 'custom') { const z = (p.get('z') || '').split('-').map(Number); if (z.length === 2 && z[0] < z[1]) state.zoom = z; else state.zk = 'rise'; }
+}
+
+// ---------------------------------------------------------------- controls
+function buildSeg(el, name, items, getter, setter) {
+  el.innerHTML = items.map(([v, lab]) => `<label><input type="radio" name="${name}" value="${v}" ${getter() === v ? 'checked' : ''}><span>${lab}</span></label>`).join('');
+  el.querySelectorAll('input').forEach(i => i.addEventListener('change', () => setter(i.value)));
+}
+function buildControls() {
+  $('#evSel').innerHTML = EVENTS.map((e, i) => `<option value="${i}">${e.start.slice(0, 10)} · ${e.peak_ft.toFixed(1)} ft${e.official_ge_25ft ? ' · official (≥25 ft)' : ''} · fold ${e.fold}${e.provisional ? ' · provisional data' : ''}</option>`).join('');
+  $('#evSel').addEventListener('change', e => { state.ev = +e.target.value; if (state.zk === 'custom') state.zk = 'rise'; render(); });
+  $('#prevBtn').addEventListener('click', () => { state.ev = (state.ev + EVENTS.length - 1) % EVENTS.length; if (state.zk === 'custom') state.zk = 'rise'; render(); });
+  $('#nextBtn').addEventListener('click', () => { state.ev = (state.ev + 1) % EVENTS.length; if (state.zk === 'custom') state.zk = 'rise'; render(); });
+  const hs = HZ.map(h => [h, HLAB[h]]);
+  const setH = v => { state.h = v; render(); };
+  buildSeg($('#hSeg'), 'h', hs, () => state.h, setH); buildSeg($('#hSeg2'), 'h2', hs, () => state.h, setH);
+  buildSeg($('#axSeg'), 'axis', [['target', 'target time'], ['issue', 'issue time']], () => state.axis, v => { state.axis = v; if (state.zk === 'custom') state.zk = 'rise'; render(); });
+  buildSeg($('#mSeg'), 'metric', [['rmse', 'RMSE (ft)'], ['mae', 'MAE (ft)'], ['ratio', 'Peak ratio']], () => state.metric, v => { state.metric = v; render(); });
+  $('#chips').innerHTML = MODELS.map(m => `<label class="chip" title="${esc(m.note)}"><input type="checkbox" data-m="${m.id}" ${state.models.has(m.id) ? 'checked' : ''}>${swatch(m.id)}<span>${esc(m.label)}</span></label>`).join('');
+  $('#chips').querySelectorAll('input').forEach(i => i.addEventListener('change', () => { i.checked ? state.models.add(i.dataset.m) : state.models.delete(i.dataset.m); render(); }));
+  const opts = [['band', 'GRU 24 h range over 3 seeds'], ['win', 'Scored flood window'], ['marks', 'Rise onset and observed peak'], ['thr', '10 ft event threshold'], ['peaks', 'Highest forecast value']];
+  $('#opts').innerHTML = opts.map(([k, lab]) => `<label class="chip"><input type="checkbox" data-o="${k}" ${state[k] ? 'checked' : ''}><span>${lab}</span></label>`).join('');
+  $('#opts').querySelectorAll('input').forEach(i => i.addEventListener('change', () => { state[i.dataset.o] = i.checked; render(); }));
+  document.querySelectorAll('[data-zoom]').forEach(b => b.addEventListener('click', () => { state.zk = b.dataset.zoom; render(); }));
+  document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () => { state.tab = t.dataset.tab; render(); }));
+  $('#themeBtn').addEventListener('click', () => {
+    const cur = document.documentElement.getAttribute('data-theme');
+    const dark = cur ? cur === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+    const next = dark ? 'light' : 'dark'; document.documentElement.setAttribute('data-theme', next);
+    try { localStorage.setItem('replay-theme', next); } catch (e) { /* storage may be blocked */ }
+    render();
+  });
+  try { const t = localStorage.getItem('replay-theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) { /* ignore */ }
+}
+function syncControls() {
+  $('#evSel').value = String(state.ev);
+  document.querySelectorAll('#hSeg input, #hSeg2 input').forEach(i => { i.checked = i.value === state.h; });
+  document.querySelectorAll('#axSeg input').forEach(i => { i.checked = i.value === state.axis; });
+  document.querySelectorAll('#mSeg input').forEach(i => { i.checked = i.value === state.metric; });
+  document.querySelectorAll('#chips input').forEach(i => { i.checked = state.models.has(i.dataset.m); });
+  document.querySelectorAll('#opts input').forEach(i => { i.checked = !!state[i.dataset.o]; });
+  document.querySelectorAll('[data-zoom]').forEach(b => { b.style.fontWeight = b.dataset.zoom === state.zk ? '700' : '400'; b.style.borderColor = b.dataset.zoom === state.zk ? 'var(--ink)' : ''; });
+  document.querySelectorAll('.tab').forEach(t => { t.setAttribute('aria-selected', t.dataset.tab === state.tab ? 'true' : 'false'); });
+  for (const t of ['replay', 'all', 'about']) $('#panel-' + t).hidden = state.tab !== t;
+}
+function fullRange() { const e = ev(), k = K[state.h] * e.step_ms; return state.axis === 'target' ? [T(0), T(e.n - 1) + k] : [T(0), T(e.n - 1)]; }
+function zoomPreset(kind) {
+  const e = ev(), k = K[state.h] * e.step_ms, sh = state.axis === 'target' ? k : 0;
+  if (kind === 'all') state.zoom = null;
+  else if (kind === 'rise') state.zoom = [T(e.onset_rel) - 4 * 3600000, T(e.peak_rel) + sh + 6 * 3600000];
+  else state.zoom = [T(e.peak_rel) - 6 * 3600000, T(e.peak_rel) + 6 * 3600000 + sh];
+}
+
+// ---------------------------------------------------------------- main chart
+let LAYOUT = null;
+function drawChart() {
+  const e = ev(), h = state.h, k = K[h], step = e.step_ms, shift = state.axis === 'target' ? k * step : 0;
+  const svg = $('#chart'), W = Math.max(320, Math.round($('#chartwrap').clientWidth - 8)), mobile = W < 560;
+  const ml = mobile ? 44 : 56, mr = 14, mT = 12, mH = mobile ? 250 : 320, stripH = 22, gap = 28, eH = mobile ? 130 : 160, bottom = 40;
+  const H = mT + mH + stripH + gap + eH + bottom, yE0 = mT + mH + stripH + gap;
+  const [fx0, fx1] = fullRange(), [x0, x1] = state.zoom || [fx0, fx1];
+  const X = ms => ml + (ms - x0) / (x1 - x0) * (W - ml - mr);
+  const sel = [...state.models].filter(id => modelById(id));
+  // series (target or issue aligned), null = no forecast
+  const obsPts = e.obs.map((v, i) => v === null ? null : [T(i), v]);
+  const fut = e.obs.map((v, i) => (i + k < e.n && e.obs[i + k] !== null) ? e.obs[i + k] : null);
+  const fcS = {};
+  sel.forEach(id => { fcS[id] = e.fc[id][h].map((v, i) => v === null ? null : [T(i) + shift, v]); });
+  const inR = t => t >= x0 && t <= x1;
+  const ys = [];
+  obsPts.forEach(p => { if (p && inR(p[0])) ys.push(p[1]); });
+  if (state.axis === 'issue') fut.forEach((v, i) => { if (v !== null && inR(T(i))) ys.push(v); });
+  sel.forEach(id => fcS[id].forEach(p => { if (p && inR(p[0])) ys.push(p[1]); }));
+  const bandOn = state.band && sel.includes('gru'), B = e.band_gru24[h];
+  if (bandOn) B.lo.forEach((v, i) => { if (v !== null && inR(T(i) + shift)) ys.push(v, B.hi[i]); });
+  let y0 = Math.min(...ys, 1e9), y1 = Math.max(...ys, -1e9); if (!isFinite(y0)) { y0 = 0; y1 = 1; }
+  const padY = (y1 - y0) * 0.06 || 0.5; y0 -= padY; y1 += padY;
+  const Y = v => mT + mH - (v - y0) / (y1 - y0) * mH;
+  // errors: forecast minus the stage observed at the target time (aligned at target or issue time)
+  const errS = {}; let emax = 0.25;
+  sel.forEach(id => { errS[id] = e.fc[id][h].map((v, i) => (v === null || i + k >= e.n || e.obs[i + k] === null) ? null : [T(i) + shift, v - e.obs[i + k]]); errS[id].forEach(p => { if (p && inR(p[0])) emax = Math.max(emax, Math.abs(p[1])); }); });
+  emax *= 1.08;
+  const YE = v => yE0 + eH / 2 - v / emax * (eH / 2);
+  LAYOUT = {W, H, ml, mr, x0, x1, X, mT, mH, yE0, eH, shift, k, step, sel, Y, YE, y0, y1, emax, errS, fcS, fut, bandOn};
+  const g = [];
+  g.push(`<defs><pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="none"/><line x1="0" y1="0" x2="0" y2="6" stroke="var(--muted)" stroke-width="2"/></pattern><clipPath id="clipM"><rect x="${ml}" y="${mT}" width="${W - ml - mr}" height="${mH}"/></clipPath><clipPath id="clipE"><rect x="${ml}" y="${yE0}" width="${W - ml - mr}" height="${eH}"/></clipPath></defs>`);
+  // grids
+  niceTicks(y0, y1, 6).forEach(v => g.push(`<line class="grid" x1="${ml}" x2="${W - mr}" y1="${Y(v)}" y2="${Y(v)}"/><text x="${ml - 6}" y="${Y(v) + 4}" text-anchor="end">${v}</text>`));
+  niceTicks(-emax, emax, 4).forEach(v => g.push(`<line class="grid" x1="${ml}" x2="${W - mr}" y1="${YE(v)}" y2="${YE(v)}"/><text x="${ml - 6}" y="${YE(v) + 4}" text-anchor="end">${v}</text>`));
+  const tt = timeTicks(x0, x1);
+  tt.forEach(t => g.push(`<line class="grid" x1="${X(t)}" x2="${X(t)}" y1="${mT}" y2="${mT + mH}"/><line class="grid" x1="${X(t)}" x2="${X(t)}" y1="${yE0}" y2="${yE0 + eH}"/><text x="${X(t)}" y="${yE0 + eH + 15}" text-anchor="middle">${fmtTick(t)}</text>`));
+  g.push(`<text x="${ml}" y="${H - 6}">UTC; ${state.axis === 'target' ? 'each forecast is drawn at the time it is about (issue time + horizon)' : 'each forecast is drawn at the time it was issued'}</text>`);
+  g.push(`<text x="12" y="${mT + mH / 2}" text-anchor="middle" transform="rotate(-90 12 ${mT + mH / 2})">stage (ft)</text>`);
+  g.push(`<text x="12" y="${yE0 + eH / 2}" text-anchor="middle" transform="rotate(-90 12 ${yE0 + eH / 2})">error (ft)</text>`);
+  g.push(`<text class="lblstrong" x="${ml + 4}" y="${yE0 - 8}">Forecast error: forecast minus stage observed at the target time (above zero = forecast too high)</text>`);
+  // flood window shading (issue times, shown where the forecasts are drawn)
+  if (state.win) {
+    const a = X(T(e.window_rel[0]) + shift), b = X(T(e.window_rel[1]) + shift);
+    [[mT, mH], [yE0, eH]].forEach(([yy, hh]) => g.push(`<rect x="${Math.max(ml, a)}" y="${yy}" width="${Math.max(0, Math.min(W - mr, b) - Math.max(ml, a))}" height="${hh}" fill="var(--win)"/>`));
+    g.push(`<text x="${Math.max(ml, a) + 4}" y="${yE0 + 12}">scored flood window</text>`);
+  }
+  // missing observations (gaps are not filled)
+  e.obs_missing_runs.forEach(([a, b]) => g.push(`<rect x="${X(T(a) - step / 2)}" y="${mT}" width="${Math.max(2, X(T(b) + step / 2) - X(T(a) - step / 2))}" height="${mH}" fill="var(--miss)"><title>observed stage missing ${fmtT(T(a))} to ${fmtT(T(b))}</title></rect>`));
+  if (state.thr) { const yy = Y(10); if (yy > mT && yy < mT + mH) g.push(`<line x1="${ml}" x2="${W - mr}" y1="${yy}" y2="${yy}" stroke="var(--muted)" stroke-dasharray="4 4"/><text x="${W - mr - 4}" y="${yy - 4}" text-anchor="end">10 ft (event definition, experimental)</text>`); }
+  g.push('<g clip-path="url(#clipM)">');
+  if (bandOn) {
+    for (const [a, b] of runsOf(B.lo.map(v => v !== null))) {
+      const up = [], dn = []; for (let i = a; i <= b; i++) { up.push(`${X(T(i) + shift).toFixed(1)},${Y(B.hi[i]).toFixed(1)}`); dn.unshift(`${X(T(i) + shift).toFixed(1)},${Y(B.lo[i]).toFixed(1)}`); }
+      g.push(`<polygon points="${up.concat(dn).join(' ')}" fill="var(--band)"/>`);
+    }
+  }
+  if (state.axis === 'issue') g.push(`<path d="${pathOf(fut.map((v, i) => v === null ? null : [X(T(i)), Y(v)]))}" fill="none" stroke="var(--ink)" stroke-width="1.4" stroke-dasharray="2 3" opacity=".75"/>`);
+  g.push(`<path d="${pathOf(obsPts.map(p => p && [X(p[0]), Y(p[1])]))}" fill="none" stroke="var(--ink)" stroke-width="2.4" stroke-linejoin="round"/>`);
+  sel.forEach(id => g.push(`<path d="${pathOf(fcS[id].map(p => p && [X(p[0]), Y(p[1])]))}" fill="none" stroke="${STYLE[id][0]}" stroke-width="1.9" stroke-dasharray="${STYLE[id][1]}" stroke-linejoin="round"/>`));
+  g.push('</g>');
+  g.push('<g clip-path="url(#clipE)">');
+  g.push(`<line x1="${ml}" x2="${W - mr}" y1="${YE(0)}" y2="${YE(0)}" stroke="var(--muted)"/>`);
+  sel.forEach(id => g.push(`<path d="${pathOf(errS[id].map(p => p && [X(p[0]), YE(p[1])]))}" fill="none" stroke="${STYLE[id][0]}" stroke-width="1.6" stroke-dasharray="${STYLE[id][1]}"/>`));
+  g.push('</g>');
+  // markers: rise onset, observed peak, highest forecast values
+  if (state.marks) {
+    const xo = X(T(e.onset_rel)), xp = X(T(e.peak_rel)), yp = Y(e.peak_ft);
+    if (xo >= ml && xo <= W - mr) g.push(`<line x1="${xo}" x2="${xo}" y1="${mT}" y2="${mT + mH}" stroke="var(--ink2)" stroke-dasharray="5 3"/><text x="${xo + 4}" y="${mT + mH - 6}">rise onset</text>`);
+    if (xp >= ml && xp <= W - mr) g.push(`<path d="M${xp - 6},${yp - 12} L${xp + 6},${yp - 12} L${xp},${yp - 3} Z" fill="var(--ink)"/><text class="lblstrong" x="${xp}" y="${yp - 16}" text-anchor="middle">observed peak ${e.peak_ft.toFixed(2)} ft</text>`);
+  }
+  if (state.peaks) sel.forEach(id => {
+    const m = e.metrics[id][h]; if (m.fc_max_ft === null || m.fc_max_time_minus_peak_h === null) return;
+    const xm = X(T(e.peak_rel) + m.fc_max_time_minus_peak_h * 3600000 - (state.axis === 'issue' ? k * step : 0));
+    if (xm >= ml && xm <= W - mr) g.push(`<path d="M${xm},${Y(m.fc_max_ft) - 6} l5,6 l-5,6 l-5,-6 Z" fill="${STYLE[id][0]}" stroke="var(--card)" stroke-width="1.5"><title>${esc(modelById(id).short)}: highest ${h} forecast ${m.fc_max_ft.toFixed(2)} ft</title></path>`);
+  });
+  // strip: forecasts unavailable (any shown model) and provisional observations; not interpolated
+  const na = []; for (let i = 0; i < e.n; i++) na.push(sel.some(id => e.fc[id][h][i] === null));
+  runsOf(na).forEach(([a, b]) => g.push(`<rect x="${X(T(a) + shift - step / 2)}" y="${mT + mH + 3}" width="${Math.max(2, X(T(b) + shift + step / 2) - X(T(a) + shift - step / 2))}" height="8" fill="url(#hatch)" opacity=".8"><title>no forecast available ${fmtT(T(a))} to ${fmtT(T(b))} (issue time)</title></rect>`));
+  e.prov_runs.forEach(([a, b]) => g.push(`<rect x="${X(T(a) - step / 2)}" y="${mT + mH + 12}" width="${Math.max(2, X(T(b) + step / 2) - X(T(a) - step / 2))}" height="6" fill="var(--prov)"><title>USGS provisional stage data</title></rect>`));
+  g.push(`<text x="${ml}" y="${mT + mH + 20}" style="font-size:10px"></text>`);
+  g.push(`<g id="cross" style="display:none"><line id="cl" y1="${mT}" y2="${yE0 + eH}" stroke="var(--ink2)" stroke-width="1"/></g><g id="dots"></g><rect id="brush" y="${mT}" height="${yE0 + eH - mT}" fill="var(--s1)" opacity=".15" style="display:none"/>`);
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`); svg.innerHTML = g.join('');
+  const na2 = na.some(Boolean), anyMiss = e.obs_missing_runs.length > 0, anyProv = e.prov_runs.length > 0;
+  $('#chartNote').innerHTML = 'Hover or touch for values; drag to zoom, double-click to reset. ' + (na2 ? '<b>Hatched strip</b> = no forecast exists for at least one shown model at that issue time (not interpolated). ' : '') + (anyMiss ? '<b>Grey bands</b> = observed stage missing (line broken). ' : '') + (anyProv ? '<b>Orange strip</b> = provisional USGS data. ' : '') + 'Diamonds mark the highest forecast value of each shown model.';
+  svg.setAttribute('aria-label', `Stage observed and ${sel.length} forecast series for ${HLAB[h]} horizon, event ${e.start}`);
+}
+function nearestIndex(ms) { const e = ev(); return Math.max(0, Math.min(e.n - 1, Math.round((ms - LAYOUT.shift - e.t0_ms) / e.step_ms))); }
+function attachHover() {
+  const svg = $('#chart'), tip = $('#tip'), wrap = $('#chartwrap'); let drag = null;
+  const toMs = clientX => { const r = svg.getBoundingClientRect(), x = (clientX - r.left) / r.width * LAYOUT.W; return LAYOUT.x0 + (x - LAYOUT.ml) / (LAYOUT.W - LAYOUT.ml - LAYOUT.mr) * (LAYOUT.x1 - LAYOUT.x0); };
+  const toX = clientX => { const r = svg.getBoundingClientRect(); return (clientX - r.left) / r.width * LAYOUT.W; };
+  const hide = () => { tip.hidden = true; const c = $('#cross'); if (c) c.style.display = 'none'; const d = $('#dots'); if (d) d.innerHTML = ''; };
+  svg.onpointerdown = ev_ => { const x = toX(ev_.clientX); if (x < LAYOUT.ml || x > LAYOUT.W - LAYOUT.mr) return; drag = {x0: x, x: x}; svg.setPointerCapture(ev_.pointerId); };
+  svg.onpointermove = ev_ => {
+    const x = toX(ev_.clientX);
+    if (drag) { drag.x = x; const b = $('#brush'), a = Math.min(drag.x0, x), w = Math.abs(x - drag.x0); b.setAttribute('x', a); b.setAttribute('width', w); b.style.display = w > 3 ? '' : 'none'; hide(); return; }
+    if (x < LAYOUT.ml || x > LAYOUT.W - LAYOUT.mr) { hide(); return; }
+    const e = ev(), L = LAYOUT, i = nearestIndex(toMs(ev_.clientX)), xi = L.X(T(i) + L.shift);
+    $('#cross').style.display = ''; $('#cl').setAttribute('x1', xi); $('#cl').setAttribute('x2', xi);
+    const dots = [], k = L.k, tgt = i + k < e.n ? e.obs[i + k] : null;
+    const shown = state.axis === 'target' ? tgt : e.obs[i];
+    const rows = [`<div class="row"><span>${state.axis === 'target' ? 'Stage observed at the target time' : 'Stage observed at the issue time'}</span><b>${shown === null ? 'missing' : num(shown, 2) + ' ft'}</b></div>`];
+    if (state.axis === 'issue') rows.push(`<div class="row"><span>Stage observed at the target time</span><b>${tgt === null ? 'missing / after window' : num(tgt, 2) + ' ft'}</b></div>`);
+    if (shown !== null) dots.push(`<circle cx="${xi}" cy="${L.Y(shown)}" r="3.6" fill="var(--ink)"/>`);
+    L.sel.forEach(id => {
+      const v = e.fc[id][state.h][i], err = (v === null || tgt === null) ? null : v - tgt, ms = modelById(id);
+      rows.push(`<div class="row"><span><i class="sw" style="background:${STYLE[id][0]}"></i>${esc(ms.short)}</span><b>${v === null ? 'no forecast' : num(v, 2) + ' ft'}${err === null ? '' : ' (' + sgn(err, 2) + ')'}</b></div>`);
+      if (v !== null) dots.push(`<circle cx="${xi}" cy="${L.Y(v)}" r="3.4" fill="${STYLE[id][0]}"/>`);
+      if (err !== null) dots.push(`<circle cx="${xi}" cy="${L.YE(err)}" r="3" fill="${STYLE[id][0]}"/>`);
+    });
+    $('#dots').innerHTML = dots.join('');
+    tip.innerHTML = `<b>Target time ${fmtT(T(i) + k * e.step_ms)}</b><br><span style="color:var(--ink2)">issued ${fmtT(T(i))} (${HLAB[state.h]} earlier)</span>` + rows.join('') + (L.sel.length ? '<div style="color:var(--ink2);margin-top:3px">(error = forecast minus observed)</div>' : '');
+    tip.hidden = false;
+    const wr = wrap.getBoundingClientRect(), tx = ev_.clientX - wr.left + 14, ty = ev_.clientY - wr.top + 10;
+    tip.style.left = Math.max(4, Math.min(tx, wr.width - tip.offsetWidth - 4)) + 'px'; tip.style.top = Math.max(4, Math.min(ty, wr.height - tip.offsetHeight - 4)) + 'px';
+  };
+  svg.onpointerup = ev_ => { if (!drag) return; const x = toX(ev_.clientX), a = Math.min(drag.x0, x), b = Math.max(drag.x0, x); drag = null; $('#brush').style.display = 'none';
+    if (b - a > 10) { const f = px => LAYOUT.x0 + (px - LAYOUT.ml) / (LAYOUT.W - LAYOUT.ml - LAYOUT.mr) * (LAYOUT.x1 - LAYOUT.x0); state.zoom = [f(a), f(b)]; state.zk = 'custom'; render(); } };
+  svg.onpointerleave = () => { if (!drag) hide(); };
+  svg.ondblclick = () => { state.zk = 'all'; render(); };
+}
+
+// ---------------------------------------------------------------- tables
+function cardsHtml() {
+  const e = ev(), q = e.quality;
+  const off = e.official_events_inside.length ? e.official_events_inside.map(o => `${o.start.slice(0, 10)} (${o.peak_ft.toFixed(2)} ft)`).join('; ') : 'none at or above 25 ft';
+  const c = [
+    ['Event', `${e.start.slice(0, 10)}`, `first reaches 10 ft ${e.start.slice(11)} UTC; ends ${e.end.replace('T', ' ')}`],
+    ['Rise onset', e.onset.slice(11) + ' UTC', e.onset.slice(0, 10) + (((e.peak_rel - e.onset_rel) * 0.25) > 24 ? '; slow or multi-stage rise, onset ambiguous' : '')],
+    ['Observed peak', e.peak_ft.toFixed(2) + ' ft', e.peak_time.replace('T', ' ') + ' UTC'],
+    ['NWS action stage (25 ft)', off, 'official stage; all other thresholds here are experimental'],
+    ['Evaluation block', `fold ${e.fold}`, `models trained on data to ${e.fold_train_end.slice(0, 10)}; held out ${e.fold_test_start.slice(0, 10)} to ${e.fold_test_end.slice(0, 10)}`],
+    ['Storm cluster', `#${e.storm_cluster}`, `${e.events_in_cluster} of the 18 events come from this storm` + (e.provisional ? '; includes provisional USGS data' : '')],
+  ];
+  return c.map(([k, v, s]) => `<div class="card"><div class="k">${esc(k)}</div><div class="v">${esc(v)}</div><div class="s">${esc(s)}</div></div>`).join('');
+}
+function bestRow(vals) { let b = Infinity, bi = -1; vals.forEach((v, i) => { if (v !== null && v < b) { b = v; bi = i; } }); return bi; }
+function errTable() {
+  const e = ev(), h = state.h;
+  $('#errTitle').textContent = `Forecast error in the scored flood window, ${HLAB[h]} horizon`;
+  const rows = MODELS.map(m => ({m, x: e.metrics[m.id][h]}));
+  const bi = bestRow(rows.map(r => r.x.rmse));
+  $('#errTable').innerHTML = `<table><thead><tr><th>Model</th><th>RMSE (ft)</th><th>MAE (ft)</th><th>Bias (ft)</th><th>Largest error (ft)</th><th>Scored issue times</th></tr></thead><tbody>` + rows.map((r, i) =>
+    `<tr class="${i === bi ? 'best' : ''}"><td><i class="sw" style="background:${STYLE[r.m.id][0]}"></i>${esc(r.m.short)}</td><td>${num(r.x.rmse)}</td><td>${num(r.x.mae)}</td><td>${sgn(r.x.bias, 3)}</td><td>${num(r.x.max_abs_err, 2)}</td><td>${r.x.rows_scored} of ${r.x.rows_in_window}</td></tr>`).join('') +
+    `</tbody></table><div class="note">Scored issue times run from 6 h before the rise onset to the observed peak; only times with a saved forecast and an observed target are scored (nothing is filled in). Bold = lowest RMSE for this event, one training seed for GRU and LSTM: differences between seeds can be as large as many of the gaps between models.</div>`;
+}
+function peakTable() {
+  const e = ev(), h = state.h;
+  $('#peakTitle').textContent = `Observed versus predicted peak, ${HLAB[h]} horizon`;
+  $('#peakTable').innerHTML = `<div class="note" style="margin-top:0">Observed peak <b>${e.peak_ft.toFixed(2)} ft</b> at ${e.peak_time.replace('T', ' ')} UTC.</div><table><thead><tr><th>Model</th><th>Forecast made ${HLAB[h]} before the peak (ft)</th><th>% of peak</th><th>Highest forecast (ft)</th><th>% of peak</th><th>Time vs peak</th></tr></thead><tbody>` +
+    MODELS.map(m => { const x = e.metrics[m.id][h]; const r = v => v === null ? '—' : (100 * v).toFixed(0) + '%';
+      return `<tr><td><i class="sw" style="background:${STYLE[m.id][0]}"></i>${esc(m.short)}</td><td>${num(x.peak_forecast_ft, 2)}</td><td>${r(x.peak_ratio)}</td><td>${num(x.fc_max_ft, 2)}</td><td>${r(x.fc_max_ratio)}</td><td>${x.fc_max_time_minus_peak_h === null ? '—' : sgn(x.fc_max_time_minus_peak_h, 2) + ' h'}</td></tr>`; }).join('') +
+    `</tbody></table><div class="note">Time vs observed peak: positive = the highest forecast value is for a target time after the observed peak. Peak ratios are descriptive and say nothing about when a rise was first anticipated.</div>`;
+}
+function matrixTable() {
+  const e = ev();
+  $('#matrixTable').innerHTML = `<table><thead><tr><th>Model</th>${HZ.map(h => `<th>${HLAB[h]}</th>`).join('')}</tr></thead><tbody>` +
+    MODELS.map(m => `<tr><td><i class="sw" style="background:${STYLE[m.id][0]}"></i>${esc(m.short)}</td>${HZ.map(h => `<td>${num(e.metrics[m.id][h].rmse)}</td>`).join('')}</tr>`).join('') + `</tbody></table><div class="note">Same issue times for every model; the 15-min to 3-h errors differ by orders of magnitude, so compare across models within a column.</div>`;
+}
+function qualityBox() {
+  const e = ev(), q = e.quality, h = state.h, rs = q.unavailable_forecast_reasons[h];
+  const pct = v => (100 * v).toFixed(1) + '%';
+  const reasons = Object.entries(rs).filter(([, n]) => n > 0).map(([k, n]) => `<li>${esc(k)}: ${n}</li>`).join('') || '<li>none: a forecast exists for every issue time in the plotted window</li>';
+  $('#qualityBox').innerHTML = `<ul class="tight">
+    <li>Observed stage missing in the plotted window: <b>${q.obs_missing_samples}</b> of ${q.window_samples} samples (${pct(q.obs_missing_share)}); longest gap ${q.longest_obs_gap_h.toFixed(2)} h.</li>
+    <li>Provisional USGS samples in the window: <b>${q.provisional_samples}</b>${q.provisional_samples ? ' (subject to revision)' : ''}.</li>
+    <li>Scored issue times with any missing sample in the preceding 24 h: <b>${pct(q.history24_any_missing_share)}</b>; in the preceding 72 h: <b>${pct(q.history72_any_missing_share)}</b> (of ${q.flood_window_issue_times}).</li>
+    <li>Issue times in the plotted window without a forecast for the ${HLAB[h]} horizon (GRU rows used as the reference), by reason:<ul class="tight">${reasons}</ul></li></ul>
+    <div class="note">Forecasts require recent stage history and an observed target (project eligibility rule) and exist only inside the out-of-fold test blocks.</div>`;
+}
+function detTable() {
+  const e = ev(), h = state.h;
+  $('#detTitle').textContent = `Event-level results of the fixed alarm rule, ${HLAB[h]} horizon (evaluation device with experimental thresholds)`;
+  const cell = (r) => { if (!r) return '<td class="na">n/a</td>'; const s = STATUS[r.status] || r.status; return `<td>${esc(s)}${r.lead_h !== null ? ' +' + r.lead_h.toFixed(2) + ' h' : ''}</td>`; };
+  $('#detTable').innerHTML = `<table><thead><tr><th>Event definition (events in the plotted window)</th>${MODELS.map(m => `<th><i class="sw" style="background:${STYLE[m.id][0]}"></i>${esc(m.short)}</th>`).join('')}</tr></thead><tbody>` +
+    e.detection.map(d => `<tr class="${d.is_primary ? 'best' : ''}"><td>${esc(d.label)}${d.kind === 'official' ? ' <b>[official NWS stage]</b>' : ' [experimental]'}<br><span style="color:var(--ink2)">starts ${d.start} UTC, peak ${d.peak_ft.toFixed(2)} ft</span></td>${MODELS.map(m => cell(d.results[m.id] && d.results[m.id][h])).join('')}</tr>`).join('') +
+    `</tbody></table><div class="note">Rule (Phase 1A, fixed in advance): raise an alarm when the forecast reaches the threshold, hold it for 1 h; an event is an <b>early hit</b> if an alarm was issued before it began, <b>late</b> if only after, a <b>miss</b> if none matched. <b>Lead</b> (shown as +h) = event start minus first alarm. This is how forecasts were scored, not a warning product: there are no warning categories or alerts here. n/a = not computed (GRU 72 h was scored for the two experimental definitions only; some events lie outside the evaluated set).</div>`;
+}
+function dataTable() {
+  const e = ev(), h = state.h, k = K[h], sel = [...state.models];
+  const [a, b] = state.zoom || fullRange(); let rows = '';
+  for (let i = 0; i < e.n; i++) { const t = T(i) + (state.axis === 'target' ? k * e.step_ms : 0); if (t < a || t > b) continue;
+    rows += `<tr><td>${fmtT(T(i))}</td><td>${fmtT(T(i) + k * e.step_ms)}</td><td>${num(e.obs[i], 2)}</td><td>${i + k < e.n ? num(e.obs[i + k], 2) : '—'}</td>${sel.map(id => `<td>${num(e.fc[id][h][i], 2)}</td>`).join('')}</tr>`; }
+  $('#dataTable').innerHTML = `<table><thead><tr><th>Issue time (UTC)</th><th>Target time (UTC)</th><th>Observed at issue (ft)</th><th>Observed at target (ft)</th>${sel.map(id => `<th>${esc(modelById(id).short)} (ft)</th>`).join('')}</tr></thead><tbody>${rows}</tbody></table>`;
+}
+function allTable() {
+  const h = state.h, mt = state.metric;
+  const val = (e, m) => { const x = e.metrics[m.id][h]; return mt === 'rmse' ? x.rmse : mt === 'mae' ? x.mae : x.peak_ratio; };
+  const f = v => v === null ? '—' : mt === 'ratio' ? (100 * v).toFixed(0) + '%' : num(v);
+  const nm = {rmse:'flood-window RMSE (ft)', mae:'flood-window MAE (ft)', ratio:`forecast made ${HLAB[h]} before the peak, as a share of the observed peak`};
+  $('#allNote').innerHTML = `Per-event ${nm[mt]} at the ${HLAB[h]} horizon for the 18 evaluated events (Phase 1D/1E definition; same issue times for every model; one training seed for GRU, LSTM and GRU 72 h). ` + (mt === 'ratio' ? 'For peak ratio, 100% is a perfect peak and below 100% is under-forecast.' : 'Lowest value per row in bold. Click a row to open the event.');
+  const med = arr => { const a = arr.filter(v => v !== null).sort((x, y) => x - y); if (!a.length) return null; const n = a.length; return n % 2 ? a[(n - 1) / 2] : (a[n / 2 - 1] + a[n / 2]) / 2; };
+  let html = `<table><thead><tr><th>Event</th><th>Peak (ft)</th><th>Fold</th>${MODELS.map(m => `<th><i class="sw" style="background:${STYLE[m.id][0]}"></i>${esc(m.short)}</th>`).join('')}</tr></thead><tbody>`;
+  EVENTS.forEach((e, i) => { const v = MODELS.map(m => val(e, m)); const bi = mt === 'ratio' ? -1 : bestRow(v);
+    html += `<tr class="click" data-i="${i}" tabindex="0"><td>${e.start.slice(0, 10)}${e.official_ge_25ft ? ' <b>(official)</b>' : ''}${e.provisional ? ' (provisional)' : ''}</td><td>${e.peak_ft.toFixed(2)}</td><td>${e.fold}</td>${v.map((x, j) => `<td style="${j === bi ? 'font-weight:700' : ''}">${f(x)}</td>`).join('')}</tr>`; });
+  html += `<tr><td><b>Median over events</b></td><td></td><td></td>${MODELS.map(m => `<td>${f(med(EVENTS.map(e => val(e, m))))}</td>`).join('')}</tr>`;
+  if (mt !== 'ratio') { const P = DATA.pooled_flood_window; html += `<tr><td><b>All 18 windows pooled</b></td><td></td><td></td>${MODELS.map(m => { const x = P[m.id][h]; return `<td>${num(mt === 'rmse' ? x.rmse : x.mae)}</td>`; }).join('')}</tr>`; }
+  html += '</tbody></table>';
+  if (mt !== 'ratio') html += `<div class="note">Pooled row: ${DATA.pooled_flood_window.gru[h].rows_scored} scored issue times; recomputed from the saved forecasts, it reproduces the Phase 1D/1E "flood windows of the 10 ft events" subset (GRU and LSTM: seed 0).</div>`;
+  $('#allTable').innerHTML = html;
+  $('#allTable').querySelectorAll('tr.click').forEach(tr => { const go = () => { state.ev = +tr.dataset.i; if (state.zk === 'custom') state.zk = 'rise'; state.tab = 'replay'; render(); window.scrollTo(0, 0); }; tr.addEventListener('click', go); tr.addEventListener('keydown', k => { if (k.key === 'Enter') go(); }); });
+}
+function aboutHtml() {
+  const m = DATA.meta;
+  $('#about').innerHTML = `
+  <h2>What this is</h2>
+  <p>A viewer for forecasts that were already produced and saved during the research project <i>Hybrid Transformer-LSTM for flash-flood forecasting</i> (Phase 1D and 1E cross-validation). It replays 18 historical flood events (stage of at least 10 ft) at USGS 08167500, Guadalupe River near Spring Branch, TX, and compares the saved forecasts of several models with what the river actually did.</p>
+  <p><b>${esc(m.disclaimer)}</b> There are no warning categories, alerts or live data. All results are exploratory: the full 2007-2026 record has been inspected during development, so none of this is untouched validation.</p>
+  <h2>How to read the plots</h2>
+  <ul class="tight">
+    <li><b>Out-of-fold</b>: each forecast comes from a model trained only on earlier data (six expanding-window folds, with a 27 h 15 min gap before the held-out block), so the model never saw the storm it is forecasting.</li>
+    <li><b>Issue time and target time</b>: a forecast made at time <i>t</i> with horizon <i>h</i> is a forecast of the stage at <i>t + h</i>. The default view draws it at <i>t + h</i> so it can be compared with the observed line. The alternative view draws it at <i>t</i>, next to the dotted line of the stage that actually followed.</li>
+    <li><b>Scored flood window</b>: issue times from 6 h before the rise onset to the observed peak. Onset = the last sample within 0.5 ft of the preceding 72 h minimum before the first sample at or above 10 ft.</li>
+    <li><b>Gaps</b>: where a forecast or an observation does not exist the line is broken; nothing is interpolated or filled.</li>
+    <li><b>Models</b>: ${MODELS.map(x => esc(x.label) + ' (' + esc(x.note) + ')').join('; ')}. GRU, LSTM and GRU 72 h are single training seeds; the shaded band shows the range of three GRU 24 h seeds from Phase 1E.</li>
+    <li><b>Thresholds</b>: 10 ft and rises of 4 ft in 3 h are experimental definitions chosen for evaluation. The NWS action stage (25 ft) is the official one. Only a handful of events are official, from 5 storms.</li>
+  </ul>
+  <h2>Main limitations</h2>
+  <ul class="tight"><li>One river gauge, 18 events from 14 storm clusters; two events include provisional 2026 data.</li><li>The hydrology-only models see only the gauge's own stage history, no rain or upstream gauges, so they cannot anticipate a rise before it begins (see the onset-timing report).</li><li>Simple methods (ridge, damped trend) were as good as or better than the neural networks in flood windows; this viewer shows that instead of hiding it.</li><li>Retrospective replay only: it says nothing about real-time data latency, revisions or operational use.</li></ul>
+  <h2>Provenance (SHA-256 of the saved files this page was built from)</h2>
+  <table><tbody>${Object.entries(m.sources).map(([k, v]) => `<tr><td><code>${esc(k)}</code></td><td style="text-align:left"><code>${v}</code></td></tr>`).join('')}</tbody></table>
+  <p class="note">Rebuild: <code>PYTHONPATH=src python scripts/build_replay_dashboard.py</code>. Metrics are recomputed from the saved 0.001 ft-rounded forecast files, so they can differ from the report tables in the last digit. Source code: <code>src/flashflood/replay.py</code>, <code>dashboard/replay/template.html</code>.</p>`;
+}
+
+// ---------------------------------------------------------------- render
+function render() {
+  if (state.zk !== 'custom') zoomPreset(state.zk);
+  syncControls(); writeHash();
+  if (state.tab === 'replay') {
+    const e = ev(), modelNote = [...state.models].filter(id => ['gru', 'lstm', 'gru72_s0'].includes(id)).length ? 'GRU, LSTM and GRU 72 h are single training seeds (the shaded band is the range of three GRU 24 h seeds).' : '';
+    $('#modelNote').textContent = modelNote;
+    $('#cards').innerHTML = cardsHtml();
+    drawChart(); attachHover(); errTable(); peakTable(); matrixTable(); qualityBox(); detTable();
+    if ($('#dataDetails').open) dataTable();
+  } else if (state.tab === 'all') allTable();
+  else aboutHtml();
+}
+buildControls(); readHash(); render();
+$('#dataDetails').addEventListener('toggle', () => { if ($('#dataDetails').open) dataTable(); });
+let rt; window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { if (state.tab === 'replay') { drawChart(); attachHover(); } }, 120); });
+window.addEventListener('hashchange', () => { readHash(); render(); });
+</script>
+</body>
+</html>

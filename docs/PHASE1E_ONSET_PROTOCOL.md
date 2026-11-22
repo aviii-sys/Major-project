@@ -30,4 +30,5 @@ The existing alarm rule, hysteresis and matching (`experiment.fixed_rule_raw`, `
 `reports/phase1e_onset/tables/O1..O6*` (csv and md), `figures/`, report `reports/PHASE1E_ONSET_TIMING.md`, library `src/flashflood/onset.py`, script `scripts/run_onset_timing.py`, tests `tests/test_onset.py` (synthetic persistence/perfect/shifted/anticipating forecasts; reproduction of E6b hit counts; flag logic). Reproduce: `python scripts/run_onset_timing.py`.
 
 ## Deviations
-(none yet)
+1. (Logged after the first run.) The first run of `scripts/run_onset_timing.py` showed that the pre-specified 0.5 ft anticipation flag (section 2.2) does not separate anticipation from reaction to the first uptick (the damped trend flags 8 of 18 events at 3 h). I therefore ADDED, without changing any pre-specified definition, flag or threshold: the issue time of the first forecast that shows each level relative to the rise onset (`issue_vs_onset_*` columns, table `O3c`), the official-events table `O8`, and the fixed-rule lead summary `O7d`. The first-run outputs were overwritten by the rerun of the same code plus these additions. Figure axes were clipped (events with an ambiguous onset give leads of 10 to 30 h) and two-line titles added after viewing the first figures.
+2. Interpretation rule (section 5) outcome: neither criterion (a) nor (b) is met; see `reports/PHASE1E_ONSET_TIMING.md`.
