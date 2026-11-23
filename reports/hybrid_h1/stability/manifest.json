@@ -1,0 +1,62 @@
+{
+  "fold1_S0_s0": {
+    "checkpoint_sha256": "4273ad4c62ed42c56f9a97c0f9bf62570b464ea629dbbfd2fd4662b8bdfa9451",
+    "predictions_sha256": "e48bacf7a7469856184319e866b876472cdf58c9c204b392b1ae5dfbaaa18251",
+    "best_epoch": 0,
+    "train_seconds": 171.8
+  },
+  "fold1_S1_s0": {
+    "checkpoint_sha256": "9f1561426066051a3e49042e0e2693bb3d4f9cd94d3f1b3d98d6c456315718c8",
+    "predictions_sha256": "76d9f0f7f4bb0955933ec4e7850209d62c339b4918bc29532903ec36afdd0aa2",
+    "best_epoch": 3,
+    "train_seconds": 464.1
+  },
+  "fold1_S2_s0": {
+    "checkpoint_sha256": "11bad71cce602a9f817cd90843b70e9061a9aace2dc55cc3173f02407af55fc7",
+    "predictions_sha256": "af7be64f749388bcce8ddd3f7e8f69f19fa2d207c07a3bec9330e15ca2f110dd",
+    "best_epoch": 2,
+    "train_seconds": 432.8
+  },
+  "fold1_S3_s0": {
+    "checkpoint_sha256": "867878a09d034bd6863836e8412c1fd93fe523dc79f2da8dad892cf3dab679e7",
+    "predictions_sha256": "be685f57844325719df252647b2c0a6b4cbf5f11a81cc07aeb99d5aa036e1503",
+    "best_epoch": 0,
+    "train_seconds": 279.8
+  },
+  "fold2_S0_s0": {
+    "checkpoint_sha256": "e37724619199cabfe1bb938ababf41829e5724f86fd5f1362144789a5aa5f1ec",
+    "predictions_sha256": "583e0a1dff0c5c095f9e1e5fd0f9e5f4b53034c4a83ca91cdd1957d7842713e2",
+    "best_epoch": 20,
+    "train_seconds": 1035.8
+  },
+  "fold2_S1_s0": {
+    "checkpoint_sha256": "929da5c7d15ca91b467f6e30c9a6ddb53bab30328e27e0c6252220f491c139d0",
+    "predictions_sha256": "3de78061f0a73e49390f82253b8ad8b2d8de21cf9abff4300d5dcb7653ee158c",
+    "best_epoch": 8,
+    "train_seconds": 382.9
+  },
+  "fold2_S2_s0": {
+    "checkpoint_sha256": "2b3f02680a8f0eb5dec43dee8e171270d140f53da0ae86c4c6ea48ffda45df1c",
+    "predictions_sha256": "1aee2c2cd0c6df2530a119c3f2e4c734b125cc1a4813294723425a51ed35af15",
+    "best_epoch": 8,
+    "train_seconds": 382.5
+  },
+  "fold2_S3_s0": {
+    "checkpoint_sha256": "1d99889f3b6e4469390025003669da5bbead488d4e67d67bdee8116bb5438d49",
+    "predictions_sha256": "28ef60e2facb2c95dca9d6cd83aed22c050f81ebd0861a3cc1819869fcc86e0d",
+    "best_epoch": 9,
+    "train_seconds": 342.7
+  },
+  "fold3_S0_s0": {
+    "checkpoint_sha256": "7905c64ae91111ebd9deda968b4ba060c4e14b9058cbf7cd0289558af2ee0c0e",
+    "predictions_sha256": "93161f067f3269a72c899b78c68b4ef2bdea7512da9f453ef335c63389e496e8",
+    "best_epoch": 38,
+    "train_seconds": 1015.3
+  },
+  "fold3_S1_s0": {
+    "checkpoint_sha256": "dbb83f802731f53943d559a9deb591f7e33ba6f9cfe5256b0a2bd95d635078a4",
+    "predictions_sha256": "0e7284775fdac28dd80fdad6d079b33b0382dbcd34d7c6796c91fd5819483306",
+    "best_epoch": 7,
+    "train_seconds": 353.7
+  }
+}

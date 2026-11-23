@@ -1,0 +1,7 @@
+| definition               | event_start      |   peak_ft |   best_lead_h_any_baseline_30m_1h_3h | reaches_30min_with_some_configuration   |
+|:-------------------------|:-----------------|----------:|-------------------------------------:|:----------------------------------------|
+| experimental_rise_4ft_3h | 2013-05-25 12:45 |      6.69 |                                 0.25 | False                                   |
+| experimental_rise_4ft_3h | 2014-05-26 17:30 |      6.92 |                                 0.25 | False                                   |
+| experimental_rise_4ft_3h | 2015-10-30 12:00 |     30.06 |                                 0.25 | False                                   |
+| experimental_rise_4ft_3h | 2025-07-05 03:30 |     29.99 |                                 0.25 | False                                   |
+| experimental_stage_10ft  | 2025-07-05 03:45 |     30.03 |                                 0.25 | False                                   |

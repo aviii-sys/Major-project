@@ -141,6 +141,27 @@
       "where": "`docs/UPSTREAM_INPUT_PROTOCOL.md`; supporting descriptive tables `reports/upstream_protocol_support/` (S1-S8), `scripts/build_upstream_protocol_support.py`, `tests/test_upstream_protocol_support.py`; re-queried gauge series `data/raw/upstream/iv_requery/`",
       "protocol": "itself (DRAFT FOR RESEARCH-GUIDE REVIEW, not approved)",
       "status": "written 2026-11-22; awaiting the guide's decisions (section 6); classes: 6 upstream-led / 6 local-or-downstream-led / 6 ambiguous of 18 events; found 5-minute gauge stamps and 4 failed downloads in the earlier feasibility cache (no class changes); no training or evaluation done"
+    },
+    {
+      "id": "E21",
+      "what": "First faculty evaluation pack: audit of actual progress, PROPOSED three-stage academic roadmap (university requirements not documented), faculty evaluation dashboard built from the saved result tables, presentation structure, demonstrations and likely Q&A. Presentation layer only: no new experiment, model or result.",
+      "where": "`dashboard/evaluation/` (`index.html` built file, `template.html`, `README.md`, `screenshots/`, optional `browser_check/`), `docs/FACULTY_EVALUATION_PREP.md`, code `scripts/build_evaluation_dashboard.py`, tests `tests/test_evaluation_dashboard.py`",
+      "protocol": "none (presentation layer; assumptions in `dashboard/evaluation/README.md`)",
+      "status": "built and verified 2026-11-23 (13 tests; 1,763 displayed values compared with the source tables in a browser run); every displayed number traceable to a saved table; roadmap is a proposal pending faculty confirmation; the hybrid is shown as proposed, not implemented"
+    },
+    {
+      "id": "E22",
+      "what": "H0: warning-lead evaluation of the EXISTING saved baselines (events with an early alarm of at least 30 min before the flood criterion, false alarms per year); frozen numbers the hybrid must beat. No training.",
+      "where": "`reports/hybrid_h0/` (tables H0_1..H0_5b, `baseline_leadtime.json`), code `src/flashflood/{oof,leadtime}.py`, `scripts/run_h0_leadtime.py`, tests `tests/test_hybrid.py`",
+      "protocol": "`docs/HYBRID_PLAN_30MIN_LEAD.md` section 4 (stage H0); `docs/HYBRID_H1_PROTOCOL.md`",
+      "status": "done 2026-11-23; reproduces all 72 Phase 1D detection rows exactly; five events (two official floods) are reached by no baseline with a 30-minute lead; exploratory"
+    },
+    {
+      "id": "E23",
+      "what": "H1: stage-only hybrid Transformer+LSTM (Transformer on 24 h, LSTM on the last 6 h) on the six Phase 1D folds, 4 bounded stability settings chosen on validation only, 3 seeds, single-branch ablations; compared with matched GRU 24 h, ridge, damped trend, XGBoost, LSTM",
+      "where": "`reports/hybrid_h1/` (stability, runs with SHA-256 manifest, tables, figures, `decision.json`), report `reports/HYBRID_H1_REPORT.md`, code `src/flashflood/hybrid.py`, `scripts/run_hybrid_h1.py`, `scripts/eval_hybrid_h1.py`",
+      "protocol": "`docs/HYBRID_H1_PROTOCOL.md` (fixed before training)",
+      "status": "STOPPED 2026-11-23 at the project owner's request after 10 of 24 stability runs (folds 1-2 complete, fold 3 partly); NO setting selected, NO main runs, NO evaluation, NO result; resumable (`scripts/run_hybrid_h1.py --stage stability`, then select, main, ablate; `scripts/eval_hybrid_h1.py` is validated on a throwaway run). Exploratory when completed."
     }
   ]
 }

@@ -1,0 +1,76 @@
+{
+  "experiment": "E23 H1 stability",
+  "fold": 2,
+  "kind": "hybrid",
+  "setting": {
+    "name": "S2",
+    "d_model": 64,
+    "n_heads": 4,
+    "n_layers": 2,
+    "ff_mult": 2,
+    "dropout": 0.1,
+    "norm_first": true,
+    "lstm_hidden": 64,
+    "short_steps": 24,
+    "lr": 0.0003,
+    "warmup_steps": 300
+  },
+  "seed": 0,
+  "n_params": 118132,
+  "optimizer": "adam",
+  "batch": 512,
+  "grad_clip": 1.0,
+  "max_epochs": 40,
+  "patience": 6,
+  "rows_per_epoch": 120000,
+  "epochs_run": 15,
+  "best_epoch": 8,
+  "best_val_scaled_loss": 1.3272735687866029,
+  "final_val_loss": 1.3602403447887967,
+  "train_seconds": 382.5,
+  "min_history_steps_for_training_rows": 288,
+  "norm_stats_fit_on_fold_train_only": {
+    "c1": [
+      0.02531951479613781,
+      0.3522281050682068
+    ],
+    "c2": [
+      -0.003367174882441759,
+      0.1564130187034607
+    ],
+    "cur": [
+      2.2919700145721436,
+      0.9827902913093567
+    ]
+  },
+  "sigma_ft": {
+    "15m": 0.017654351890087128,
+    "30m": 0.03301464766263962,
+    "1h": 0.061837948858737946,
+    "3h": 0.14806511998176575
+  },
+  "rows": {
+    "train": 187495,
+    "val": 63522,
+    "test": 35038
+  },
+  "boundaries": {
+    "train_start": "2007-10-02 05:00:00+00:00",
+    "train_end": "2013-03-07 18:45:00+00:00",
+    "val_start": "2013-03-08 22:00:00+00:00",
+    "val_end": "2014-12-30 20:45:00+00:00",
+    "test_start": "2015-01-01 00:00:00+00:00",
+    "test_end": "2015-12-31 23:45:00+00:00"
+  },
+  "environment": {
+    "python": "3.11.18",
+    "torch": "2.15.0",
+    "device": "mps",
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "numpy": "2.4.6",
+    "pandas": "3.1.1"
+  },
+  "checkpoint_sha256": "2b3f02680a8f0eb5dec43dee8e171270d140f53da0ae86c4c6ea48ffda45df1c",
+  "predictions_sha256": "1aee2c2cd0c6df2530a119c3f2e4c734b125cc1a4813294723425a51ed35af15",
+  "quick": false
+}

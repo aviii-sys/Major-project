@@ -1,0 +1,13 @@
+[13:02:35] === stability, fold 1
+[13:05:27] saved fold1_S0_s0: best epoch 0 val 0.0864 in 171.8s (7 epochs, 118004 params)
+[13:13:11] saved fold1_S1_s0: best epoch 3 val 0.0848 in 464.1s (10 epochs, 118132 params)
+[13:20:24] saved fold1_S2_s0: best epoch 2 val 0.0879 in 432.8s (9 epochs, 118132 params)
+[13:25:04] saved fold1_S3_s0: best epoch 0 val 0.0882 in 279.8s (7 epochs, 54740 params)
+[13:25:04] === stability, fold 2
+[13:42:20] saved fold2_S0_s0: best epoch 20 val 1.2502 in 1035.8s (27 epochs, 118004 params)
+[13:48:43] saved fold2_S1_s0: best epoch 8 val 1.3139 in 382.9s (15 epochs, 118132 params)
+[13:55:05] saved fold2_S2_s0: best epoch 8 val 1.3273 in 382.5s (15 epochs, 118132 params)
+[14:00:48] saved fold2_S3_s0: best epoch 9 val 1.3299 in 342.7s (16 epochs, 54740 params)
+[14:00:48] === stability, fold 3
+[14:17:43] saved fold3_S0_s0: best epoch 38 val 2.7884 in 1015.3s (40 epochs, 118004 params)
+[14:23:37] saved fold3_S1_s0: best epoch 7 val 3.3129 in 353.7s (14 epochs, 118132 params)
