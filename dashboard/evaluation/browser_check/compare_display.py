@@ -57,8 +57,8 @@ def main(dump_path: str) -> int:
     folds = len(pd.read_csv("reports/phase1d/fold_specification.csv"))
     official = json.loads(Path("reports/phase0/phase0_results.json").read_text())["events"]["n_events_action"]
     reg = len(json.loads(Path("experiments/registry.json").read_text())["entries"])
-    col = subprocess.run([sys.executable, "-m", "pytest", "--collect-only", "-q", "--ignore=tests/test_evaluation_dashboard.py", "-p", "no:cacheprovider"], capture_output=True, text=True)
-    n_tests = len([l for l in col.stdout.splitlines() if "::" in l])
+    run = subprocess.run([sys.executable, "-m", "pytest", "-q", "--ignore=tests/test_evaluation_dashboard.py", "-p", "no:cacheprovider"], capture_output=True, text=True)
+    n_tests = int(re.search(r"(\d+) passed", run.stdout).group(1))
     got = [s["n"].replace(",", "") for s in D["stats"]]
     ok("stat cards", got == [str(p0["rows_raw"]), str(ev18), str(folds), str(official), str(n_tests), str(reg)], f"{got} vs {[p0['rows_raw'], ev18, folds, official, n_tests, reg]}")
 

@@ -105,7 +105,7 @@ footer { padding:1.4rem 0 3rem; color:var(--ink2); font-size:.82rem; }
   <div class="badges">
     <span class="chip done">Baselines, cross-validation and upstream feasibility complete</span>
     <span class="chip prog">Results are exploratory (retrospective, test period already inspected)</span>
-    <span class="chip prop">Hybrid model: proposed, not yet implemented</span>
+    <span class="chip prop">Hybrid model: code written and unit-tested; no trained result yet</span>
     <span class="chip none">No live or operational component</span>
   </div>
   <div class="notice" id="notice" role="note"></div>
@@ -131,7 +131,7 @@ footer { padding:1.4rem 0 3rem; color:var(--ink2); font-size:.82rem; }
         <dt>Forecast horizons</dt><dd>15 minutes, 30 minutes, 1 hour, 3 hours (stage change at the gauge)</dd>
         <dt>Evaluation standard</dt><dd>Storm-grouped, chronological cross-validation with an embargo; official NWS stages kept separate from experimental thresholds.</dd>
       </dl></div>
-    <div class="card"><h3>Proposed final architecture <span class="chip prop">Proposed &middot; not implemented</span></h3>
+    <div class="card"><h3>Proposed final architecture <span class="chip prop">Code written &middot; no trained result</span></h3>
       <svg class="chart" viewBox="0 0 560 250" role="img" aria-label="Proposed hybrid architecture: a Transformer branch on a long window and an LSTM branch on a short window, fused, with four horizon heads. Not implemented.">
         <defs><marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="var(--muted)"/></marker></defs>
         <rect x="6" y="6" width="548" height="238" rx="10" fill="none" stroke="var(--prop)" stroke-width="2" stroke-dasharray="7 5"/>
@@ -144,7 +144,7 @@ footer { padding:1.4rem 0 3rem; color:var(--ink2); font-size:.82rem; }
         <path d="M138,59 H188" stroke="var(--muted)" marker-end="url(#arr)" fill="none"/><path d="M138,179 H188" stroke="var(--muted)" marker-end="url(#arr)" fill="none"/><path d="M320,59 H340 V110 H358" stroke="var(--muted)" marker-end="url(#arr)" fill="none"/><path d="M320,179 H340 V140 H358" stroke="var(--muted)" marker-end="url(#arr)" fill="none"/><path d="M440,125 H472" stroke="var(--muted)" marker-end="url(#arr)" fill="none"/>
         <text x="280" y="236" text-anchor="middle" style="font-size:.7rem">Design from the project plan; regression outputs first. Optional later inputs: upstream gauges, rainfall.</text>
       </svg>
-      <p class="meta">Nothing in this diagram has been built or trained. The comparison it must beat (GRU, LSTM, ridge, damped trend, XGBoost) is complete.</p></div>
+      <p class="meta">The model code exists and passes unit tests, but a first training run was stopped after 10 of 24 stability runs, so no hybrid has been trained to a result. The comparison it must beat (GRU, LSTM, ridge, damped trend, XGBoost) is complete.</p></div>
   </div>
   <div class="card" style="margin-top:.9rem"><h3>Current development status</h3><div class="twocol" id="statusCols"></div></div>
 </section>
@@ -209,7 +209,7 @@ footer { padding:1.4rem 0 3rem; color:var(--ink2); font-size:.82rem; }
 <section class="block" id="next" aria-labelledby="h-next">
   <h2 id="h-next"><span class="letter">H</span>Next steps</h2>
   <p class="lead">Proposed work for the second and third evaluations, subject to the research guide's and faculty's approval.</p>
-  <div class="callout prop">The hybrid Transformer&ndash;LSTM is <b>proposed future development</b>. It has not been implemented, trained or evaluated.</div>
+  <div class="callout prop">The hybrid Transformer&ndash;LSTM is <b>proposed future development as a result</b>: its code is written and unit-tested, but it has <b>not been trained to a result or evaluated</b> (a first run was stopped at 10 of 24 stability runs).</div>
   <div class="grid g3" id="nextCards"></div>
   <div class="card" style="margin-top:.9rem"><h3>Why baselines and upstream research come before the hybrid</h3><p id="whyBefore"></p></div>
 </section>
@@ -291,7 +291,7 @@ function renderStatic() {
   const stats = [[F('p0.rows').toLocaleString(), `15-minute stage readings, ${F('p0.first').slice(0, 4)} to ${F('p0.last').slice(0, 4)} (${F('p0.completeness_pct')}% of expected values present)`], [F('p1d.events_evaluated'), `flood events (stage of 10 ft or more) tested out of fold, from ${F('p1d.clusters_evaluated')} storm clusters`], [F('p1d.folds'), 'chronological cross-validation folds with a 27 h 15 min embargo'], [F('p0.official_events'), `events reached the official 25 ft NWS action stage (${F('p0.official_storms')} storms)`], [F('eng.tests_passed'), 'automated tests passing (leakage, metrics, onset timing, dashboard)'], [F('eng.registry_entries'), 'registered experiments and work items (location, protocol, status)']];
   $('#glance').innerHTML = stats.map(([n, l]) => `<div class="stat"><div class="n">${esc(n)}</div><div class="l">${esc(l)}</div></div>`).join('');
   const done = ['Data audit and event catalogue', 'Leakage-safe preprocessing and evaluation framework', 'Persistence, damped trend, ridge and XGBoost baselines', 'LSTM, GRU and Transformer baselines', 'Six-fold chronological cross-validation', '24 h versus 72 h input-window experiment', 'Upstream gauge feasibility study and research protocol (draft)', 'Onset-timing analysis', 'Historical-replay dashboard'];
-  $('#statusCols').innerHTML = `<div><h3 style="margin-bottom:.3rem"><span class="chip done">Implemented and evidenced</span></h3><ul class="plain">${done.map(d => `<li>${esc(d)}</li>`).join('')}</ul></div><div><h3 style="margin-bottom:.3rem"><span class="chip prop">Proposed, not implemented</span></h3><ul class="plain">${D.demo.not_implemented.map(d => `<li>${esc(d)}</li>`).join('')}</ul><p class="meta">Awaiting the research guide: the upstream-input protocol (15 decisions).</p></div>`;
+  $('#statusCols').innerHTML = `<div><h3 style="margin-bottom:.3rem"><span class="chip done">Implemented and evidenced</span></h3><ul class="plain">${done.map(d => `<li>${esc(d)}</li>`).join('')}</ul></div><div><h3 style="margin-bottom:.3rem"><span class="chip prop">Not done (no result yet)</span></h3><ul class="plain">${D.demo.not_implemented.map(d => `<li>${esc(d)}</li>`).join('')}</ul><p class="meta">Awaiting the research guide: the upstream-input protocol (15 decisions).</p></div>`;
   $('#timeline').innerHTML = D.roadmap.map(p => { const done = p.deliverables.filter(d => d.done).length, n = p.deliverables.length, cur = p.status === 'Current';
     return `<div class="phase ${cur ? 'current' : 'proposed'}"><span class="chip ${cur ? 'done' : 'prop'}">${cur ? 'Current: this evaluation' : 'Proposed'}</span><h3>${esc(p.name)}</h3><div class="theme">${esc(p.theme)}</div>
     <h4>Objectives</h4><ul class="plain">${p.objectives.map(o => `<li>${esc(o)}</li>`).join('')}</ul>

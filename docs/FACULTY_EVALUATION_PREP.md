@@ -1,6 +1,6 @@
 # First faculty evaluation: audit, academic roadmap and presentation pack
 
-**Written for:** the project team, to prepare the first evaluation. **Companion:** the Faculty Evaluation Dashboard (`dashboard/evaluation/index.html`, built from the saved result tables). Everything here is taken from the repository (tables, reports, registry, tests). Where something is not documented, it is marked **NOT DOCUMENTED** or **PROPOSAL**. Nothing below claims the hybrid model, any upstream-input result, warning logic or live operation, because none exists yet.
+**Written for:** the project team, to prepare the first evaluation. **Companion:** the Faculty Evaluation Dashboard (`dashboard/evaluation/index.html`, built from the saved result tables). Everything here is taken from the repository (tables, reports, registry, tests). Where something is not documented, it is marked **NOT DOCUMENTED** or **PROPOSAL**. Nothing below claims a trained hybrid result, any upstream-input result, warning logic or live operation, because none exists yet.
 
 ## 1. Audit: what actually exists
 
@@ -12,7 +12,7 @@
 | Experiments | Phase 1C (single split, 5 seeds), Phase 1D (six-fold cross-validation), Phase 1E (24 h versus 72 h, pre-registered rule), onset timing (post-hoc), upstream feasibility and protocol | Complete; upstream protocol is a draft awaiting the research guide |
 | Software quality | 76 automated tests pass (`.venv/bin/python -m pytest -q`); 7 protocol documents; experiment registry with 20 entries and logged deviations | Complete |
 | Dashboards | Historical-replay dashboard (`dashboard/replay/index.html`, offline, saved forecasts only) and the faculty dashboard | Complete |
-| Hybrid Transformer-LSTM | design sketched only | **Not implemented** |
+| Hybrid Transformer-LSTM | model code, protocol (`docs/HYBRID_H1_PROTOCOL.md`) and unit tests written; a first training run was stopped after 10 of 24 stability runs | **No trained result** |
 | Upstream-input experiments (A to D) | protocol only; nothing trained or run | **Not implemented** |
 | Probability/detection head, warning categories, live data, discharge forecasting | not started | **Not implemented** |
 
@@ -76,11 +76,11 @@ Progress is counted as deliverables with evidence on disk, not percentages; task
 Do not demonstrate anything that implies live forecasting.
 
 ## 6. The 60-second summary
-"We built the evidence base for a flash-flood forecasting study on one river gauge: audited 19 years of data, designed a leakage-safe evaluation, trained classical and neural baselines, and cross-validated them on 18 held-out floods. The honest result is that neural networks and a Transformer do not yet beat simple methods, and that every model reacts to a flood rather than anticipating it, because the gauge's own history does not contain the rain. Upstream gauges rose hours earlier in about a third of events, so the next stage tests whether adding upstream information helps, and then builds and compares the hybrid model. The hybrid itself is not built yet; the baselines and the upstream study are what let us judge it fairly."
+"We built the evidence base for a flash-flood forecasting study on one river gauge: audited 19 years of data, designed a leakage-safe evaluation, trained classical and neural baselines, and cross-validated them on 18 held-out floods. The honest result is that neural networks and a Transformer do not yet beat simple methods, and that every model reacts to a flood rather than anticipating it, because the gauge's own history does not contain the rain. Upstream gauges rose hours earlier in about a third of events, so the next stage tests whether adding upstream information helps, and then builds and compares the hybrid model. The hybrid's code is written but it has not been trained to a result; the baselines and the upstream study are what let us judge it fairly."
 
 ## 7. Likely faculty questions and suggested answers
 
-1. **Where is the hybrid model?** Not implemented. It is proposed for the second evaluation. What exists is the complete evaluation framework and the baselines it must beat.
+1. **Where is the hybrid model?** There is no trained hybrid result yet. The model code, a fixed protocol and unit tests are written (`docs/HYBRID_H1_PROTOCOL.md`), and a first training run was started and stopped partway (10 of 24 stability runs); it is resumable. What is complete is the evaluation framework and the baselines it must beat, including the 30-minute-lead evaluation of those baselines.
 2. **Why build baselines and an upstream study before the hybrid?** Because the baselines show the limit is probably information, not model size: ridge matches the networks, and no model forecast half of a rise before it began. A hybrid on the same stage-only inputs would likely hit the same limit; without strong, leakage-safe baselines any hybrid gain could not be judged. The upstream study tests the information hypothesis first.
 3. **Isn't "neural networks do not beat ridge" a failed project?** No. It is a result obtained under a stricter protocol than the single split that first suggested otherwise. It sharpens the question: what information does a model need? The conclusion is limited to hydrology-only inputs, one architecture family and untuned settings.
 4. **How do you know there is no data leakage?** Whole storms are kept together; folds are chronological with a 27 h 15 min embargo (24 h window + 3 h horizon + one step); scalers and target scales are fitted on training rows only; tests check these properties. A data-handling defect was found by us, fixed, and disclosed (deviation 3).

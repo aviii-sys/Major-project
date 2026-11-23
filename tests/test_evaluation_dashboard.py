@@ -153,7 +153,7 @@ def test_roadmap_is_labelled_a_proposal_and_the_hybrid_is_not_shown_as_done(doc)
         assert item in ni
     for m in doc["milestones"]:
         assert "hybrid" not in m["title"].lower()
-    assert "proposed future development" in html and "proposed, not yet implemented" in html
+    assert "not been trained to a result" in html and "no trained result" in html and "unit-tested" in html
     assert not re.search(r"\b\d{1,3}\s?%\s+(complete|done|finished)", html)                    # no invented completion percentages
 
 

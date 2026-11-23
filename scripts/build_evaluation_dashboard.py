@@ -318,7 +318,7 @@ def main() -> None:
          "deliverables": [{"t": "Guide decisions on the " + str(FACTS["up.guide_questions"]["value"]) + " protocol questions", "done": False, "e": None}, {"t": "Validated upstream data (full-record gauge stage; hourly radar rainfall validated against gauges)", "done": False, "e": None},
                           {"t": "Upstream-input experiment report (configurations A to D, same folds, pre-registered rule)", "done": False, "e": None}, {"t": "Hybrid Transformer-LSTM implementation, tests and cross-validated comparison", "done": False, "e": None},
                           {"t": "Updated dashboard with the new results", "done": False, "e": None}],
-         "completed": "Prerequisites only: the protocol draft, the baselines and the evaluation framework.", "remaining": "Everything listed; none of it has started.",
+         "completed": "Prerequisites: the protocol draft, the baselines and the evaluation framework; the hybrid model code, its protocol and unit tests exist, but no hybrid has been trained to a result.", "remaining": "Everything listed; none of it has started.",
          "demo": "Planned: A-to-D comparison per flood class, hybrid against baselines with intervals, failure analysis."},
         {"id": "ev3", "name": "Third evaluation", "status": "Proposed", "theme": "Early-warning evaluation, robustness and final report",
          "objectives": ["Evaluate event detection and lead time with a false-alarm constraint (research prototype, not operational)", "Test robustness to missing data and report failure cases", "Complete the final report and an integrated replay demonstration"],
@@ -348,10 +348,10 @@ def main() -> None:
                 {"t": "Automated tests", "d": f"{F('eng.tests_passed')} tests passed, {F('eng.tests_failed')} failed at build time ({F('eng.loc_tests'):,} lines)", "cmd": ".venv/bin/python -m pytest -q"},
                 {"t": "Pre-registered protocols and experiment registry", "d": f"{F('eng.protocols')} protocols, {F('eng.registry_entries')} registry entries with status and deviations", "cmd": "open experiments/REGISTRY.md"},
                 {"t": "Historical-replay dashboard", "d": "saved out-of-fold forecasts, 18 events, offline", "cmd": "open dashboard/replay/index.html"}],
-            "not_implemented": ["Hybrid Transformer-LSTM model", "Upstream-input experiments", "Probability / detection head and warning categories", "Real-time data ingestion, live forecasting or alerting", "Discharge forecasting"]}
+            "not_implemented": ["Hybrid Transformer-LSTM results (model code and unit tests exist; training stopped before any result)", "Upstream-input experiments", "Probability / detection head and warning categories", "Real-time data ingestion, live forecasting or alerting", "Discharge forecasting"]}
     doc = {"meta": {"title": "Hybrid Transformer-LSTM for Real-Time Flash-Flood Forecasting and Early Warning: first evaluation progress review",
                     "station": "USGS 08167500, Guadalupe River near Spring Branch, Texas (NWS id SRGT2)", "horizons": HZ, "built": dt.datetime.now().strftime("%Y-%m-%d %H:%M"),
-                    "notice": "Research progress dashboard built from the project's saved result tables. All experimental results are exploratory (retrospective, test period already inspected). The hybrid model has not been implemented. The academic roadmap is a proposal pending faculty confirmation."},
+                    "notice": "Research progress dashboard built from the project's saved result tables. All experimental results are exploratory (retrospective, test period already inspected). No trained hybrid result exists yet (the model code is written and unit-tested; a first training run was stopped). The academic roadmap is a proposal pending faculty confirmation."},
            "facts": FACTS, "model_cv": model_cv, "single_split": single, "paired_cv": paired_cv, "paired_1c": paired_1c, "detection": detection, "window": window, "onset": onset,
            "example": example, "strip": strip, "upstream": upstream_rows, "milestones": milestones, "roadmap": roadmap, "limitations": limitations, "next_steps": next_steps, "demo": demo,
            "tests": tests, "sources": SOURCES}
